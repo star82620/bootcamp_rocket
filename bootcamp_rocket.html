@@ -21,67 +21,194 @@
         </div>
     </div> -->
     <main>
-        <!-- <h1></h1> -->
         <div id="banner">
             <!-- (邊界大184)格線背景，有兩個卡片，卡片RWD變成column -->
             <div class="container">
                 <div class="enter_card">
                     <div class="card_container">
                         <div class="card_title">
-                            <h2>
+                            <h2 class="card_title_chinese">
                                 火箭隊
                             </h2>
-                            <p>
+                            <p class="card_title_eng">
                                 Bootcamp Rocket
                             </p>
+                            <img class="logo" src="./image/banner/banner-logo-rocket-lg.svg" alt="">
                         </div>
-                        <img class="logo" src="./image/banner/banner-logo-rocket-lg.svg" alt="">
                         <div class="hashtag">
                             <p># 軟體工程師培訓營</p>
                             <p># 全程免費的扎實訓練</p>
                             <p># 帶你翻轉人生！</p>
                         </div>
-                        <img class="enter_btn" src="./image/banner/banner-btn-rocket-lg.svg" alt="">
+                        <img class="enter_btn_lg" src="./image/banner/banner-btn-rocket-lg.svg" alt="">
+                        <img class="enter_btn_sm" src="./image/banner/banner-btn-rocket-sm.svg" alt="">
                     </div>
                 </div>
-                
-                <!-- 這個X可以用偽元素替代嗎？ -->
-                <div>X</div> 
-
+                <div class="deco_cross">X</div> 
                 <div class="enter_card">
                     <div class="card_container">
                         <div class="card_title">
-                            <h2>
+                            <h2 class="card_title_chinese">
                                 共同空間
                             </h2>
-                            <p>
+                            <p class="card_title_eng">
                                 Co-working Space
                             </p>
+                            <img class="logo" src="./image/banner/banner-logo-coworking-lg.svg" alt="">
                         </div>
-                        <img class="logo" src="./image/banner/banner-logo-coworking-lg.svg" alt="">
                         <div class="hashtag">
                             <p># 超 chill 的共同工作場域</p>
                             <p># 餅乾、零食、咖啡應有盡有</p>
                             <p># 等你來一同交流成長</p>
                         </div>
-                        <img class="enter_btn" src="./image/banner/banner-btn-coworking-lg.svg" alt="">
+                        <img class="enter_btn_lg" src="./image/banner/banner-btn-coworking-lg.svg" alt="">
+                        <img class="enter_btn_sm" src="./image/banner/banner-btn-coworking-sm.svg" alt="">
                     </div>
                 </div>
-
-
             </div>
         </div>
         <div id="about_rocket">
             <!-- (邊界小72)藍色底，圓角（>1440取消），左邊文字、右邊三張直式卡片scroll，不要滾動軸 -->
+            <div class="container">
+                <div class="what_is">
+                    <p class="title_eng">About Rocket</p>
+                    <h2 class="title_chinese">什麼是火箭隊</h2>
+                    <p class="description">
+                        火箭隊位於高雄的工程師培訓營，針對市場急需的前端、後端工程師與 UI 設計師職缺而設。為期<span>七個月的免費課程，</span>
+                        學員全程參與，<span>僅需支付場地費。</span>
+                    </p>
+                    <p class="description">
+                        火箭隊培育具備問題解決能力的專業人才，滿足企業需求。透過教練的觀察與協助，學員將建立階段性目標，確保技能成長。加入火箭隊，您將獲得實戰經驗，迅速融入職場，並滿足市場對高品質工程師的渴求。
+                    </p>
+                </div>
+                <div class="card_container">
+                    <div class="career_card">
+                        <div class="card_top">
+                            <h3>
+                                前端工程師
+                            </h3>
+                            <ul class="skill">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+                        <p class="eng_title">Front-end engineer</p>
+                        <div class="career_img">
+                            <div class="career_img_bg"></div>
+                            <img src="./image/about_rocket/about-rocket-frontend.png" alt="Front-end engineer">
+                        </div>
+                    </div>
+                    <div class="career_card">
+                        <div class="card_top">
+                            <h3>
+                                後端工程師
+                            </h3>
+                            <ul class="skill">
+                                <li>C#</li>
+                                <li>Net</li>
+                            </ul>
+                        </div>
+                        <p class="eng_title">
+                            Back-end engineer
+                        </p>
+                        <div class="career_img">
+                            <div class="career_img_bg"></div>
+                            <img src="./image/about_rocket/about-rocket-backend.png" alt="Back-end engineer">
+                        </div>
+                    </div>
+                    <div class="career_card">
+                        <div class="card_top">                            
+                            <h3>
+                                UI 設計師
+                            </h3>
+                            <ul class="skill">
+                                <li>Figma</li>
+                                <li>HTML</li>
+                                <li>css</li>
+                            </ul>
+                        </div>
+                        <p class="eng_title">
+                            UI designer
+                        </p>
+                        <div class="career_img">
+                            <div class="career_img_bg"></div>
+                            <img src="./image/about_rocket/about-rocket-ui.png" alt="UI designer">
+                        </div>
+                    </div>
+                    
+                </div>
 
+            </div>
         </div>
         <div id="success_case">
             <!-- (邊界小72)八張卡片 4*2 RWD也是這樣 -->
+            <div class="container">
+                <h3>成功案例</h3>
+                <div class="card_container">
+                    <div>
+                        <img src="./image/success_case/case1.png" alt="case1">
+                        <img src="./image/success_case/case2.png" alt="case2">
+                        <img src="./image/success_case/case3.png" alt="case3">
+                        <img src="./image/success_case/case4.png" alt="case4">
+                    </div>
+                    <div>
+                        <img src="./image/success_case/case5.png" alt="case5">
+                        <img src="./image/success_case/case6.png" alt="case6">
+                        <img src="./image/success_case/case7.png" alt="case7">
+                        <img src="./image/success_case/case8.png" alt="case8">
+                    </div>
+                </div>    
+            </div>
 
         </div>
         <div id="training">
             <!-- (邊界大184)藍底，標題壓在上邊線，近期梯次要跑馬燈，三張工程師卡片直排，
                 教練團四張卡片橫排，下面文案按了切換，馬上報名按鈕(hover)壓在下邊線 RWD也一樣 -->
+                <div class="container">
+
+                    <h3>關於培訓</h3>
+                    <div class="new_batch">
+                        <div class="new_batch_title">近期梯次</div>
+                        <div class="new_batch_ticker">
+                            第十三梯 (2023/5/8~2023/11/30) 、第十四梯 (2023/7/31~2024/2/28)
+                        </div>
+                    </div>
+                    <div class="career_card_container">
+                        <div class="career_card">
+                            <h4>前端工程師</h4>
+                            <div class="card_content_container">
+                                <div class="card_content">
+                                    <section>
+                                        <h5>關於前端</h5>
+                                        <p>主要專精 JavaScript 前端 (65%)、後端 (35%) 開發，投入語言為 HTML、CSS、JavaScript，<span class="mark">適合有一些 HTML、CSS、JS 基礎的學員報名</span>。</p>
+                                    </section>
+                                    <section>
+                                        <h5>應徵門檻</h5>
+                                        <ol>
+                                            <li>會用 CSS Flexbox 排過網頁，有 RWD 響應式網頁概念，需提交 CSS 切版作品，請<span class="mark">在履歷上需附網頁切版作品</span>，Codepen、GitHub Pages 皆可</li>
+                                            <li>了解 JS 變數、陣列物件、DOM、監聽、AJAX 等知識，尚未熟練也沒關係。</li>
+                                        </ol>
+                                    </section>
+                                    <section>
+                                        <h5>你會學到</h5>
+                                        <ol>
+                                            <li>網頁切版技能：HTML5、CSS3、SCSS、Bootsrap5、TailwindCSS</li>
+                                            <li>前端開發技能：JavaScript、TypeScript、ES6、SPA、JS plugin 整合、API 介接、NPM</li>
+                                            <li>後端開發技能：Node.js、MongoDB、heroku、express、JWT</li>
+                                            <li>JS 框架：React(Hooks)、Vue3，會依照未來你想投入的公司進行調整</li>
+                                            <li>程式版控：Git、GitHub、Git Flow 工作流程</li>
+                                        </ol>
+                                    </section>
+                                </div>
+                                <div class="card_img">
+                                    <img src="./image/training/training-img-frontend-lg.png" alt="前端工程師">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
         </div>
         <div id="faq">
             <!-- (邊界292)兩大區塊直列：費用&流程 li 左icon右文字 -->

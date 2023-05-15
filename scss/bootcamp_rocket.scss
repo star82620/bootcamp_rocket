@@ -1,6 +1,24 @@
 //Guideline style
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;700&family=Noto+Sans+TC:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+@mixin desktop {
+    @media (max-width: 1279px) {
+        @content
+    };
+}
+
+@mixin tablet {
+    @media (max-width: 1023px) {
+        @content
+    };
+}
+
+@mixin mobile {
+    @media (max-width: 767px) {
+        @content
+    };
+}
 
 // Bootcamp Rocket
 $primary-blue-100: #E6EBFF;
@@ -65,6 +83,32 @@ h4 {
     font-size: 28px;
 }
 
+@mixin w-1076 {
+    max-width: 1440px;
+    padding-left: 182px;
+    padding-right: 182px;
+    margin: 0 auto;
+
+    // @include desktop() {
+    //     padding: 0;
+    // }
+
+    // @include mobile() {
+    //     padding: 0 48px;
+    // }
+}
+
+@mixin w-1296 {
+    max-width: 1440px;
+    padding-left: 72px;
+    padding-right: 72px;
+    margin: 0 auto;
+}
+
+
+
+
+
 // Page style ---
 
 #marquee {
@@ -99,85 +143,596 @@ main {
 }
 
 #banner {
+    display: block;
     width: 100%;
     height: 757px;
+    padding-bottom: 22px;
     background: url('../image/banner/banner-bg.png') repeat top center;
     
-    h2,  {
-        font-size: 48px;
+    @include mobile() {
+        height: 462px;
+        padding-bottom: 28px;
     }
     
+    
     .container {
-        height: 100%;
+        @include w-1076();
+        height: auto;
         display: flex;
         justify-content: space-around;
         align-items: center;
-    }
+        padding-top: 91px;
+        padding-bottom: 100px;
+        
+        @include desktop() {
+            padding: 0 20px;
 
-    .enter_card {
-        width: 440px;
-        height: 448px;
-        border: 1px solid $neutral-gray-300;
-        background-color: #fff;
-        border-radius: 24px;
-        position: relative;
+        }
 
-        .card_container {
-            display: flex;
+        @include mobile() {
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            height: 528px;
+            padding: 60px 48px 80px;
             
-            .card_title {
-                margin-top: -36px;
+        }
+        
+        .deco_cross {
+            font-size: 48px;
+
+            @include mobile() {
+                display: none;
+            }
+        }
+        
+        .enter_card {
+            width: 440px;
+            height: 448px;
+            border: 1px solid $neutral-gray-300;
+            background-color: #fff;
+            border-radius: 24px;
+            position: relative;
+
+            @include mobile() {
+                width: 294px;
+                // min-width: 294px;
+                height: 134px;
+                margin-left: -32px;
+            }
+            
+            .card_container {
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
                 align-items: center;
+                height: 528px;
+
+                @include mobile() {
+                    height: 100%;
+                    flex-direction: row;
+                    margin-right: -28px;
+                }
                 
-                p {
-                    color: $neutral-gray-500;
-                    font-size: $font-size-body1;
-                    font-weight: 700;
-                }    
+                .card_title {
+                    margin-top: -36px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    @include mobile() {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        margin-top: 0;
+                        padding: 24px;
+                    }
+
+                    .card_title_chinese {
+                        font-size: 48px;
+                        // line-height: 1em;
+
+                        @include mobile() {
+                            font-size: 32px;
+                        }
+                    }
+                    
+                    .card_title_eng {
+                        color: $neutral-gray-500;
+                        font-size: $font-size-body1;
+                        font-weight: 700;
+
+                        @include mobile() {
+                            width: 100%;
+                            font-size: 20px;
+                            margin-top: 8px;
+                        }
+                    }    
+
+                    img {
+                        width: 124px;
+                        margin-top: 24px;
+
+                        @include mobile() {
+                            width: 48px;
+                            order: -1;
+                            margin: 0 8px 0 0;
+                        }
+                    }
+                }
+                
+                .logo {
+                    width: 124px;
+                }
+                
+                .hashtag {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    @include mobile() {
+                        display: none;
+                    }
+                }
+                .enter_btn_lg {
+                    margin-bottom: 36px;
+                    width: 100px;
+
+                    @include mobile() {
+                        display: none;
+                    }
+                }
+
+                .enter_btn_sm {
+                    display: none;
+
+                    @include mobile() {
+                        display: block;
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+                
+            }   
+
+            &::after {
+                content: "";
+                display: block;
+                width: 120px;
+                height: 120px;
+                border-radius: 999px;
+                background-color: $primary-blue-200;
+                z-index: -1;
+                position: absolute;
+
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 50%);   
+
+                @include mobile() {
+                    width: 80px;
+                    height: 80px;
+                    transform: rotate(-90deg) translate(-50%, 50%);
+                    bottom: 50%;
+                    left: auto;
+                    right: 0;
+                    
+                }
             }
             
-            .logo {
-                width: 124px;
+            &:last-child::after {
+                background-color: $primary-violet-200;
+            }
+        }
+        
+    }
+}
+
+#about_rocket {
+    background-color: $primary-blue-100;
+    border-radius: 40px;
+    margin-top: -22px;
+
+    .container {
+        @include w-1296();
+        padding-top: 60px;
+        padding-bottom: 60px;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet() {
+            flex-direction: column;
+            padding: 36px 52px;
+        }
+
+
+        .what_is {
+            width: 526px;
+
+            @include tablet() {
+                width: 100%;
+                margin-bottom: 24px;
             }
 
-            .hashtag {
+            .title_eng {
+                font-size: 20px;
+
+                @include tablet() {
+                    font-size: 16px;
+                }
+            }
+
+            .title_eng ~ p{
+                margin-top: 40px;
+
+                @include tablet() {
+                    margin-top: 16px;
+                }
+            }
+
+            .title_chinese {
+                font-size: 48px;
+                vertical-align: middle;
+            
+                @include tablet() {
+                    font-size:  32px;
+                }
+
+            }
+
+            .description {
+                font-size: 20px;
+                font-weight: 500;
+
+                @include tablet() {
+                    font-size: 16px;
+                }
+
+                span {
+                    font-weight: 700;
+                }
+            }
+
+
+        }
+
+        .card_container {
+            height: 592px;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+
+            @include tablet() {
+                overflow: visible;
+                height: 100%;
+            }
+    
+            .career_card {
+                width: 636px;
+                height: 280px;
+                background-color: #fff;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-top: 32px;
+                padding: 36px;
+                border-radius: 24px;
+
+                @include tablet() {
+                    flex-wrap: nowrap;
+                    justify-content: start;
+                    width: 100%;
+                    height: auto;
+                    padding: 16px 20px;
+                }
+
+                h3 {
+                    font-size: 24px;
+                }
+
+                .skill {
+                    display: flex;
+
+
+                    li {
+                        list-style: none;
+                        padding: 8px 12px;
+                        color: $primary-blue-400;
+                        border: 2px solid $primary-blue-400;
+                        border-radius: 999px;
+
+                        @include tablet() {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .eng_title {
+                    color: $neutral-gray-500;
+                    font-size: 24px;
+
+                    @include tablet() {
+
+                    }
+                }
+
+                .career_img {
+                    border: 1px solid #B28FEA;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    .career_img_bg {
+                        display: block;
+                        width: 169px;
+                        height: 208px;
+                        border-radius: 24px;
+                        background-color: $neutral-gray-200;
+                    }
+
+                    img {
+                        height: 160px;
+                    }
+                    
+                    &:first-of-type {
+                        margin-left: -220px;
+                    }
+                    
+                    &:nth-of-type(2) img {
+                        margin-left: -232px; 
+                    
+                    }
+                    &:nth-of-type(3) img {
+                        margin-right: -129px; 
+                    
+                    
+                    }
+                }
+
+                &:first-child {
+                    margin-top: 0;
+                }
             }
-            .enter_btn {
-                margin-bottom: 36px;
-                width: 100px;
-            }
-        
-        }   
-
-    }
-
-    .enter_card::after {
-        content: "";
-        display: block;
-        width: 120px;
-        height: 120px;
-        border-radius: 999px;
-        background-color: $primary-blue-200;
-        z-index: -1;
-
-        position: absolute;
-        bottom: -60px;
-        left: 160px;    
-    }
-        
-        
     
-    .enter_card:last-child::after {
-        background-color: $primary-violet-200;
+        }
     }
+
+}
+
+#success_case {
+    width: 100%;
+
+    .container {
+        @include w-1296();
+        padding-top: 92px;
+        padding-bottom: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         
+        @include tablet() {
+            padding: 48px 0 48px 48px;
+            
+        }
+        
+        h3 {
+            font-size: 36px;
+
+            @include tablet() {
+                font-size: 28px;
+            }
+        }
+
+        .card_container {
+            width: 100%;
+            overflow-x: scroll;
+            
+            &::-webkit-scrollbar {
+                height: 0;
+                width: 0;
+            }
+
+            div {
+                width: 1296px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            @include tablet() {
+            }
+        
+        img {
+            height: 200px;
+            border-radius: 12px;
+            margin-top: 28px;
+
+            @include tablet() {
+                margin-top: 16px;
+            }            
+        }
+        }
+
+
+
+    }
+}
+#training {
+    width: 100%;
+    background-color: $neutral-gray-100;
+    font-size: 16px;
+
+    .container {
+        @include w-1076();
+        // padding-top: 38px;
+        padding-bottom: 128px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -28px;
+
+        @include tablet() {
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+
+    }
+    
+    h3 {
+        font-size: 36px;
+    }
+
+    // 近期梯次
+    .new_batch {
+        border-radius: 50px;
+        background-color: #fff;
+        display: flex;
+        padding: 12px 20px;
+        margin-top: 12px;
+        box-shadow: 0 2px 4px #E8E8E8;
+
+        @include tablet() {
+            width: 100%;
+        }
+        
+        .new_batch_title {
+            padding: 5px 12px 5px 0;
+            margin-right: 12px;
+            border-right: 2px solid $neutral-gray-200;
+        }
+
+        .new_batch_ticker {
+            padding: 5px 0 ;
+            font-weight: 500;
+
+            @include tablet() {
+                width: 220px;
+                height: 24px;
+                // overflow-x: hidden;
+            }
+        }
+    }
+
+    
+    .career_card_container {
+        margin-top: 80px;
+
+        // 卡片
+        .career_card {
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid $neutral-gray-200;
+            background: #fff url('../image/training/training-bg.png');
+            padding: 0 80px 42px 48px;
+
+            @include tablet() {
+                padding: 0 48px;
+                border-radius: 0;
+
+            }
+            
+            h4 {
+                display: inline-block;
+                margin-top: -32px;
+                margin-bottom: 28px;
+                padding: 12px 40px;
+                border: 2px solid $neutral-gray-700;
+                border-radius: 12px;
+                box-shadow: 4px 4px 0 $neutral-gray-700;
+                background-color: #fff;
+                line-height: normal;
+
+                @include tablet() {
+                    margin-bottom: 24px;
+                }
+            }
+
+            .card_content_container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                @include tablet() {
+                    flex-direction: column;
+                }
+
+                .card_content {
+                    width: 618px;
+                    margin-right: 48px;
+
+                    section {
+                        margin-top: 36px;
+                        
+                        &:first-child {
+                            margin-top: 0;
+                        }
+
+                        p {
+                            font-weight: 400;
+                        }
+
+                        h5 {
+                            display: inline-block;
+                            border-bottom: 3px solid $neutral-gray-700;
+                            font-size: 20px;
+                            margin-bottom: 16px;
+                        }
+
+                        .mark {
+                            background-color: $accent-yellow;
+                            font-weight: 700;
+
+                        }
+                        
+                        ol {
+                            margin-left: 20px;
+
+                            li {
+                                font-weight: 400;
+
+
+                                &::marker {
+                                    font-family: 'Noto Sans TC', sans-serif;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+
+                    .card_img {
+                        width: 280px;
+
+                        @include tablet() {
+                            order: -1;
+                            height: 200px;
+                        }
+                    
+                        img {
+                            width: 100%;
+
+                        }
+
+                    }
+
+
+            }
+        }
+
+    }
+
+
+
+}
+#faq {
+
+}
+#support {
+
+}
+#footer {
+
 }
