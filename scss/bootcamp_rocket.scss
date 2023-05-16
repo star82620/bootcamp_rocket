@@ -15,7 +15,7 @@
 }
 
 @mixin mobile {
-    @media (max-width: 767px) {
+    @media (max-width: 428px) {
         @content
     };
 }
@@ -43,9 +43,9 @@ $neutral-gray-500: #9A9A9A;
 $neutral-gray-600: #757575;
 $neutral-gray-700: #363636;
 
-$font-size-body1: 24px;
-$font-size-body2: 20px;
-$font-size-body3: 16px;
+$font-size-body1-24: 24px;
+$font-size-body2-20: 20px;
+$font-size-body3-16: 16px;
 
 *{
     margin: 0;
@@ -60,6 +60,10 @@ $font-size-body3: 16px;
     &:focus {
         outline: none;
     }
+}
+
+a {
+    color: $neutral-gray-700;
 }
 
 html, body {
@@ -84,25 +88,19 @@ h4 {
 }
 
 @mixin w-1076 {
-    max-width: 1440px;
-    padding-left: 182px;
-    padding-right: 182px;
+    max-width: 1076px;
+    width: 100%;
     margin: 0 auto;
-
-    // @include desktop() {
-    //     padding: 0;
-    // }
-
-    // @include mobile() {
-    //     padding: 0 48px;
-    // }
+    display: flex;
+    justify-content: space-between;
 }
 
 @mixin w-1296 {
-    max-width: 1440px;
-    padding-left: 72px;
-    padding-right: 72px;
+    max-width: 1296px;
+    width: 100%;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -131,56 +129,41 @@ h4 {
 
 main {
     width: 100%;
-    height: 2000px;
-    margin-top: 64px;
+    height: 2000px; //之後刪掉
+    margin-top: 64px; //給跑馬燈的空間，之後調整
     display: flex;
     flex-direction: column;
     color: $neutral-gray-700;
-
-    h1 {
-        width: 0%;
-    }
 }
 
 #banner {
-    display: block;
-    width: 100%;
-    height: 757px;
-    padding-bottom: 22px;
     background: url('../image/banner/banner-bg.png') repeat top center;
+    padding: 0 20px 22px;
     
-    @include mobile() {
-        height: 462px;
+    @include tablet() {
+        padding-left: 12px;
+        padding-right: 12px;
         padding-bottom: 28px;
     }
     
-    
     .container {
         @include w-1076();
-        height: auto;
-        display: flex;
-        justify-content: space-around;
         align-items: center;
         padding-top: 91px;
         padding-bottom: 100px;
-        
-        @include desktop() {
-            padding: 0 20px;
 
-        }
-
-        @include mobile() {
+        @include tablet() {
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 60px 48px 80px;
-            
+            padding-top: 60px;
+            padding-bottom: 80px;
         }
         
         .deco_cross {
             font-size: 48px;
 
-            @include mobile() {
+            @include tablet() {
                 display: none;
             }
         }
@@ -189,15 +172,18 @@ main {
             width: 440px;
             height: 448px;
             border: 1px solid $neutral-gray-300;
-            background-color: #fff;
             border-radius: 24px;
+            background-color: #fff;
             position: relative;
 
-            @include mobile() {
+            @include tablet() {
                 width: 294px;
-                // min-width: 294px;
                 height: 134px;
-                margin-left: -32px;
+                margin-left: -32px; //為了平衡右邊偽元素
+
+                &:first-child {
+                    margin-bottom: 46px;
+                }
             }
             
             .card_container {
@@ -205,9 +191,9 @@ main {
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-                height: 528px;
+                height: 488px;
 
-                @include mobile() {
+                @include tablet() {
                     height: 100%;
                     flex-direction: row;
                     margin-right: -28px;
@@ -219,34 +205,34 @@ main {
                     flex-direction: column;
                     align-items: center;
 
-                    @include mobile() {
+ 
+                    @include tablet() {
                         display: flex;
                         flex-direction: row;
                         justify-content: flex-start;
                         align-items: center;
                         flex-wrap: wrap;
                         margin-top: 0;
-                        padding: 24px;
+                        padding: 24px 0 24px 24px;
                     }
 
                     .card_title_chinese {
                         font-size: 48px;
-                        // line-height: 1em;
+                        line-height: normal;
 
-                        @include mobile() {
+                        @include tablet() {
                             font-size: 32px;
                         }
                     }
                     
                     .card_title_eng {
                         color: $neutral-gray-500;
-                        font-size: $font-size-body1;
-                        font-weight: 700;
+                        font-size: $font-size-body1-24;
 
-                        @include mobile() {
+                        @include tablet() {
                             width: 100%;
-                            font-size: 20px;
                             margin-top: 8px;
+                            font-size: $font-size-body2-20;
                         }
                     }    
 
@@ -254,7 +240,7 @@ main {
                         width: 124px;
                         margin-top: 24px;
 
-                        @include mobile() {
+                        @include tablet() {
                             width: 48px;
                             order: -1;
                             margin: 0 8px 0 0;
@@ -262,35 +248,29 @@ main {
                     }
                 }
                 
-                .logo {
-                    width: 124px;
-                }
-                
                 .hashtag {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
 
-                    @include mobile() {
+                    @include tablet() {
                         display: none;
                     }
                 }
                 .enter_btn_lg {
-                    margin-bottom: 36px;
                     width: 100px;
 
-                    @include mobile() {
+                    @include tablet() {
                         display: none;
                     }
                 }
 
                 .enter_btn_sm {
+                    width: 60px;
                     display: none;
 
-                    @include mobile() {
+                    @include tablet() {
                         display: block;
-                        width: 60px;
-                        height: 60px;
                     }
                 }
                 
@@ -303,21 +283,19 @@ main {
                 height: 120px;
                 border-radius: 999px;
                 background-color: $primary-blue-200;
-                z-index: -1;
                 position: absolute;
-
+                z-index: -1;
                 bottom: 0;
                 left: 50%;
                 transform: translate(-50%, 50%);   
 
-                @include mobile() {
+                @include tablet() {
                     width: 80px;
                     height: 80px;
                     transform: rotate(-90deg) translate(-50%, 50%);
                     bottom: 50%;
                     left: auto;
-                    right: 0;
-                    
+                    right: 0;                    
                 }
             }
             
@@ -325,25 +303,37 @@ main {
                 background-color: $primary-violet-200;
             }
         }
-        
     }
 }
 
 #about_rocket {
+    margin-top: -22px;
+    padding-left: 20px;
+    padding-right: 20px;
     background-color: $primary-blue-100;
     border-radius: 40px;
-    margin-top: -22px;
+    
+    @media (min-width:1441px) {
+        border-radius: 0;
+    }
+    
+    @include tablet() {
+        padding-left: 12px;
+        padding-right: 12px;    
+    }
 
     .container {
         @include w-1296();
         padding-top: 60px;
         padding-bottom: 60px;
-        display: flex;
-        justify-content: space-between;
 
         @include tablet() {
+            min-width: 332px;            
             flex-direction: column;
-            padding: 36px 52px;
+            padding-top: 36px;
+            padding-bottom: 36px;
+            padding-left: 12px;
+            padding-right: 12px;
         }
 
 
@@ -415,42 +405,59 @@ main {
                 height: 280px;
                 background-color: #fff;
                 display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
                 justify-content: space-between;
                 margin-top: 32px;
                 padding: 36px;
                 border-radius: 24px;
 
                 @include tablet() {
-                    flex-wrap: nowrap;
-                    justify-content: start;
-                    width: 100%;
+                    width: 332px;
+                    height: 348px;
+                    // width: 100%;
+                    flex-direction: column;
+                    align-items: center;
                     height: auto;
                     padding: 16px 20px;
                 }
 
-                h3 {
-                    font-size: 24px;
-                }
-
-                .skill {
+                .career_text {
                     display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    
+                    @include tablet() {
+                        width: 100%;
+                        height: 120px;
+                    }
+                    
+                    h3 {
+                        font-size: 24px;
+                    }
+                    
+                    .skill {
+                        display: flex;
+                        flex-grow:1;
+                        flex-shrink: 1;
 
+                        li {
+                            list-style: none;
+                            padding: 8px 12px;
+                            color: $primary-blue-400;
+                            border: 2px solid $primary-blue-400;
+                            border-radius: 999px;
+                            margin-left: 12px;
 
-                    li {
-                        list-style: none;
-                        padding: 8px 12px;
-                        color: $primary-blue-400;
-                        border: 2px solid $primary-blue-400;
-                        border-radius: 999px;
+                            &:first-child {
+                                margin-left: 0;
+                            }
 
-                        @include tablet() {
-                            font-size: 12px;
+                            @include tablet() {
+                                font-size: 12px;
+                            }
                         }
                     }
                 }
-
+                
                 .eng_title {
                     color: $neutral-gray-500;
                     font-size: 24px;
@@ -461,35 +468,51 @@ main {
                 }
 
                 .career_img {
-                    border: 1px solid #B28FEA;
+                    display: block;
+                    width: 169px;
+                    height: 208px;
+                    border-radius: 24px;
+                    background-color: $neutral-gray-200;
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    justify-content: start;
                     
-                    .career_img_bg {
-                        display: block;
-                        width: 169px;
-                        height: 208px;
-                        border-radius: 24px;
-                        background-color: $neutral-gray-200;
+                    @include tablet() {
+                        justify-content: center;    
+                        width: 292px;
+                        height: 60px;
+                        border-radius: 12px;
+                        margin-top: 110px;
                     }
-
+                    
                     img {
                         height: 160px;
+                        margin-top: 24px;
                     }
                     
-                    &:first-of-type {
-                        margin-left: -220px;
+                }
+                
+                &:first-child img {
+                    margin-left: -51px;
+                    
+                    @include tablet() {
+                        margin-top: -108px;
+                        margin-left: 0px;
                     }
+                }
+                
+                &:nth-of-type(2) img {
+                    margin-left: -63px; 
                     
-                    &:nth-of-type(2) img {
-                        margin-left: -232px; 
-                    
+                    @include tablet() {
+                        margin-top: -108px;
+                        margin-left: 0px;
                     }
-                    &:nth-of-type(3) img {
-                        margin-right: -129px; 
-                    
-                    
+                }
+                &:nth-of-type(3) img {
+                    margin-left: -59px; 
+                    @include tablet() {
+                        margin-top: -108px;
+                        margin-left: 0px;
                     }
                 }
 
@@ -510,13 +533,11 @@ main {
         @include w-1296();
         padding-top: 92px;
         padding-bottom: 120px;
-        display: flex;
         flex-direction: column;
         align-items: center;
         
         @include tablet() {
-            padding: 48px 0 48px 48px;
-            
+            padding: 48px 0 92px 48px;
         }
         
         h3 {
@@ -560,179 +581,448 @@ main {
 
     }
 }
+
 #training {
-    width: 100%;
     background-color: $neutral-gray-100;
-    font-size: 16px;
+    font-size: $font-size-body3-16;
 
     .container {
         @include w-1076();
-        // padding-top: 38px;
-        padding-bottom: 128px;
-        display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: -28px;
-
+        
         @include tablet() {
             padding-left: 48px;
             padding-right: 48px;
         }
 
-    }
+        h3 {
+            font-size: 36px;
     
-    h3 {
-        font-size: 36px;
-    }
-
-    // 近期梯次
-    .new_batch {
-        border-radius: 50px;
-        background-color: #fff;
-        display: flex;
-        padding: 12px 20px;
-        margin-top: 12px;
-        box-shadow: 0 2px 4px #E8E8E8;
-
-        @include tablet() {
-            width: 100%;
-        }
-        
-        .new_batch_title {
-            padding: 5px 12px 5px 0;
-            margin-right: 12px;
-            border-right: 2px solid $neutral-gray-200;
-        }
-
-        .new_batch_ticker {
-            padding: 5px 0 ;
-            font-weight: 500;
-
             @include tablet() {
-                width: 220px;
-                height: 24px;
-                // overflow-x: hidden;
+                font-size: 28px;
             }
         }
-    }
-
     
-    .career_card_container {
-        margin-top: 80px;
-
-        // 卡片
-        .career_card {
-            width: 100%;
-            border-radius: 16px;
-            border: 1px solid $neutral-gray-200;
-            background: #fff url('../image/training/training-bg.png');
-            padding: 0 80px 42px 48px;
-
+        //近期梯次
+        .new_batch {
+            display: flex;
+            padding: 12px 20px;
+            margin-top: 12px;
+            border-radius: 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px #E8E8E8;
+            
             @include tablet() {
-                padding: 0 48px;
-                border-radius: 0;
-
+                width: 100%;
+                font-size: 14px;
             }
             
+            
+            .new_batch_title {
+                padding: 5px 12px 5px 0;
+                margin-right: 12px;
+                border-right: 2px solid $neutral-gray-200;
+    
+                @include mobile() {
+                    width: 76px;
+                }
+            }
+    
+            .new_batch_ticker {
+                padding: 5px 0 ;
+                font-weight: 500;
+    
+                @include tablet() {
+                    min-width: 230px;
+                    width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+    
+                p {
+                    font-weight: 500;
+    
+                    @include tablet() {
+                        height: 24px;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    
+        //三張工程師卡片
+        .career_card_container {
+    
+            // 卡片
+            .career_card {
+                border-radius: 16px;
+                border: 1px solid $neutral-gray-200;
+                background: #fff url('../image/training/training-bg.png');
+                padding: 0 80px 42px 48px;
+                margin-top: 80px;
+    
+                @include tablet() {
+                    padding: 0 48px 42px 48px;
+                    border-radius: 0;
+                }
+    
+                h5 {
+                    display: inline-block;
+                    margin-top: -32px;
+                    margin-bottom: 28px;
+                    padding: 12px 40px;
+                    border: 2px solid $neutral-gray-700;
+                    border-radius: 12px;
+                    box-shadow: 4px 4px 0 $neutral-gray-700;
+                    background-color: #fff;
+                    line-height: normal;
+                    font-size: 24px;
+    
+                    @include tablet() {
+                        margin-bottom: 24px;
+                        font-size: 20px;
+                    }
+                }
+    
+                .card_content_container {
+                    @include w-1076();
+                    align-items: center;
+    
+                    @include tablet() {
+                        flex-direction: column;
+                    }
+    
+                    .card_content {
+                        width: 618px;
+    
+                        @include mobile() {
+                            width: 100%;
+                        }
+    
+                        section {
+                            margin-top: 36px;
+                            
+                            &:first-child {
+                                margin-top: 0;
+                            }
+    
+                            p {
+                                font-weight: 400;
+                            }
+    
+                            h6 {
+                                display: inline-block;
+                                border-bottom: 3px solid $neutral-gray-700;
+                                font-size: 20px;
+                                margin-bottom: 16px;
+    
+                                @include tablet() {
+                                    font-size: 18px;
+                                }
+                            }
+    
+                            .mark_style {
+                                background-color: $accent-yellow;
+                                font-weight: 700;
+                            }
+    
+                            .underline_style {
+                                font-weight: 500;
+                                text-decoration: underline;
+                            }
+                            
+                            ol {
+                                margin-left: 20px;
+    
+                                li {
+                                    font-weight: 400;
+    
+    
+                                    &::marker {
+                                        font-family: 'Noto Sans TC', sans-serif;
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+    
+                        .card_img {
+                            height: 280px;
+    
+                            @include tablet() {
+                                order: -1;
+                                height: 200px;
+                            }
+                        
+                            img {
+                                height: 100%;
+                            }
+    
+                        }
+    
+    
+                }
+            }
+    
+        }
+
+        //教練團
+        .coach {
+            // @include w-1076();
+            // flex-direction: column;
+            width: 100%;
+            margin-top: 64px;
+            margin-bottom: 128px;
+
             h4 {
-                display: inline-block;
-                margin-top: -32px;
-                margin-bottom: 28px;
-                padding: 12px 40px;
-                border: 2px solid $neutral-gray-700;
-                border-radius: 12px;
-                box-shadow: 4px 4px 0 $neutral-gray-700;
-                background-color: #fff;
-                line-height: normal;
+                font-size: 32px;
 
                 @include tablet() {
-                    margin-bottom: 24px;
+                    font-size: 24px;
                 }
             }
 
-            .card_content_container {
+            .coach_card_container {
                 display: flex;
-                align-items: center;
                 justify-content: space-between;
+                margin-top: 40px;
 
-                @include tablet() {
-                    flex-direction: column;
-                }
-
-                .card_content {
-                    width: 618px;
-                    margin-right: 48px;
-
-                    section {
-                        margin-top: 36px;
-                        
-                        &:first-child {
-                            margin-top: 0;
-                        }
-
-                        p {
-                            font-weight: 400;
-                        }
-
-                        h5 {
-                            display: inline-block;
-                            border-bottom: 3px solid $neutral-gray-700;
-                            font-size: 20px;
-                            margin-bottom: 16px;
-                        }
-
-                        .mark {
-                            background-color: $accent-yellow;
-                            font-weight: 700;
-
-                        }
-                        
-                        ol {
-                            margin-left: 20px;
-
-                            li {
-                                font-weight: 400;
-
-
-                                &::marker {
-                                    font-family: 'Noto Sans TC', sans-serif;
-                                }
-                            }
-                        }
-                        
+                .coach_card {
+                    width: 251px;
+                    height: 160px;
+                    border-radius: 16px;
+                    background-color: #fff;
+                    border: 2px solid $neutral-gray-700;
+                    display: flex;
+                    align-items: end;
+    
+                    &:hover, &:active {
+                        background-color: $primary-blue-100;
                     }
-                }
-
-                    .card_img {
-                        width: 280px;
-
-                        @include tablet() {
-                            order: -1;
-                            height: 200px;
-                        }
+    
+    
+                    img {
+                        width: 180px;
                     
-                        img {
-                            width: 100%;
-
-                        }
-
+                    @include tablet() {
+                        width: 220px;
                     }
+                    
+                    }
+    
+                    .coach_name {
+                        writing-mode: vertical-lr;
+                        padding: 16px;
+                        background-color: #fff;
+                        border-radius: 12px;
+                        border: 2px solid $neutral-gray-700;
+                        box-shadow: 4px 4px 0 $neutral-gray-700;
+                        letter-spacing: 0.5em;
+                        vertical-align: middle;
+                        align-self: flex-start;
+                        margin-top: -24px;
+                    }
+                }
+            }
 
 
+            .coach_description_container {
+                margin-top: 28px;
+
+                .coach_description {
+                    display: none;
+
+                    &:first-child {
+                        display: block;
+                    }
+                    
+                    h5 {
+                        font-size: 24px;
+                    }
+                    
+                    ul {
+                        margin-top: 12px;
+                        margin-left: 24px;
+                        
+                        li, a {
+                            font-weight: 400;
+                            font-size: 16px;
+                            color: $neutral-gray-700; 
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+        .button_go {
+            @include w-1076();
+            height: 96px;
+            justify-content: center;
+            align-items: center;
+            background-color: $primary-blue-100;
+            border-radius: 16px;
+            border: 2px solid $neutral-gray-700;
+            margin-top: 80px;
+            transform: translate(0, 50%);
+            // padding: 24px;
+
+
+            span {
+                font-size: 32px;
+            }
+
+            img {
+                display: none;
+                width: 64px;
+                margin-left: 20px;
+            }
+
+            &:hover img {
+                display: inline-block;
             }
         }
 
     }
-
-
-
 }
+
 #faq {
 
-}
-#support {
+    .container {
+        max-width: 856px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        padding-top: 128px;
+        padding-bottom: 128px;
 
+        section {
+            margin-bottom: 60px;
+
+            h4 {
+                font-size: 32px;
+            }
+
+            li {
+                font-size: 16px;
+                font-weight: 500;
+                list-style: none;
+            }
+
+            .question_item {
+                border-top: 2px solid $neutral-gray-200;
+                padding: 20px;
+                display: flex;
+                align-items: start;
+                justify-content: start;
+                
+                &:last-child {
+                    border-bottom: 2px solid $neutral-gray-200;
+                }
+
+                img {
+                    width: 24px;
+                    margin-right: 20px;
+                }
+                
+                li {
+                    max-width: 761px;
+                    width: 100%;
+                }
+                
+                li:first-child {
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                }                
+            }
+        }
+
+    }
+}
+
+#support {
+    background-color: $neutral-gray-200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+    h4 {
+        align-self: flex-start;
+        margin-top: -16px;
+    }
+    
+    .container {
+        padding: 40px 0;
+        // @include w-1296();
+        // flex-direction: column;
+        width: 1368px;
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        .support_card_container {
+            display: flex;
+
+            .support_card_item {
+                margin-left: 24px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+                
+                .support_img {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 196px;
+                    height: 148px;
+                    background-color: #fff;
+                    border-radius: 12px;
+                }
+
+                .support_text {
+                    font-size: 16px;
+                    margin-top: 16px;
+
+                    & p:last-child {
+                        font-weight: 500;
+                        margin-top: 4px;
+                    }
+                }
+            }
+        }
+
+    }
 }
 #footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 36px 0;
 
+    @include tablet() {
+        flex-direction: column;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    p:first-child::after {
+        content: '-';
+        margin: 0 8px;
+
+        @include tablet() {
+            display: none;
+        }
+    }
 }
