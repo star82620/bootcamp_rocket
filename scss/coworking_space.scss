@@ -4,6 +4,11 @@
     font-weight: 700;
 }
 
+.mark_style {
+    position: relative;
+    z-index: 0;
+}
+
 .mark_style::after {
     content: '';
     display: inline-block;
@@ -15,7 +20,6 @@
     height: 50%;
     background-color: $accent-orange;
 }
-//這個怪怪的，span 套用會在 場域說明 的上面出現背景色？？？
 
 #marquee {
     width: 100%;
@@ -81,177 +85,222 @@ main {
     color: $neutral-gray-700;
 }
 
-// #banner {
-//     background: url('../image/banner/banner-bg.png') repeat top center;
-//     padding: 0 40px 0;
+//以 rocket page 為主，還沒調整好
+#banner {
+    background: url('../image/banner/banner-bg.png') repeat top center;
+    padding: 0 40px 0;
+
+    $page: space;
     
-//     @include mobile() {
-//         padding: 0 12px 0;
-//     }
+    @include mobile() {
+        padding: 0 12px 0;
+    }
     
-//     .container {
-//         @include w-1076();
-//         align-items: center;
-//         padding-top: 127px;
-//         padding-bottom: 182px;
+    .container {
+        @include w-1076();
+        align-items: center;
+        padding-top: 127px;
+        padding-bottom: 182px;
 
-//         @include mobile() {
-//             flex-direction: column;
-//             justify-content: space-between;
-//             align-items: center;
-//             padding-top: 60px;
-//             padding-bottom: 88px;
-//         }
+        @include mobile() {
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 60px;
+            padding-bottom: 88px;
+            height: 462px
+        }
         
-//         .deco_cross {
-//             font-size: 48px;
+        .deco_cross {
+            font-size: 48px;
 
-//             @include mobile() {
-//                 display: none;
-//             }
-//         }
+            @include mobile() {
+                display: none;
+            }
+        }
         
-//         .enter_card {
-//             width: 440px;
-//             height: 448px;
-//             border: 1px solid $neutral-gray-300;
-//             border-radius: 24px;
-//             background-color: #fff;
-//             position: relative;
-
-//             @include mobile() {
-//                 width: 294px;
-//                 height: 134px;
-//                 margin-left: -32px; //為了平衡右邊偽元素
-
-//                 &:first-child {
-//                     margin-bottom: 46px;
-//                 }
-//             }
+        .enter_card {
+            display: block;
+            position: relative;
+            width: 440px;
+            height: 448px;
+            border: 2px solid $neutral-gray-300;
+            border-radius: 24px;
+            background-color: #fff;
+            transition: 0.5s;
             
-//             .card_container {
-//                 display: flex;
-//                 flex-direction: column;
-//                 justify-content: space-between;
-//                 align-items: center;
-//                 height: 488px;
-//                 opacity: 0.5;
-
-//                 &:hover {
-//                     opacity: 1;
-//                 }
-
-//                 @include mobile() {
-//                     height: 100%;
-//                     flex-direction: row;
-//                     margin-right: -28px;
-//                 }
+            @include mobile() {
+                width: 294px;
+                height: 134px;
+                margin-left: -32px; //為了平衡右邊偽元素
                 
-//                 .card_title {
-//                     margin-top: -36px;
-//                     display: flex;
-//                     flex-direction: column;
-//                     align-items: center;
+                &:first-child {
+                    margin-bottom: 46px;
+                }
+            }
+            
+            &:hover {
+                margin-top: -16px;
+            
+                .card_container {
+                    opacity: 1;
+                }
+            }
 
-//                     @include mobile() {
-//                         display: flex;
-//                         flex-direction: row;
-//                         justify-content: flex-start;
-//                         align-items: center;
-//                         flex-wrap: wrap;
-//                         margin-top: 0;
-//                         padding: 24px 0 24px 24px;
-//                     }
+            &:active {
+                
+                
+                @if $page == space { //還沒試成功
+                    box-shadow: 8px 8px 0 $primary-violet-200;
+                } @else if $page == rocket {
+                    color: red;
+                    box-shadow: 8px 8px 0 $primary-blue-200;
+                }
+            }
+            
+            
 
-//                     .card_title_chinese {
-//                         font-size: 48px;
-//                         line-height: normal;
+            .card_container {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                opacity: 0.5;
 
-//                         @include mobile() {
-//                             font-size: 32px;
-//                         }
-//                     }
+                @include mobile() {
+                    height: 100%;
+                    flex-direction: row;
+                    margin-right: -28px;
+                }
+                
+                .card_title {
+                    margin-top: -36px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    @include mobile() {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        margin-top: 0;
+                        padding: 24px 0 24px 24px;
+                    }
+
+                    .card_title_chinese {
+                        font-size: 48px;
+                        line-height: normal;
+                        height: 72px;
+
+                        @include mobile() {
+                            font-size: 32px;
+                        }
+                    }
                     
-//                     .card_title_eng {
-//                         color: $neutral-gray-500;
-//                         font-size: 24px;
+                    .card_title_eng {
+                        color: $neutral-gray-500;
+                        font-size: 24px;
 
-//                         @include mobile() {
-//                             width: 100%;
-//                             margin-top: 8px;
-//                             font-size: 20px;
-//                         }
-//                     }    
+                        @include mobile() {
+                            width: 100%;
+                            margin-top: 8px;
+                            font-size: 20px;
+                        }
+                    }    
 
-//                     img {
-//                         width: 124px;
-//                         margin-top: 24px;
+                    img {
+                        width: 124px;
+                        margin-top: 24px;
 
-//                         @include mobile() {
-//                             width: 48px;
-//                             order: -1;
-//                             margin: 0 8px 0 0;
-//                         }
-//                     }
-//                 }
+                        @include mobile() {
+                            width: 48px;
+                            order: -1;
+                            margin: 0 8px 0 0;
+                        }
+                    }
+                }
                 
-//                 .hashtag {
-//                     display: flex;
-//                     flex-direction: column;
-//                     align-items: center;
+                .hashtag {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 16px;
+                    
+                    @include mobile() {
+                        display: none;
+                    }
+                    
+                    p {
+                        line-height: 35px;
+                    }
+                }
 
-//                     @include mobile() {
-//                         display: none;
-//                     }
-//                 }
-//                 .enter_btn_lg {
-//                     width: 100px;
-
-//                     @include mobile() {
-//                         display: none;
-//                     }
-//                 }
-
-//                 .enter_btn_sm {
-//                     width: 60px;
-//                     display: none;
-
-//                     @include mobile() {
-//                         display: block;
-//                     }
-//                 }
+            }   
                 
-//             }   
+            .enter_btn_lg {
+                // width: 100px;
+                height: 126px;
+                position: absolute;
+                z-index: 1;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 44px);   
 
-//             &::after {
-//                 content: "";
-//                 display: block;
-//                 width: 120px;
-//                 height: 120px;
-//                 border-radius: 999px;
-//                 background-color: $primary-blue-200;
-//                 position: absolute;
-//                 z-index: -1;
-//                 bottom: 0;
-//                 left: 50%;
-//                 transform: translate(-50%, 50%);   
+                @include mobile() {
+                    display: none;
+                }
+            }
 
-//                 @include mobile() {
-//                     width: 80px;
-//                     height: 80px;
-//                     transform: rotate(-90deg) translate(-50%, 50%);
-//                     bottom: 50%;
-//                     left: auto;
-//                     right: 0;                    
-//                 }
-//             }
-            
-//             &:last-child::after {
-//                 background-color: $primary-violet-200;
-//             }
-//         }
-//     }
-// }
+            .enter_btn_sm {
+                display: none;
+                width: 60px;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                right: 0;
+                transform: translate(50%, 36px); 
+                
+
+                @include mobile() {
+                    display: block;
+                }
+            }
+
+            .shape {
+                width: 120px;
+                height: 120px;
+                border-radius: 999px;
+                
+                position: absolute;
+                z-index: -1;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 50%);   
+
+                @if $page == space {
+                    background-color: $primary-violet-200;
+                    // box-shadow: 8px 8px 0 $primary-violet-200;
+                } @else if $page == rocket {
+                    background-color: $primary-blue-200;
+                    // box-shadow: 8px 8px 0 $primary-blue-200;
+                }
+
+                @include mobile() {
+                    width: 80px;
+                    height: 80px;
+                    transform: rotate(-90deg) translate(-50%, 50%);
+                    bottom: 50%;
+                    left: auto;
+                    right: 0;                    
+                }
+                
+            }
+        }
+
+    }
+}
 
 #about_us {
     padding: 60px 0;
@@ -366,7 +415,6 @@ main {
 
         h4 {
             display: inline-block;
-            position: relative;
             font-size: 28px;
             line-height: normal;
         }        
@@ -472,6 +520,7 @@ main {
             }
         }
 
+        //icon 有點調皮，還要找一下問題
         .service {
             margin-top: 84px;
             width: 100%;
@@ -517,12 +566,15 @@ main {
                     .service_card_img {
                         width: 120px;
                         
-                        
                         @include mobile() {
                             width: 48px;
+                            height: 48px;
                         }
 
-                        
+                        & img {
+                            width: 100%;
+                            height: auto;
+                        }
                     }
                     
                     .service_card_text {
@@ -567,35 +619,36 @@ main {
     }
 
     .carousel {
-        display: flex;
-        max-width: 1440px;
+        margin-top: 80px;
         width: 100%;
         overflow-x: scroll;
-        margin-top: 80px;
-
-        &::-webkit-scrollbar {
-            width: 0;
-            height: 0;
-        }
-
+        @include scrollbar_none();
+        
         @include mobile() {
             margin-top: 40px;
         }
 
-        .carousel_img {
-            width: 636px;
-            height: 424px;
-            border-radius: 12px;
+        .carousel_container {
+            display: flex;
+            max-width: 1440px;
 
-            @include mobile() {
-                width: 332px;
-                height: 240px;
-            }
-
-            &:first-child ~ .carousel_img {
-                margin-left: 24px;
+            .carousel_img {
+                width: 636px;
+                height: 424px;
+                border-radius: 12px;
+    
+                @include mobile() {
+                    width: 332px;
+                    height: 240px;
+                }
+    
+                &:first-child ~ .carousel_img {
+                    margin-left: 24px;
+                }
             }
         }
+
+
     }
 }
 
@@ -615,8 +668,6 @@ main {
         
         @include mobile() {
             max-width: 332px;
-            padding: 36px 0 48px 0;
-
         }
 
         .notice {
@@ -661,7 +712,6 @@ main {
                     transform: translate(-50%, -120%);
                 }
             }
-
         }
 
         p {
@@ -670,21 +720,23 @@ main {
             margin-top: 8px;
         }
         
-        .menu_card_container {
+    }
+    .menu_card_container_outside {
+        @include w-1076();
+        margin-top: 36px;
+        
+        @include mobile() {
+            margin-top: 20px;
+            overflow-x: scroll;
+            @include scrollbar_none();
+        }
+        
+        .menu_card_container_inside {
             display: flex;
             justify-content: space-between;
-            margin-top: 36px;
-            width: 100%;
-
+            
             @include mobile() {
-                margin-top: 20px;
                 width: 686px;
-                overflow-x: scroll;
-
-                // &::-webkit-scrollbar {
-                //     width: 0;
-                //     height: 0;
-                // }
             }
             
             .menu_card {
@@ -697,9 +749,10 @@ main {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-
+    
                 &:last-child {
                     margin-left: 24px;
+                    border: none;
                 }
                 
                 @include mobile() {
@@ -710,11 +763,11 @@ main {
                         margin-left: 20px;
                     }
                 }
-
+    
                 h5 {
                     font-size: 24px;
                 }
-
+    
                 .price {
                     width: 365px;
                     height: 134px;
@@ -724,7 +777,7 @@ main {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-
+    
                     @include mobile() {
                         width: 270px;
                         height: 76px;
@@ -732,7 +785,7 @@ main {
                         font-size: 24px;
                     }
                 }
-
+    
                 ul {
                     margin-top: 23.5px;
                     width: 100%;
@@ -742,15 +795,15 @@ main {
                         display: flex;
                         justify-content: start;
                         align-items: center;
-
+    
                         &:first-child ~ li {
                             margin-top: 16px;
                         }
-
-
+    
+    
                         img {
                             width: 21px;
-
+    
                             @include mobile() {
                                 width: 18px;
                             }
@@ -761,17 +814,19 @@ main {
                             font-size: 20px;
                             font-weight: 400;
                             margin-left: 15.5px;
-                            position: relative;
-                            z-index: 0;
                         }
                     }
                 }
             }
         }
+    }
 
-        .button_go {
-            background-color: $primary-violet-100;
-        }
+
+
+    .button_go {
+        background-color: $primary-violet-100;
+        transform: translate(0, 0);
+        margin-top: 40px;
     }
 }
 
