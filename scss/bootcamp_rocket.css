@@ -14,7 +14,6 @@
 
 a {
   color: #363636;
-  text-decoration: none;
 }
 
 img {
@@ -93,6 +92,250 @@ main {
   color: #363636;
 }
 
+#banner {
+  background: url("../image/banner/banner-bg.png") repeat top center;
+  padding: 0 40px 0;
+}
+@media (max-width: 1280px) {
+  #banner {
+    padding: 0 12px 0;
+  }
+}
+#banner a {
+  text-decoration: none;
+}
+#banner .container {
+  max-width: 1076px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 127px;
+  padding-bottom: 182px;
+}
+@media (max-width: 1280px) {
+  #banner .container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 88px;
+    height: 462px;
+  }
+}
+#banner .container .deco_cross {
+  font-size: 48px;
+}
+@media (max-width: 1280px) {
+  #banner .container .deco_cross {
+    display: none;
+  }
+}
+#banner .container .enter_card {
+  display: block;
+  position: relative;
+  width: 440px;
+  height: 448px;
+  border: 2px solid #E0E0E0;
+  border-radius: 24px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card {
+    width: 294px;
+    height: 134px;
+    margin-left: -32px;
+    transition: 0s;
+  }
+  #banner .container .enter_card:first-child {
+    margin-bottom: 46px;
+  }
+}
+#banner .container .enter_card:hover {
+  margin-top: -16px;
+}
+#banner .container .enter_card:hover .card_container, #banner .container .enter_card:hover .shape, #banner .container .enter_card:hover .enter_btn_lg, #banner .container .enter_card:hover .enter_btn_sm {
+  filter: opacity(1);
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card:hover {
+    margin-top: 0;
+  }
+}
+#banner .container .enter_card:active {
+  box-shadow: 8px 8px 0 #BFC9F0;
+  transition: 0s;
+  margin-top: 0;
+}
+#banner .container .enter_card:active::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 42px;
+  width: 42px;
+  transform: translate(100%, -100%);
+  background-image: url("../image/banner/ic-highlight-rocket-lg-.svg");
+  background-position: center center;
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card:active::after {
+    right: auto;
+    left: 0;
+    transform: translate(-50%, -50%);
+    background-image: url("../image/banner/ic-highlight-rocket-sm-.svg");
+  }
+}
+#banner .container .enter_card:target {
+  margin-top: 100px;
+}
+#banner .container .enter_card .card_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  filter: opacity(0.5);
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card .card_container {
+    height: 100%;
+    flex-direction: row;
+    margin-right: -28px;
+  }
+}
+#banner .container .enter_card .card_container .card_title {
+  margin-top: -36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card .card_container .card_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+    padding: 24px 0 24px 24px;
+  }
+}
+#banner .container .enter_card .card_container .card_title .card_title_chinese {
+  font-size: 48px;
+  line-height: normal;
+  height: 72px;
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card .card_container .card_title .card_title_chinese {
+    font-size: 32px;
+    height: auto;
+  }
+}
+#banner .container .enter_card .card_container .card_title .card_title_eng {
+  color: #9A9A9A;
+  font-size: 24px;
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card .card_container .card_title .card_title_eng {
+    width: 100%;
+    margin-top: 8px;
+    font-size: 20px;
+  }
+}
+#banner .container .enter_card .card_container .card_title img {
+  width: 124px;
+  margin-top: 24px;
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card .card_container .card_title img {
+    width: 48px;
+    order: -1;
+    margin: 0 8px 0 0;
+  }
+}
+#banner .container .enter_card .card_container .hashtag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card .card_container .hashtag {
+    display: none;
+  }
+}
+#banner .container .enter_card .card_container .hashtag p {
+  line-height: 35px;
+}
+#banner .container .enter_card .enter_btn_lg {
+  height: 126px;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 44px);
+  filter: opacity(0.5);
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card .enter_btn_lg {
+    display: none;
+  }
+}
+#banner .container .enter_card .enter_btn_sm {
+  display: none;
+  width: 60px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  transform: translate(50%, 36px);
+  filter: opacity(0.5);
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card .enter_btn_sm {
+    display: block;
+  }
+}
+#banner .container .enter_card .shape {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background-color: #BFC9F0;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  filter: opacity(0.5);
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card .shape {
+    width: 80px;
+    height: 80px;
+    transform: rotate(-90deg) translate(-50%, 50%);
+    bottom: 50%;
+    left: auto;
+    right: 0;
+  }
+}
+#banner .container .enter_card.space .shape {
+  background-color: #EEE5FF;
+}
+#banner .container .enter_card.space:active {
+  box-shadow: 8px 8px 0 #EEE5FF;
+}
+#banner .container .enter_card.space:active::after {
+  background-image: url("../image/banner/ic-highlight-coworking-lg-.svg");
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card.space:active::after {
+    background-image: url("../image/banner/ic-highlight-coworking-sm-.svg");
+  }
+}
+
 .button_go {
   max-width: 1076px;
   width: 100%;
@@ -153,10 +396,6 @@ footer p:first-child::after {
   }
 }
 
-.bold_style {
-  font-weight: 700;
-}
-
 .mark_style {
   font-weight: 700;
   position: relative;
@@ -173,198 +412,6 @@ footer p:first-child::after {
   width: 100%;
   height: 50%;
   background-color: #FFEEA3;
-}
-
-#banner {
-  background: url("../image/banner/banner-bg.png") repeat top center;
-  padding: 0 40px 0;
-}
-@media (max-width: 1280px) {
-  #banner {
-    padding: 0 12px 0;
-  }
-}
-#banner .container {
-  max-width: 1076px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 127px;
-  padding-bottom: 182px;
-}
-@media (max-width: 1280px) {
-  #banner .container {
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 60px;
-    padding-bottom: 88px;
-    height: 462px;
-  }
-}
-#banner .container .deco_cross {
-  font-size: 48px;
-}
-@media (max-width: 1280px) {
-  #banner .container .deco_cross {
-    display: none;
-  }
-}
-#banner .container .enter_card {
-  display: block;
-  position: relative;
-  width: 440px;
-  height: 448px;
-  border: 2px solid #E0E0E0;
-  border-radius: 24px;
-  background-color: #fff;
-  transition: 0.5s;
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card {
-    width: 294px;
-    height: 134px;
-    margin-left: -32px;
-  }
-  #banner .container .enter_card:first-child {
-    margin-bottom: 46px;
-  }
-}
-#banner .container .enter_card:hover {
-  margin-top: -16px;
-}
-#banner .container .enter_card:hover .card_container {
-  opacity: 1;
-}
-#banner .container .enter_card:active {
-  box-shadow: 8px 8px 0 #EEE5FF;
-}
-#banner .container .enter_card .card_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  opacity: 0.5;
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card .card_container {
-    height: 100%;
-    flex-direction: row;
-    margin-right: -28px;
-  }
-}
-#banner .container .enter_card .card_container .card_title {
-  margin-top: -36px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card .card_container .card_title {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 0;
-    padding: 24px 0 24px 24px;
-  }
-}
-#banner .container .enter_card .card_container .card_title .card_title_chinese {
-  font-size: 48px;
-  line-height: normal;
-  height: 72px;
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card .card_container .card_title .card_title_chinese {
-    font-size: 32px;
-  }
-}
-#banner .container .enter_card .card_container .card_title .card_title_eng {
-  color: #9A9A9A;
-  font-size: 24px;
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card .card_container .card_title .card_title_eng {
-    width: 100%;
-    margin-top: 8px;
-    font-size: 20px;
-  }
-}
-#banner .container .enter_card .card_container .card_title img {
-  width: 124px;
-  margin-top: 24px;
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card .card_container .card_title img {
-    width: 48px;
-    order: -1;
-    margin: 0 8px 0 0;
-  }
-}
-#banner .container .enter_card .card_container .hashtag {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 16px;
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card .card_container .hashtag {
-    display: none;
-  }
-}
-#banner .container .enter_card .card_container .hashtag p {
-  line-height: 35px;
-}
-#banner .container .enter_card .enter_btn_lg {
-  height: 126px;
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 44px);
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card .enter_btn_lg {
-    display: none;
-  }
-}
-#banner .container .enter_card .enter_btn_sm {
-  display: none;
-  width: 60px;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  transform: translate(50%, 36px);
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card .enter_btn_sm {
-    display: block;
-  }
-}
-#banner .container .enter_card .shape {
-  width: 120px;
-  height: 120px;
-  border-radius: 999px;
-  position: absolute;
-  z-index: -1;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  background-color: #EEE5FF;
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card .shape {
-    width: 80px;
-    height: 80px;
-    transform: rotate(-90deg) translate(-50%, 50%);
-    bottom: 50%;
-    left: auto;
-    right: 0;
-  }
 }
 
 #about_rocket {

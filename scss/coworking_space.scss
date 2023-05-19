@@ -1,9 +1,5 @@
 @import "guildline";
 
-.bold_style {
-    font-weight: 700;
-}
-
 .mark_style {
     position: relative;
     z-index: 0;
@@ -19,287 +15,6 @@
     width: 100%;
     height: 50%;
     background-color: $accent-orange;
-}
-
-#marquee {
-    width: 100%;
-    padding: 20px 0;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 999;
-    background-color: #fff;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    
-    .container {
-        // 每 0.1s 往左移動 10px = 1s 移動 100px 
-        // = 從 100% 跑到 0% (1440px) 需要 14.4s   
-
-        &:first-child {
-            animation: marquee_first 28.8s linear infinite;
-        }
-        
-        &:nth-child(2) {
-            animation: marquee_second 28.8s linear infinite;
-            animation-delay: -14.4s;
-        }
-        
-        @keyframes marquee_first{
-            0% {
-                transform: translateX(100%);
-            }
-        
-            100% {
-                transform: translateX(-100%);
-            }
-        }     
-        
-        @keyframes marquee_second{
-            0% {
-                transform: translateX(0%);
-            }
-        
-            100% {
-                transform: translateX(-200%);
-            }
-        }   
-
-        .marquee_item {
-            width: fit-content;
-            margin-left: 32px;
-            font-size: 16px;
-            white-space: nowrap;
-        
-            
-        }
-    }
-}
-
-main {
-    width: 100%;
-    margin-top: 64px; //給跑馬燈的空間，之後調整
-    display: flex;
-    flex-direction: column;
-    color: $neutral-gray-700;
-}
-
-//以 rocket page 為主，還沒調整好
-#banner {
-    background: url('../image/banner/banner-bg.png') repeat top center;
-    padding: 0 40px 0;
-
-    $page: space;
-    
-    @include mobile() {
-        padding: 0 12px 0;
-    }
-    
-    .container {
-        @include w-1076();
-        align-items: center;
-        padding-top: 127px;
-        padding-bottom: 182px;
-
-        @include mobile() {
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 60px;
-            padding-bottom: 88px;
-            height: 462px
-        }
-        
-        .deco_cross {
-            font-size: 48px;
-
-            @include mobile() {
-                display: none;
-            }
-        }
-        
-        .enter_card {
-            display: block;
-            position: relative;
-            width: 440px;
-            height: 448px;
-            border: 2px solid $neutral-gray-300;
-            border-radius: 24px;
-            background-color: #fff;
-            transition: 0.5s;
-            
-            @include mobile() {
-                width: 294px;
-                height: 134px;
-                margin-left: -32px; //為了平衡右邊偽元素
-                
-                &:first-child {
-                    margin-bottom: 46px;
-                }
-            }
-            
-            &:hover {
-                margin-top: -16px;
-            
-                .card_container {
-                    opacity: 1;
-                }
-            }
-
-            &:active {
-                
-                
-                @if $page == space { //還沒試成功
-                    box-shadow: 8px 8px 0 $primary-violet-200;
-                } @else if $page == rocket {
-                    color: red;
-                    box-shadow: 8px 8px 0 $primary-blue-200;
-                }
-            }
-            
-            
-
-            .card_container {
-                display: flex;
-                flex-direction: column;
-                justify-content: start;
-                align-items: center;
-                opacity: 0.5;
-
-                @include mobile() {
-                    height: 100%;
-                    flex-direction: row;
-                    margin-right: -28px;
-                }
-                
-                .card_title {
-                    margin-top: -36px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    @include mobile() {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-start;
-                        align-items: center;
-                        flex-wrap: wrap;
-                        margin-top: 0;
-                        padding: 24px 0 24px 24px;
-                    }
-
-                    .card_title_chinese {
-                        font-size: 48px;
-                        line-height: normal;
-                        height: 72px;
-
-                        @include mobile() {
-                            font-size: 32px;
-                        }
-                    }
-                    
-                    .card_title_eng {
-                        color: $neutral-gray-500;
-                        font-size: 24px;
-
-                        @include mobile() {
-                            width: 100%;
-                            margin-top: 8px;
-                            font-size: 20px;
-                        }
-                    }    
-
-                    img {
-                        width: 124px;
-                        margin-top: 24px;
-
-                        @include mobile() {
-                            width: 48px;
-                            order: -1;
-                            margin: 0 8px 0 0;
-                        }
-                    }
-                }
-                
-                .hashtag {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    margin-top: 16px;
-                    
-                    @include mobile() {
-                        display: none;
-                    }
-                    
-                    p {
-                        line-height: 35px;
-                    }
-                }
-
-            }   
-                
-            .enter_btn_lg {
-                // width: 100px;
-                height: 126px;
-                position: absolute;
-                z-index: 1;
-                bottom: 0;
-                left: 50%;
-                transform: translate(-50%, 44px);   
-
-                @include mobile() {
-                    display: none;
-                }
-            }
-
-            .enter_btn_sm {
-                display: none;
-                width: 60px;
-                position: absolute;
-                z-index: 1;
-                top: 0;
-                right: 0;
-                transform: translate(50%, 36px); 
-                
-
-                @include mobile() {
-                    display: block;
-                }
-            }
-
-            .shape {
-                width: 120px;
-                height: 120px;
-                border-radius: 999px;
-                
-                position: absolute;
-                z-index: -1;
-                bottom: 0;
-                left: 50%;
-                transform: translate(-50%, 50%);   
-
-                @if $page == space {
-                    background-color: $primary-violet-200;
-                    // box-shadow: 8px 8px 0 $primary-violet-200;
-                } @else if $page == rocket {
-                    background-color: $primary-blue-200;
-                    // box-shadow: 8px 8px 0 $primary-blue-200;
-                }
-
-                @include mobile() {
-                    width: 80px;
-                    height: 80px;
-                    transform: rotate(-90deg) translate(-50%, 50%);
-                    bottom: 50%;
-                    left: auto;
-                    right: 0;                    
-                }
-                
-            }
-        }
-
-    }
 }
 
 #about_us {
@@ -659,7 +374,6 @@ main {
 
     @include mobile() {
         padding: 36px 0 48px 0;
-
     }
 
     .container {
@@ -673,10 +387,12 @@ main {
         .notice {
             width: fit-content;
             margin-bottom: 25px; //還要加上下面角角，感覺尺寸要調？
-            
+            margin-left: 80px;
+
             @include mobile() {
                 width: 100%;
                 height: auto;
+                margin-left: 0;
             }
             
             .notice_block {
@@ -690,8 +406,8 @@ main {
                 line-height: normal;
                 
                 @include mobile() {
-                    padding: 12px 10px;
-                    font-size: 14px;
+                    padding: 12px 4px;
+                    font-size: 8px;
                 }
             }
 
@@ -701,7 +417,7 @@ main {
                 border-top: 20px solid $neutral-gray-700;
                 border-left: 10px solid transparent;
                 border-right: 10px solid transparent;
-                margin: -0px 0 0 14px;
+                margin: 0px 0 0 18px;
                 
                 .notice_sharp_inside {
                     width: 0;
@@ -828,8 +544,4 @@ main {
         transform: translate(0, 0);
         margin-top: 40px;
     }
-}
-
-#footer {
-
 }
