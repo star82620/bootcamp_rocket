@@ -1,356 +1,58 @@
-//Guideline style
+@import "guildline";
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
-
-@mixin desktop {
-    @media (max-width: 1279px) {
-        @content
-    };
-}
-
-@mixin tablet {
-    @media (max-width: 1023px) {
-        @content
-    };
-}
-
-@mixin mobile {
-    @media (max-width: 767px) {
-        @content
-    };
-}
-
-// Bootcamp Rocket
-$primary-blue-100: #E6EBFF;
-$primary-blue-200: #BFC9F0;
-$primary-blue-300: #A6B6F1;
-$primary-blue-400: #7F94E2;
-$accent-yellow: #FFEEA3;
-
-// Co-working Space
-$primary-violet-100: #F5F1FF;
-$primary-violet-200: #EEE5FF;
-$primary-violet-300: #CAB2F1;
-$primary-violet-400: #B28FEA;
-$accent-orange: #FFD887;
-
-// Neutral
-$neutral-gray-100: #F8F9FD;
-$neutral-gray-200: #F0F0F0;
-$neutral-gray-300: #E0E0E0;
-$neutral-gray-400: #CDCDCD;
-$neutral-gray-500: #9A9A9A;
-$neutral-gray-600: #757575;
-$neutral-gray-700: #363636;
-
-$font-size-body1: 24px;
-$font-size-body2: 20px;
-$font-size-body3: 16px;
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-    font-family: 'Josefin Sans', 'Noto Sans TC', sans-serif;
+.mark_style {
     font-weight: 700;
-    line-height: 1.5em;
-    letter-spacing: 0.02em;
-
-    &:focus {
-        outline: none;
-    }
+    position: relative;
+    z-index: 0;
 }
-
-html, body {
+.mark_style::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
     width: 100%;
-    height: 100%;   
+    height: 50%;
+    background-color: $accent-yellow;
+
 }
 
-h1 {
-    font-size:  48px;
-}
-
-h2 {
-    font-size: 36px;
-}
-
-h3 {
-    font-size: 32px;
-}
-
-h4 {
-    font-size: 28px;
-}
-
-@mixin w-1076 {
-    max-width: 1440px;
-    padding-left: 182px;
-    padding-right: 182px;
-    margin: 0 auto;
-
-    // @include desktop() {
-    //     padding: 0;
-    // }
-
-    // @include mobile() {
-    //     padding: 0 48px;
-    // }
-}
-
-@mixin w-1296 {
-    max-width: 1440px;
-    padding-left: 72px;
-    padding-right: 72px;
-    margin: 0 auto;
-}
-
-
-
-
-
-// Page style ---
-
-#marquee {
-    padding: 20px 0;
-    border: 1px solid #000;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-
-    .container {
-        display: flex;
-
-        .item {
-            margin-right: 32px;
-        }
-
-    }
-}
-
-main {
-    width: 100%;
-    height: 2000px;
-    margin-top: 64px;
-    display: flex;
-    flex-direction: column;
-    color: $neutral-gray-700;
-
-    h1 {
-        width: 0%;
-    }
-}
-
-#banner {
-    display: block;
-    width: 100%;
-    height: 757px;
-    padding-bottom: 22px;
-    background: url('../image/banner/banner-bg.png') repeat top center;
-    
-    @include mobile() {
-        height: 462px;
-        padding-bottom: 28px;
-    }
-    
-    
-    .container {
-        @include w-1076();
-        height: auto;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding-top: 91px;
-        padding-bottom: 100px;
-        
-        @include desktop() {
-            padding: 0 20px;
-
-        }
-
-        @include mobile() {
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            padding: 60px 48px 80px;
-            
-        }
-        
-        .deco_cross {
-            font-size: 48px;
-
-            @include mobile() {
-                display: none;
-            }
-        }
-        
-        .enter_card {
-            width: 440px;
-            height: 448px;
-            border: 1px solid $neutral-gray-300;
-            background-color: #fff;
-            border-radius: 24px;
-            position: relative;
-
-            @include mobile() {
-                width: 294px;
-                // min-width: 294px;
-                height: 134px;
-                margin-left: -32px;
-            }
-            
-            .card_container {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
-                height: 528px;
-
-                @include mobile() {
-                    height: 100%;
-                    flex-direction: row;
-                    margin-right: -28px;
-                }
-                
-                .card_title {
-                    margin-top: -36px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    @include mobile() {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-start;
-                        align-items: center;
-                        flex-wrap: wrap;
-                        margin-top: 0;
-                        padding: 24px;
-                    }
-
-                    .card_title_chinese {
-                        font-size: 48px;
-                        // line-height: 1em;
-
-                        @include mobile() {
-                            font-size: 32px;
-                        }
-                    }
-                    
-                    .card_title_eng {
-                        color: $neutral-gray-500;
-                        font-size: $font-size-body1;
-                        font-weight: 700;
-
-                        @include mobile() {
-                            width: 100%;
-                            font-size: 20px;
-                            margin-top: 8px;
-                        }
-                    }    
-
-                    img {
-                        width: 124px;
-                        margin-top: 24px;
-
-                        @include mobile() {
-                            width: 48px;
-                            order: -1;
-                            margin: 0 8px 0 0;
-                        }
-                    }
-                }
-                
-                .logo {
-                    width: 124px;
-                }
-                
-                .hashtag {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    @include mobile() {
-                        display: none;
-                    }
-                }
-                .enter_btn_lg {
-                    margin-bottom: 36px;
-                    width: 100px;
-
-                    @include mobile() {
-                        display: none;
-                    }
-                }
-
-                .enter_btn_sm {
-                    display: none;
-
-                    @include mobile() {
-                        display: block;
-                        width: 60px;
-                        height: 60px;
-                    }
-                }
-                
-            }   
-
-            &::after {
-                content: "";
-                display: block;
-                width: 120px;
-                height: 120px;
-                border-radius: 999px;
-                background-color: $primary-blue-200;
-                z-index: -1;
-                position: absolute;
-
-                bottom: 0;
-                left: 50%;
-                transform: translate(-50%, 50%);   
-
-                @include mobile() {
-                    width: 80px;
-                    height: 80px;
-                    transform: rotate(-90deg) translate(-50%, 50%);
-                    bottom: 50%;
-                    left: auto;
-                    right: 0;
-                    
-                }
-            }
-            
-            &:last-child::after {
-                background-color: $primary-violet-200;
-            }
-        }
-        
-    }
-}
 
 #about_rocket {
+    margin-top: -22px;
+    padding-left: 40px;
+    padding-right: 40px;
     background-color: $primary-blue-100;
     border-radius: 40px;
-    margin-top: -22px;
+    
+    @include large_desktop() {
+        border-radius: 0;
+    }
+    
+    @include mobile() {
+        margin-top: -28px;
+        padding-left: 12px;
+        padding-right: 12px;    
+    }
 
     .container {
         @include w-1296();
         padding-top: 60px;
         padding-bottom: 60px;
-        display: flex;
-        justify-content: space-between;
 
-        @include tablet() {
+        @include mobile() {
+            max-width: 332px;            
             flex-direction: column;
-            padding: 36px 52px;
+            padding-top: 36px;
+            padding-bottom: 36px;
         }
 
 
         .what_is {
             width: 526px;
 
-            @include tablet() {
+            @include mobile() {
                 width: 100%;
                 margin-bottom: 24px;
             }
@@ -358,7 +60,7 @@ main {
             .title_eng {
                 font-size: 20px;
 
-                @include tablet() {
+                @include mobile() {
                     font-size: 16px;
                 }
             }
@@ -366,7 +68,7 @@ main {
             .title_eng ~ p{
                 margin-top: 40px;
 
-                @include tablet() {
+                @include mobile() {
                     margin-top: 16px;
                 }
             }
@@ -375,7 +77,7 @@ main {
                 font-size: 48px;
                 vertical-align: middle;
             
-                @include tablet() {
+                @include mobile() {
                     font-size:  32px;
                 }
 
@@ -385,12 +87,8 @@ main {
                 font-size: 20px;
                 font-weight: 500;
 
-                @include tablet() {
+                @include mobile() {
                     font-size: 16px;
-                }
-
-                span {
-                    font-weight: 700;
                 }
             }
 
@@ -401,11 +99,9 @@ main {
             height: 592px;
             overflow-y: scroll;
 
-            &::-webkit-scrollbar {
-                width: 0;
-            }
+            @include scrollbar_none();
 
-            @include tablet() {
+            @include mobile() {
                 overflow: visible;
                 height: 100%;
             }
@@ -415,81 +111,124 @@ main {
                 height: 280px;
                 background-color: #fff;
                 display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
                 justify-content: space-between;
+                align-items: center;
                 margin-top: 32px;
                 padding: 36px;
                 border-radius: 24px;
 
-                @include tablet() {
-                    flex-wrap: nowrap;
-                    justify-content: start;
-                    width: 100%;
+                @include mobile() {
+                    width: 332px;
+                    height: 348px;
+                    flex-direction: column;
+                    align-items: center;
                     height: auto;
                     padding: 16px 20px;
                 }
 
-                h3 {
-                    font-size: 24px;
-                }
-
-                .skill {
+                .career_text {
                     display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    height: 100%;
+                    
+                    @include mobile() {
+                        width: 100%;
+                        height: 120px;
+                    }
+                    
+                    h3 {
+                        font-size: 24px;
+                    }
+                    
+                    .skill {
+                        display: flex;
+                        margin-top: 12px;
 
+                        @include mobile() {
+                            margin-top: 8px;
+                        }
 
-                    li {
-                        list-style: none;
-                        padding: 8px 12px;
-                        color: $primary-blue-400;
-                        border: 2px solid $primary-blue-400;
-                        border-radius: 999px;
+                        li {
+                            width: fit-content;
+                            padding: 8px 12px;
+                            margin-left: 12px;
+                            border: 2px solid $primary-blue-400;
+                            border-radius: 999px;
+                            color: $primary-blue-400;
+                            list-style: none;
+                            line-height: normal;
 
-                        @include tablet() {
-                            font-size: 12px;
+                            &:first-child {
+                                margin-left: 0;
+                            }
+
+                            @include mobile() {
+                                font-size: 12px;
+                            }
                         }
                     }
                 }
-
+                
                 .eng_title {
                     color: $neutral-gray-500;
                     font-size: 24px;
 
-                    @include tablet() {
+                    @include mobile() {
 
                     }
                 }
 
                 .career_img {
-                    border: 1px solid #B28FEA;
+                    display: block;
+                    width: 169px;
+                    height: 208px;
+                    border-radius: 24px;
+                    background-color: $neutral-gray-200;
                     display: flex;
-                    justify-content: center;
+                    justify-content: start;
                     align-items: center;
                     
-                    .career_img_bg {
-                        display: block;
-                        width: 169px;
-                        height: 208px;
-                        border-radius: 24px;
-                        background-color: $neutral-gray-200;
+                    @include mobile() {
+                        justify-content: center;    
+                        width: 292px;
+                        height: 60px;
+                        border-radius: 12px;
+                        margin-top: 144px;
                     }
-
+                    
                     img {
                         height: 160px;
+
                     }
                     
-                    &:first-of-type {
-                        margin-left: -220px;
+                }
+                
+                &:first-child img {
+                    margin-left: -51px;
+                    
+                    @include mobile() {
+                        margin-top: -116px;
+                        margin-left: 0px;
                     }
+                }
+                
+                &:nth-of-type(2) img {
+                    margin-left: -63px; 
                     
-                    &:nth-of-type(2) img {
-                        margin-left: -232px; 
-                    
+                    @include mobile() {
+                        margin-top: -116px;
+                        margin-left: 0px;
                     }
-                    &:nth-of-type(3) img {
-                        margin-right: -129px; 
+                }
+                
+                &:nth-of-type(3) img {
+                    margin-left: -59px; 
                     
-                    
+                    @include mobile() {
+                        margin-top: -116px;
+                        margin-left: 0px;
                     }
                 }
 
@@ -505,44 +244,46 @@ main {
 
 #success_case {
     width: 100%;
+    // padding-left: 40px;
+    // padding-right: 40px; //變版時會擠壓到，再想想
 
+    @include mobile() {
+        // padding-left: 40px;
+        // padding-right: 0px;
+    }
+    
     .container {
         @include w-1296();
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
         padding-top: 92px;
         padding-bottom: 120px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         
-        @include tablet() {
-            padding: 48px 0 48px 48px;
-            
+        @include mobile() {
+            padding-top: 48px;
+            padding-bottom: 92px;
         }
         
         h3 {
             font-size: 36px;
 
-            @include tablet() {
+            @include mobile() {
                 font-size: 28px;
             }
         }
 
-        .card_container {
+        .case_card_container {
             width: 100%;
             overflow-x: scroll;
-            
-            &::-webkit-scrollbar {
-                height: 0;
-                width: 0;
-            }
 
+
+            @include scrollbar_none();
+            
             div {
                 width: 1296px;
                 display: flex;
                 justify-content: space-between;
-            }
-
-            @include tablet() {
             }
         
         img {
@@ -550,7 +291,7 @@ main {
             border-radius: 12px;
             margin-top: 28px;
 
-            @include tablet() {
+            @include mobile() {
                 margin-top: 16px;
             }            
         }
@@ -560,179 +301,517 @@ main {
 
     }
 }
+
 #training {
-    width: 100%;
     background-color: $neutral-gray-100;
     font-size: 16px;
 
     .container {
         @include w-1076();
-        // padding-top: 38px;
-        padding-bottom: 128px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: -28px;
-
-        @include tablet() {
-            padding-left: 48px;
-            padding-right: 48px;
-        }
-
-    }
-    
-    h3 {
-        font-size: 36px;
-    }
-
-    // 近期梯次
-    .new_batch {
-        border-radius: 50px;
-        background-color: #fff;
-        display: flex;
-        padding: 12px 20px;
-        margin-top: 12px;
-        box-shadow: 0 2px 4px #E8E8E8;
-
-        @include tablet() {
-            width: 100%;
+        
+        @include mobile() {
+            max-width: 1281px;
         }
         
-        .new_batch_title {
-            padding: 5px 12px 5px 0;
-            margin-right: 12px;
-            border-right: 2px solid $neutral-gray-200;
-        }
-
-        .new_batch_ticker {
-            padding: 5px 0 ;
-            font-weight: 500;
-
-            @include tablet() {
-                width: 220px;
-                height: 24px;
-                // overflow-x: hidden;
+        h3 {
+            font-size: 36px;
+            margin-top: -28px;
+    
+            @include mobile() {
+                font-size: 28px;
+                margin-top: -20px;
             }
         }
-    }
-
     
-    .career_card_container {
-        margin-top: 80px;
-
-        // 卡片
-        .career_card {
+        //近期梯次
+        .new_batch {
+            max-width: 636px;
             width: 100%;
-            border-radius: 16px;
-            border: 1px solid $neutral-gray-200;
-            background: #fff url('../image/training/training-bg.png');
-            padding: 0 80px 42px 48px;
-
-            @include tablet() {
-                padding: 0 48px;
-                border-radius: 0;
-
+            padding: 12px 20px;
+            margin-top: 12px;
+            border-radius: 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px #E8E8E8;
+            display: flex;
+            
+            @include mobile() {
+                max-width: 332px;
+                width: 100%;
+                margin-top: 8px;
+                font-size: 14px;
             }
             
-            h4 {
-                display: inline-block;
-                margin-top: -32px;
-                margin-bottom: 28px;
-                padding: 12px 40px;
-                border: 2px solid $neutral-gray-700;
-                border-radius: 12px;
-                box-shadow: 4px 4px 0 $neutral-gray-700;
-                background-color: #fff;
+            .new_batch_title {
+                width: fit-content;
+                padding: 5px 11px 5px 0;
+                margin-right: 11px;
+                border-right: 2px solid $neutral-gray-200;
                 line-height: normal;
+                white-space: nowrap;
+            }
+    
+            .new_batch_ticker {
+                padding: 5px 0 ;
+                font-weight: 500;
+                
+                @include mobile() {
+                    min-width: 210px;
+                    width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden; //之後要加動畫
+                    display: flex;
+                }
+                
+                p {
+                    font-weight: 500;
+                    line-height: normal;
+                    white-space: nowrap;
+                    
+                    &:nth-child(2) {
+                        display: none;
+                    }
+    
+                    @include mobile() {
+                        height: 24px;
+                        white-space: nowrap;
+                        // margin-right: 10px;
 
-                @include tablet() {
-                    margin-bottom: 24px;
+                        //每 0.1s 往左移動 10px
+                        //從右到左 210px 需要 2.1s
+
+                        &:first-child {
+                            animation: marqueeb_first 10s linear infinite;
+                        }
+                        
+                        &:nth-child(2) {
+                            display: block;
+                            // animation: marqueeb_second 10s linear infinite;
+                            animation-delay: 5s;
+
+                            //這個還沒成功，要再試一次
+                            @keyframes marqueeb_first{
+                                0% {
+                                    transform: translateX(0%);
+                                }
+                            
+                                100% {
+                                    transform: translateX(-100%);
+                                }
+                            }     
+                            
+                            @keyframes marqueeb_second{
+                                0% {
+                                    transform: translateX(-50%);
+                                }
+                            
+                                100% {
+                                    transform: translateX(-200%);
+                                }
+                            }  
+                        }
+                    }
+                }
+            }
+        }
+    
+        //三張工程師卡片
+        .career_card_container {
+            width: 100%;
+    
+            // 卡片
+            .career_card {
+                max-width: 1076px;
+                width: 100%;
+                border-radius: 16px;
+                border: 1px solid $neutral-gray-200;
+                background: #fff url('../image/training/training-bg.png');
+                padding: 0 48px 42px 48px; //設計圖上兩邊沒有一樣大 左48 右80 我自己改成雙邊48
+                margin-top: 80px;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+    
+                @include mobile() {
+                    max-width: 1281px;
+                    border-radius: 0;
+                    align-items: center;
+                }
+                
+                h5 {
+                    display: inline-block;
+                    margin-top: -32px;
+                    margin-bottom: 28px;
+                    padding: 12px 40px;
+                    border: 2px solid $neutral-gray-700;
+                    border-radius: 12px;
+                    box-shadow: 4px 4px 0 $neutral-gray-700;
+                    background-color: #fff;
+                    line-height: normal;
+                    font-size: 24px;
+                    
+                    @include mobile() {
+                        margin-left: -148px; //這個不知道怎麼算
+                        // transform: translate(50%, 0);
+                        margin-bottom: 24px;
+                        font-size: 20px;
+                    }
+                }
+    
+                .card_content_container {
+                    @include w-1076();
+                    align-items: center;
+    
+                    @include mobile() {
+                        flex-direction: column;
+                        max-width: 332px;
+                    }
+    
+                    .card_content {
+                        width: 618px;
+    
+                        @include mobile() {
+                            width: 100%;
+                        }
+    
+                        section {
+                            margin-top: 36px;
+
+                            @include mobile() {
+                                margin-top: 24px;
+                            }
+                            
+                            &:first-child {
+                                margin-top: 0;
+
+                                @include mobile() {
+                                    margin-top: 24px;
+                                }
+                            }
+    
+                            p {
+                                font-weight: 400;
+                            }
+    
+                            h6 {
+                                display: inline-block;
+                                border-bottom: 3px solid $neutral-gray-700;
+                                font-size: 20px;
+                                margin-bottom: 16px;
+    
+                                @include mobile() {
+                                    font-size: 18px;
+                                }
+                            }
+
+                            .underline_style {
+                                font-weight: 500;
+                                text-decoration: underline;
+                            }
+                            
+                            ol {
+                                margin-left: 20px;
+    
+                                li {
+                                    font-weight: 400;
+    
+    
+                                    &::marker {
+                                        font-family: 'Noto Sans TC', sans-serif;
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+    
+                        .card_img {
+                            height: 280px;
+    
+                            @include mobile() {
+                                order: -1;
+                                height: 200px;
+                            }
+                        
+                            img {
+                                height: 100%;
+                            }
+    
+                        }
+    
+    
+                }
+            }
+    
+        }
+
+        //教練團
+        .coach {
+            @include w-1076();
+            flex-direction: column;
+            width: 100%;
+            margin-top: 64px;
+
+            @include mobile() {
+                max-width: 332px;
+                margin-top: 40px;
+            }            
+
+            h4 {
+                font-size: 32px;
+
+                @include mobile() {
+                    font-size: 24px;
                 }
             }
 
-            .card_content_container {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+            .coach_container {
+                width: 100%;
 
-                @include tablet() {
-                    flex-direction: column;
-                }
+                .coach_card_container_outside {
+                    overflow-x: scroll;
+                    overflow-y: visible;
+                    @include scrollbar_none();
 
-                .card_content {
-                    width: 618px;
-                    margin-right: 48px;
 
-                    section {
-                        margin-top: 36px;
-                        
-                        &:first-child {
-                            margin-top: 0;
+                    .coach_card_container {
+                        max-width: 1412px;
+                        display: flex;
+                        justify-content: space-between;
+        
+                        @include mobile() {
+                            margin-top: 52px;
                         }
-
-                        p {
-                            font-weight: 400;
-                        }
-
-                        h5 {
-                            display: inline-block;
-                            border-bottom: 3px solid $neutral-gray-700;
-                            font-size: 20px;
-                            margin-bottom: 16px;
-                        }
-
-                        .mark {
-                            background-color: $accent-yellow;
-                            font-weight: 700;
-
-                        }
-                        
-                        ol {
-                            margin-left: 20px;
-
-                            li {
-                                font-weight: 400;
-
-
-                                &::marker {
-                                    font-family: 'Noto Sans TC', sans-serif;
+        
+                        .coach_card {
+                            width: 251px;
+                            height: 160px;
+                            border-radius: 16px;
+                            background-color: #fff;
+                            border: 2px solid $neutral-gray-700;
+                            display: flex;
+                            align-items: end;
+                            margin-top: 40px;
+            
+                            &:hover .coach_name {
+                                margin-top: -40px;
+                            }
+                            
+                            &:active, &.active {
+                                background-color: $primary-blue-100;
+                            }
+        
+                            @include mobile() {
+                                width: 332px;
+                                height: 200px;
+                                
+                                &:first-child ~ .coach_card {
+                                    margin-left: 28px;
                                 }
+                            }
+            
+                            img {
+                                width: 180px;
+                            
+                            @include mobile() {
+                                width: 220px;
+                            }
+                            
+                            }
+            
+                            .coach_name {
+                                writing-mode: vertical-lr;
+                                padding: 16px;
+                                background-color: #fff;
+                                border-radius: 12px;
+                                border: 2px solid $neutral-gray-700;
+                                box-shadow: 4px 4px 0 $neutral-gray-700;
+                                letter-spacing: 0.5em;
+                                vertical-align: middle;
+                                align-self: flex-start;
+                                margin-top: -24px;
+                            }
+        
+                        }
+                    }
+                }        
+
+                    .coach_description {
+                        width: 100%;
+                        margin-top: 28px;
+                        
+                        @include mobile() {
+                            max-width: 332px;
+                        }
+                        
+                        h5 {
+                            font-size: 24px;
+    
+                            @include mobile() {
+                                font-size: 20px;
                             }
                         }
                         
-                    }
+                        ul {
+                            margin-top: 12px;
+                            margin-left: 24px;
+                            
+                            li, a {
+                                font-weight: 400;
+                                font-size: 16px;
+                                color: $neutral-gray-700;
+                            }
+                        }
+
+                }
+            }
+            
+
+        }
+
+    }
+}
+
+#faq {
+
+    .container {
+        max-width: 856px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        padding-top: 128px;
+        padding-bottom: 124px;
+
+        @include mobile() {
+            max-width: 332px;
+            width: 100%;
+            padding-top: 92px;
+            padding-bottom: 76px;
+        }
+
+        section {
+            margin-bottom: 60px;
+
+            @include mobile() {
+                margin-bottom: 48px;
+            }
+
+            h4 {
+                font-size: 32px;
+
+                @include mobile() {
+                    font-size: 24px;
+                }
+            }
+
+            li {
+                font-size: 16px;
+                font-weight: 500;
+                list-style: none;
+            }
+
+            .question_item {
+                border-top: 2px solid $neutral-gray-200;
+                padding: 20px;
+                display: flex;
+                align-items: start;
+                justify-content: start;
+
+                @include mobile() {
+                    padding: 20px 0;
+                }
+                                
+                &:last-child {
+                    border-bottom: 2px solid $neutral-gray-200;
                 }
 
-                    .card_img {
-                        width: 280px;
-
-                        @include tablet() {
-                            order: -1;
-                            height: 200px;
-                        }
-                    
-                        img {
-                            width: 100%;
-
-                        }
-
-                    }
-
-
+                img {
+                    width: 24px;
+                    margin-right: 20px;
+                }
+                
+                li {
+                    max-width: 761px;
+                    width: 100%;
+                }
+                
+                li:first-child {
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                }                
             }
         }
 
     }
-
-
-
 }
-#faq {
 
-}
 #support {
+    width: 100%;
+    padding-left: 72px;
+    background-color: $neutral-gray-200;
+    
+    @include mobile() {
+        padding-left: 48px;
+    }
+    
+    .container {
+        width: 100%;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
 
-}
-#footer {
+        @include mobile() {
+            margin-bottom: 16px;
+        }        
+        
+        h4 {
+            margin-top: -16px;
+        }
+        
+        .support_card_container {
+            width: 100%; //因為是 100% 所以在轉版的時候會一直跟著改變大小
+            margin-top: 32px;
+            overflow-x: scroll;
+            display: flex;
+            justify-content: flex-start; //內部 item 一直靠左
 
+            @include mobile() {
+                margin-top: 16px;
+            }
+            
+            @include scrollbar_none();
+
+            .support_card_item {
+                margin-left: 24px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+                
+                .support_img {
+                    width: 196px;
+                    height: 148px;
+                    background-color: #fff;
+                    border-radius: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .support_text {
+                    font-size: 16px;
+                    margin-top: 16px;
+
+                    & p:last-child {
+                        font-weight: 500;
+                        margin-top: 4px;
+                    }
+                }
+            }
+        }
+
+    }
 }
