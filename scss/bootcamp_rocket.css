@@ -30,7 +30,7 @@ body {
 h1 {
   font-size: 48px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   h1 {
     font-size: 32px;
   }
@@ -39,7 +39,7 @@ h1 {
 h2 {
   font-size: 36px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   h2 {
     font-size: 28px;
   }
@@ -48,7 +48,7 @@ h2 {
 h3 {
   font-size: 32px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   h3 {
     font-size: 24px;
   }
@@ -57,7 +57,7 @@ h3 {
 h4 {
   font-size: 28px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   h4 {
     font-size: 20px;
   }
@@ -124,9 +124,9 @@ main {
 
 #banner {
   background: url("../image/banner/banner-bg.png") repeat top center;
-  padding: 0 40px 0;
+  padding: 0 20px 0;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner {
     padding: 0 12px 0;
   }
@@ -144,7 +144,7 @@ main {
   padding-top: 127px;
   padding-bottom: 182px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container {
     flex-direction: column;
     justify-content: space-between;
@@ -157,7 +157,7 @@ main {
 #banner .container .deco_cross {
   font-size: 48px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .deco_cross {
     display: none;
   }
@@ -172,7 +172,7 @@ main {
   background-color: #fff;
   transition: 0.5s;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card {
     width: 294px;
     height: 134px;
@@ -191,7 +191,7 @@ main {
 #banner .container .enter_card:hover .enter_btn {
   filter: opacity(1);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card:hover {
     margin-top: 0;
   }
@@ -219,7 +219,7 @@ main {
   transform: translate(100%, -100%);
   background: url("../image/banner/ic-highlight-rocket-lg-.svg") center center;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card:active::after, #banner .container .enter_card.active::after {
     right: auto;
     left: 0;
@@ -234,7 +234,7 @@ main {
   align-items: center;
   filter: opacity(0.5);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container {
     height: 100%;
     flex-direction: row;
@@ -247,7 +247,7 @@ main {
   align-items: center;
   margin-top: -36px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .card_title {
     display: flex;
     flex-direction: row;
@@ -263,7 +263,7 @@ main {
   line-height: normal;
   height: 72px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .card_title .card_title_chinese {
     font-size: 32px;
     height: auto;
@@ -273,7 +273,7 @@ main {
   color: #9a9a9a;
   font-size: 24px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .card_title .card_title_eng {
     width: 100%;
     margin-top: 8px;
@@ -284,7 +284,7 @@ main {
   width: 124px;
   margin-top: 24px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .card_title .card_img {
     width: 48px;
     order: -1;
@@ -297,7 +297,7 @@ main {
   align-items: center;
   margin-top: 16px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .hashtag {
     display: none;
   }
@@ -316,7 +316,7 @@ main {
   background: url("../image/banner/banner-btn-rocket-lg.svg") no-repeat center center;
   filter: opacity(0.8);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .enter_btn {
     width: 60px;
     height: 60px;
@@ -339,7 +339,7 @@ main {
   transform: translate(-50%, 50%);
   filter: opacity(0.5);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .shape {
     width: 80px;
     height: 80px;
@@ -355,7 +355,7 @@ main {
 #banner .container .enter_card.space .enter_btn {
   background-image: url("../image/banner/banner-btn-coworking-lg.svg");
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card.space .enter_btn {
     background-image: url("../image/banner/banner-btn-coworking-sm.svg");
   }
@@ -366,7 +366,7 @@ main {
 #banner .container .enter_card.space:active::after, #banner .container .enter_card.space.active::after {
   background-image: url("../image/banner/ic-highlight-coworking-lg-.svg");
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card.space:active::after, #banner .container .enter_card.space.active::after {
     background-image: url("../image/banner/ic-highlight-coworking-sm-.svg");
   }
@@ -387,7 +387,7 @@ main {
   margin-top: 32px;
   transform: translate(0, 50%);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   .button_go {
     max-width: 332px;
     margin-top: -16px;
@@ -415,7 +415,7 @@ footer {
   align-items: center;
   padding: 36px 0;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   footer {
     flex-direction: column;
   }
@@ -428,7 +428,7 @@ footer p:first-child::after {
   content: "-";
   margin: 0 8px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   footer p:first-child::after {
     display: none;
   }
@@ -454,7 +454,7 @@ footer p:first-child::after {
     border-radius: 0;
   }
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket {
     margin-top: -28px;
     padding-left: 12px;
@@ -470,7 +470,7 @@ footer p:first-child::after {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container {
     max-width: 332px;
     flex-direction: column;
@@ -481,7 +481,7 @@ footer p:first-child::after {
 #about_rocket .container .what_is {
   width: 526px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .what_is {
     width: 100%;
     margin-bottom: 24px;
@@ -490,7 +490,7 @@ footer p:first-child::after {
 #about_rocket .container .what_is .title_eng {
   font-size: 20px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .what_is .title_eng {
     font-size: 16px;
   }
@@ -498,7 +498,7 @@ footer p:first-child::after {
 #about_rocket .container .what_is .title_eng ~ p {
   margin-top: 40px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .what_is .title_eng ~ p {
     margin-top: 16px;
   }
@@ -507,7 +507,7 @@ footer p:first-child::after {
   font-size: 20px;
   font-weight: 500;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .what_is .description {
     font-size: 16px;
   }
@@ -515,15 +515,16 @@ footer p:first-child::after {
 #about_rocket .container .card_container {
   height: 592px;
   overflow-y: scroll;
+  overflow-x: visible;
 }
 #about_rocket .container .card_container::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .card_container {
-    overflow: visible;
     height: 100%;
+    overflow: visible;
   }
 }
 #about_rocket .container .card_container .career_card {
@@ -537,7 +538,7 @@ footer p:first-child::after {
   padding: 36px;
   border-radius: 24px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .card_container .career_card {
     width: 332px;
     height: 348px;
@@ -554,7 +555,7 @@ footer p:first-child::after {
   align-items: flex-start;
   height: 100%;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .card_container .career_card .career_text {
     width: 100%;
     height: 120px;
@@ -564,7 +565,7 @@ footer p:first-child::after {
   display: flex;
   margin-top: 12px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .card_container .career_card .career_text .skill {
     margin-top: 8px;
   }
@@ -584,7 +585,7 @@ footer p:first-child::after {
 #about_rocket .container .card_container .career_card .career_text .skill li:first-child {
   margin-left: 0;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .card_container .career_card .career_text .skill li {
     font-size: 12px;
   }
@@ -593,7 +594,7 @@ footer p:first-child::after {
   color: #9a9a9a;
   font-size: 24px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .card_container .career_card .eng_title {
     font-size: 20px;
   }
@@ -608,7 +609,7 @@ footer p:first-child::after {
   justify-content: start;
   align-items: center;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .card_container .career_card .career_img {
     justify-content: center;
     width: 292px;
@@ -623,7 +624,7 @@ footer p:first-child::after {
 #about_rocket .container .card_container .career_card:first-child img {
   margin-left: -51px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .card_container .career_card:first-child img {
     margin-top: -116px;
     margin-left: 0px;
@@ -632,7 +633,7 @@ footer p:first-child::after {
 #about_rocket .container .card_container .career_card:nth-of-type(2) img {
   margin-left: -63px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .card_container .career_card:nth-of-type(2) img {
     margin-top: -116px;
     margin-left: 0px;
@@ -641,7 +642,7 @@ footer p:first-child::after {
 #about_rocket .container .card_container .career_card:nth-of-type(3) img {
   margin-left: -59px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #about_rocket .container .card_container .career_card:nth-of-type(3) img {
     margin-top: -116px;
     margin-left: 0px;
@@ -666,7 +667,7 @@ footer p:first-child::after {
   padding-top: 92px;
   padding-bottom: 120px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #success_case .container {
     padding-top: 48px;
     padding-bottom: 92px;
@@ -685,7 +686,7 @@ footer p:first-child::after {
   display: flex;
   justify-content: space-between;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #success_case .container .case_card_container div {
     padding-left: 48px;
   }
@@ -695,7 +696,7 @@ footer p:first-child::after {
   border-radius: 12px;
   margin-top: 28px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #success_case .container .case_card_container img {
     margin-top: 16px;
   }
@@ -715,7 +716,7 @@ footer p:first-child::after {
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container {
     max-width: 1281px;
   }
@@ -723,7 +724,7 @@ footer p:first-child::after {
 #training .container h2 {
   margin-top: -28px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container h2 {
     margin-top: -20px;
   }
@@ -738,7 +739,7 @@ footer p:first-child::after {
   box-shadow: 0 2px 4px #e8e8e8;
   display: flex;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .new_batch {
     max-width: 332px;
     width: 100%;
@@ -759,7 +760,7 @@ footer p:first-child::after {
   padding: 5px 0;
   font-weight: 500;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .new_batch .new_batch_ticker {
     min-width: 210px;
     width: 100%;
@@ -776,7 +777,7 @@ footer p:first-child::after {
 #training .container .new_batch .new_batch_ticker p:nth-child(2) {
   display: none;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .new_batch .new_batch_ticker p {
     height: 24px;
     white-space: nowrap;
@@ -822,7 +823,7 @@ footer p:first-child::after {
   flex-direction: column;
   align-items: start;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .career_card_container .career_card {
     max-width: 1281px;
     border-radius: 0;
@@ -841,7 +842,7 @@ footer p:first-child::after {
   line-height: normal;
   font-size: 24px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .career_card_container .career_card h5 {
     margin-left: -150px;
     margin-bottom: 24px;
@@ -856,7 +857,7 @@ footer p:first-child::after {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .career_card_container .career_card .card_content_container {
     flex-direction: column;
     max-width: 332px;
@@ -865,7 +866,7 @@ footer p:first-child::after {
 #training .container .career_card_container .career_card .card_content_container .card_content {
   width: 618px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .career_card_container .career_card .card_content_container .card_content {
     width: 100%;
   }
@@ -873,7 +874,7 @@ footer p:first-child::after {
 #training .container .career_card_container .career_card .card_content_container .card_content section {
   margin-top: 36px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .career_card_container .career_card .card_content_container .card_content section {
     margin-top: 24px;
   }
@@ -881,7 +882,7 @@ footer p:first-child::after {
 #training .container .career_card_container .career_card .card_content_container .card_content section:first-child {
   margin-top: 0;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .career_card_container .career_card .card_content_container .card_content section:first-child {
     margin-top: 24px;
   }
@@ -895,7 +896,7 @@ footer p:first-child::after {
   border-bottom: 3px solid #363636;
   font-size: 20px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .career_card_container .career_card .card_content_container .card_content section h6 {
     font-size: 18px;
   }
@@ -916,7 +917,7 @@ footer p:first-child::after {
 #training .container .career_card_container .career_card .card_content_container .card_img {
   height: 280px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .career_card_container .career_card .card_content_container .card_img {
     order: -1;
     height: 200px;
@@ -932,7 +933,7 @@ footer p:first-child::after {
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .coach {
     margin-top: 40px;
   }
@@ -941,7 +942,7 @@ footer p:first-child::after {
   display: block;
   align-self: flex-start;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .coach h3 {
     max-width: 332px;
     width: 100%;
@@ -964,7 +965,7 @@ footer p:first-child::after {
   display: flex;
   justify-content: space-between;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .coach .coach_container .coach_card_container_outside .coach_card_container {
     margin-top: 28px;
   }
@@ -985,7 +986,7 @@ footer p:first-child::after {
 #training .container .coach .coach_container .coach_card_container_outside .coach_card_container .coach_card:active, #training .container .coach .coach_container .coach_card_container_outside .coach_card_container .coach_card.active {
   background-color: #e6ebff;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .coach .coach_container .coach_card_container_outside .coach_card_container .coach_card {
     width: 332px;
     height: 200px;
@@ -997,7 +998,7 @@ footer p:first-child::after {
 #training .container .coach .coach_container .coach_card_container_outside .coach_card_container .coach_card img {
   width: 180px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .coach .coach_container .coach_card_container_outside .coach_card_container .coach_card img {
     width: 220px;
   }
@@ -1014,7 +1015,7 @@ footer p:first-child::after {
   align-self: flex-start;
   margin-top: -24px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .coach .coach_container .coach_card_container_outside .coach_card_container .coach_card .coach_name {
     font-size: 18px;
   }
@@ -1029,7 +1030,7 @@ footer p:first-child::after {
   width: 100%;
   margin-top: 28px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .coach .coach_container .coach_description {
     max-width: 332px;
   }
@@ -1037,7 +1038,7 @@ footer p:first-child::after {
 #training .container .coach .coach_container .coach_description h5 {
   font-size: 24px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #training .container .coach .coach_container .coach_description h5 {
     font-size: 20px;
   }
@@ -1061,7 +1062,7 @@ footer p:first-child::after {
   padding-top: 128px;
   padding-bottom: 124px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #faq .container {
     max-width: 332px;
     width: 100%;
@@ -1072,7 +1073,7 @@ footer p:first-child::after {
 #faq .container section {
   margin-bottom: 60px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #faq .container section {
     margin-bottom: 48px;
   }
@@ -1089,7 +1090,7 @@ footer p:first-child::after {
   align-items: start;
   justify-content: start;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #faq .container section .question_item {
     padding: 20px 0;
   }
@@ -1120,7 +1121,7 @@ footer p:first-child::after {
   display: flex;
   flex-direction: column;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #support .container {
     margin-bottom: 16px;
   }
@@ -1129,7 +1130,7 @@ footer p:first-child::after {
   margin-top: -16px;
   margin-left: 72px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #support .container h4 {
     margin-left: 48px;
   }
@@ -1144,13 +1145,13 @@ footer p:first-child::after {
 }
 #support .container .support_card_container {
   margin-top: 32px;
-  padding-left: 72px;
+  padding: 0 72px;
   display: flex;
   justify-content: flex-start;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #support .container .support_card_container {
-    padding-left: 48px;
+    padding: 0 48px;
     margin-top: 16px;
   }
 }
@@ -1178,7 +1179,7 @@ footer p:first-child::after {
 #support .container .support_card_container .support_card_item .support_img img.skw {
   width: 100px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #support .container .support_card_container .support_card_item .support_img img.rocket,
   #support .container .support_card_container .support_card_item .support_img img.goodidea,
   #support .container .support_card_container .support_card_item .support_img img.titan,
@@ -1189,7 +1190,7 @@ footer p:first-child::after {
 #support .container .support_card_container .support_card_item .support_img img.hexschool {
   width: 120px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #support .container .support_card_container .support_card_item .support_img img.hexschool {
     width: 100px;
   }
@@ -1197,7 +1198,7 @@ footer p:first-child::after {
 #support .container .support_card_container .support_card_item .support_img img.kdan {
   width: 160px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #support .container .support_card_container .support_card_item .support_img img.kdan {
     width: 140px;
   }
@@ -1205,7 +1206,7 @@ footer p:first-child::after {
 #support .container .support_card_container .support_card_item .support_img img.wistron {
   width: 150px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #support .container .support_card_container .support_card_item .support_img img.wistron {
     width: 120px;
   }
@@ -1218,7 +1219,7 @@ footer p:first-child::after {
   font-weight: 500;
   margin-top: 4px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #support .container .support_card_container .support_card_item .support_text {
     font-size: 14px;
   }

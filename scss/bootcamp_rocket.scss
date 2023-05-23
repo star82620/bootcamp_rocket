@@ -75,12 +75,13 @@
     .card_container {
       height: 592px;
       overflow-y: scroll;
+      overflow-x: visible;
 
       @include scrollbar_none();
 
       @include mobile() {
-        overflow: visible;
         height: 100%;
+        overflow: visible;
       }
 
       .career_card {
@@ -717,19 +718,19 @@
     }
 
     .support_card_container_outside {
-      width: 100%; //因為是 100% 所以在轉版的時候會一直跟著改變大小
+      width: 100%;
       overflow-x: scroll;
       @include scrollbar_none();
     }
 
     .support_card_container {
       margin-top: 32px;
-      padding-left: 72px;
+      padding: 0 72px;
       display: flex;
-      justify-content: flex-start; //內部 item 一直靠左
+      justify-content: flex-start;
 
       @include mobile() {
-        padding-left: 48px;
+        padding: 0 48px;
         margin-top: 16px;
       }
 

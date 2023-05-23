@@ -7,7 +7,7 @@
 }
 
 @mixin mobile {
-  @media (max-width: 1280px) {
+  @media (max-width: 1023px) {
     @content;
   }
 }
@@ -125,6 +125,16 @@ h4 {
   justify-content: space-between;
 }
 
+@mixin page_padding {
+  padding-left: 40px;
+  padding-right: 40px;
+
+  @include mobile() {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
 @mixin scrollbar_none {
   &::-webkit-scrollbar {
     width: 0;
@@ -198,7 +208,7 @@ main {
 
 #banner {
   background: url("../image/banner/banner-bg.png") repeat top center;
-  padding: 0 40px 0;
+  padding: 0 20px 0;
 
   @include mobile() {
     padding: 0 12px 0;

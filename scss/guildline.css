@@ -30,7 +30,7 @@ body {
 h1 {
   font-size: 48px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   h1 {
     font-size: 32px;
   }
@@ -39,7 +39,7 @@ h1 {
 h2 {
   font-size: 36px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   h2 {
     font-size: 28px;
   }
@@ -48,7 +48,7 @@ h2 {
 h3 {
   font-size: 32px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   h3 {
     font-size: 24px;
   }
@@ -57,7 +57,7 @@ h3 {
 h4 {
   font-size: 28px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   h4 {
     font-size: 20px;
   }
@@ -124,9 +124,9 @@ main {
 
 #banner {
   background: url("../image/banner/banner-bg.png") repeat top center;
-  padding: 0 40px 0;
+  padding: 0 20px 0;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner {
     padding: 0 12px 0;
   }
@@ -144,7 +144,7 @@ main {
   padding-top: 127px;
   padding-bottom: 182px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container {
     flex-direction: column;
     justify-content: space-between;
@@ -157,7 +157,7 @@ main {
 #banner .container .deco_cross {
   font-size: 48px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .deco_cross {
     display: none;
   }
@@ -172,7 +172,7 @@ main {
   background-color: #fff;
   transition: 0.5s;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card {
     width: 294px;
     height: 134px;
@@ -191,7 +191,7 @@ main {
 #banner .container .enter_card:hover .enter_btn {
   filter: opacity(1);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card:hover {
     margin-top: 0;
   }
@@ -219,7 +219,7 @@ main {
   transform: translate(100%, -100%);
   background: url("../image/banner/ic-highlight-rocket-lg-.svg") center center;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card:active::after, #banner .container .enter_card.active::after {
     right: auto;
     left: 0;
@@ -234,7 +234,7 @@ main {
   align-items: center;
   filter: opacity(0.5);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container {
     height: 100%;
     flex-direction: row;
@@ -247,7 +247,7 @@ main {
   align-items: center;
   margin-top: -36px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .card_title {
     display: flex;
     flex-direction: row;
@@ -263,7 +263,7 @@ main {
   line-height: normal;
   height: 72px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .card_title .card_title_chinese {
     font-size: 32px;
     height: auto;
@@ -273,7 +273,7 @@ main {
   color: #9a9a9a;
   font-size: 24px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .card_title .card_title_eng {
     width: 100%;
     margin-top: 8px;
@@ -284,7 +284,7 @@ main {
   width: 124px;
   margin-top: 24px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .card_title .card_img {
     width: 48px;
     order: -1;
@@ -297,7 +297,7 @@ main {
   align-items: center;
   margin-top: 16px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .hashtag {
     display: none;
   }
@@ -316,7 +316,7 @@ main {
   background: url("../image/banner/banner-btn-rocket-lg.svg") no-repeat center center;
   filter: opacity(0.8);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .enter_btn {
     width: 60px;
     height: 60px;
@@ -339,7 +339,7 @@ main {
   transform: translate(-50%, 50%);
   filter: opacity(0.5);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .shape {
     width: 80px;
     height: 80px;
@@ -355,7 +355,7 @@ main {
 #banner .container .enter_card.space .enter_btn {
   background-image: url("../image/banner/banner-btn-coworking-lg.svg");
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card.space .enter_btn {
     background-image: url("../image/banner/banner-btn-coworking-sm.svg");
   }
@@ -366,7 +366,7 @@ main {
 #banner .container .enter_card.space:active::after, #banner .container .enter_card.space.active::after {
   background-image: url("../image/banner/ic-highlight-coworking-lg-.svg");
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card.space:active::after, #banner .container .enter_card.space.active::after {
     background-image: url("../image/banner/ic-highlight-coworking-sm-.svg");
   }
@@ -387,7 +387,7 @@ main {
   margin-top: 32px;
   transform: translate(0, 50%);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   .button_go {
     max-width: 332px;
     margin-top: -16px;
@@ -415,7 +415,7 @@ footer {
   align-items: center;
   padding: 36px 0;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   footer {
     flex-direction: column;
   }
@@ -428,7 +428,7 @@ footer p:first-child::after {
   content: "-";
   margin: 0 8px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   footer p:first-child::after {
     display: none;
   }
