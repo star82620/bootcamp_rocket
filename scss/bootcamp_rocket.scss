@@ -730,6 +730,45 @@
           display: flex;
           justify-content: center;
           align-items: center;
+
+          img {
+            height: auto;
+          }
+
+          img.rocket,
+          img.goodidea,
+          img.titan,
+          img.skw {
+            width: 100px;
+
+            @include mobile() {
+              width: 80px;
+            }
+          }
+
+          img.hexschool {
+            width: 120px;
+
+            @include mobile() {
+              width: 100px;
+            }
+          }
+
+          img.kdan {
+            width: 160px;
+
+            @include mobile() {
+              width: 140px;
+            }
+          }
+
+          img.wistron {
+            width: 150px;
+
+            @include mobile() {
+              width: 120px;
+            }
+          }
         }
 
         .support_text {

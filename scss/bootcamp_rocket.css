@@ -1164,6 +1164,47 @@ footer p:first-child::after {
   justify-content: center;
   align-items: center;
 }
+#support .container .support_card_container .support_card_item .support_img img {
+  height: auto;
+}
+#support .container .support_card_container .support_card_item .support_img img.rocket,
+#support .container .support_card_container .support_card_item .support_img img.goodidea,
+#support .container .support_card_container .support_card_item .support_img img.titan,
+#support .container .support_card_container .support_card_item .support_img img.skw {
+  width: 100px;
+}
+@media (max-width: 1280px) {
+  #support .container .support_card_container .support_card_item .support_img img.rocket,
+  #support .container .support_card_container .support_card_item .support_img img.goodidea,
+  #support .container .support_card_container .support_card_item .support_img img.titan,
+  #support .container .support_card_container .support_card_item .support_img img.skw {
+    width: 80px;
+  }
+}
+#support .container .support_card_container .support_card_item .support_img img.hexschool {
+  width: 120px;
+}
+@media (max-width: 1280px) {
+  #support .container .support_card_container .support_card_item .support_img img.hexschool {
+    width: 100px;
+  }
+}
+#support .container .support_card_container .support_card_item .support_img img.kdan {
+  width: 160px;
+}
+@media (max-width: 1280px) {
+  #support .container .support_card_container .support_card_item .support_img img.kdan {
+    width: 140px;
+  }
+}
+#support .container .support_card_container .support_card_item .support_img img.wistron {
+  width: 150px;
+}
+@media (max-width: 1280px) {
+  #support .container .support_card_container .support_card_item .support_img img.wistron {
+    width: 120px;
+  }
+}
 #support .container .support_card_container .support_card_item .support_text {
   font-size: 16px;
   margin-top: 16px;
