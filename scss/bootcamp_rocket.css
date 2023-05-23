@@ -7,6 +7,7 @@
   font-weight: 700;
   line-height: 1.5em;
   letter-spacing: 0.02em;
+  outline: none;
 }
 *:focus {
   outline: none;
@@ -29,17 +30,37 @@ body {
 h1 {
   font-size: 48px;
 }
+@media (max-width: 1280px) {
+  h1 {
+    font-size: 32px;
+  }
+}
 
 h2 {
   font-size: 36px;
+}
+@media (max-width: 1280px) {
+  h2 {
+    font-size: 28px;
+  }
 }
 
 h3 {
   font-size: 32px;
 }
+@media (max-width: 1280px) {
+  h3 {
+    font-size: 24px;
+  }
+}
 
 h4 {
   font-size: 28px;
+}
+@media (max-width: 1280px) {
+  h4 {
+    font-size: 20px;
+  }
 }
 
 .bold_style {
@@ -59,6 +80,7 @@ h4 {
   left: 0;
   z-index: -1;
   width: 100%;
+  height: 50%;
 }
 
 #marquee {
@@ -72,6 +94,7 @@ h4 {
   width: 100%;
   padding: 20px 0;
   background-color: #fff;
+  box-shadow: 0 1px 2px #f0f0f0;
 }
 #marquee .container {
   display: flex;
@@ -386,10 +409,12 @@ main {
     margin-top: -16px;
   }
 }
-.button_go span {
-  font-size: 32px;
+.button_go h3 {
+  display: flex;
+  align-items: center;
+  line-height: normal;
 }
-.button_go img {
+.button_go .button_img {
   width: 0;
   opacity: 0;
   transition: 0.5s;
@@ -497,15 +522,6 @@ footer p:first-child::after {
     margin-top: 16px;
   }
 }
-#about_rocket .container .what_is .title_chinese {
-  font-size: 48px;
-  vertical-align: middle;
-}
-@media (max-width: 1280px) {
-  #about_rocket .container .what_is .title_chinese {
-    font-size: 32px;
-  }
-}
 #about_rocket .container .what_is .description {
   font-size: 20px;
   font-weight: 500;
@@ -563,9 +579,6 @@ footer p:first-child::after {
     height: 120px;
   }
 }
-#about_rocket .container .card_container .career_card .career_text h3 {
-  font-size: 24px;
-}
 #about_rocket .container .card_container .career_card .career_text .skill {
   display: flex;
   margin-top: 12px;
@@ -585,6 +598,7 @@ footer p:first-child::after {
   color: #7f94e2;
   list-style: none;
   line-height: normal;
+  font-size: 16px;
 }
 #about_rocket .container .card_container .career_card .career_text .skill li:first-child {
   margin-left: 0;
@@ -597,6 +611,11 @@ footer p:first-child::after {
 #about_rocket .container .card_container .career_card .eng_title {
   color: #9a9a9a;
   font-size: 24px;
+}
+@media (max-width: 1280px) {
+  #about_rocket .container .card_container .career_card .eng_title {
+    font-size: 20px;
+  }
 }
 #about_rocket .container .card_container .career_card .career_img {
   display: block;
@@ -672,14 +691,6 @@ footer p:first-child::after {
     padding-bottom: 92px;
   }
 }
-#success_case .container h3 {
-  font-size: 36px;
-}
-@media (max-width: 1280px) {
-  #success_case .container h3 {
-    font-size: 28px;
-  }
-}
 #success_case .container .case_card_container {
   width: 100%;
   overflow-x: scroll;
@@ -723,13 +734,11 @@ footer p:first-child::after {
     max-width: 1281px;
   }
 }
-#training .container h3 {
-  font-size: 36px;
+#training .container h2 {
   margin-top: -28px;
 }
 @media (max-width: 1280px) {
-  #training .container h3 {
-    font-size: 28px;
+  #training .container h2 {
     margin-top: -20px;
   }
 }
@@ -846,7 +855,7 @@ footer p:first-child::after {
 }
 @media (max-width: 1280px) {
   #training .container .career_card_container .career_card h5 {
-    margin-left: -148px;
+    margin-left: -150px;
     margin-bottom: 24px;
     font-size: 20px;
   }
@@ -894,9 +903,9 @@ footer p:first-child::after {
 }
 #training .container .career_card_container .career_card .card_content_container .card_content section h6 {
   display: inline-block;
+  margin-bottom: 16px;
   border-bottom: 3px solid #363636;
   font-size: 20px;
-  margin-bottom: 16px;
 }
 @media (max-width: 1280px) {
   #training .container .career_card_container .career_card .card_content_container .card_content section h6 {
@@ -942,14 +951,6 @@ footer p:first-child::after {
   #training .container .coach {
     max-width: 332px;
     margin-top: 40px;
-  }
-}
-#training .container .coach h4 {
-  font-size: 32px;
-}
-@media (max-width: 1280px) {
-  #training .container .coach h4 {
-    font-size: 24px;
   }
 }
 #training .container .coach .coach_container {
@@ -1008,7 +1009,7 @@ footer p:first-child::after {
 }
 #training .container .coach .coach_container .coach_card_container_outside .coach_card_container .coach_card .coach_name {
   writing-mode: vertical-lr;
-  padding: 16px;
+  padding: 16px 16px 12px 12px;
   background-color: #fff;
   border-radius: 12px;
   border: 2px solid #363636;
@@ -1017,6 +1018,11 @@ footer p:first-child::after {
   vertical-align: middle;
   align-self: flex-start;
   margin-top: -24px;
+}
+@media (max-width: 1280px) {
+  #training .container .coach .coach_container .coach_card_container_outside .coach_card_container .coach_card .coach_name {
+    font-size: 18px;
+  }
 }
 #training .container .coach .coach_container .coach_description {
   width: 100%;
@@ -1042,7 +1048,6 @@ footer p:first-child::after {
 #training .container .coach .coach_container .coach_description ul li,
 #training .container .coach .coach_container .coach_description ul a {
   font-weight: 400;
-  font-size: 16px;
   color: #363636;
 }
 
@@ -1069,14 +1074,6 @@ footer p:first-child::after {
 @media (max-width: 1280px) {
   #faq .container section {
     margin-bottom: 48px;
-  }
-}
-#faq .container section h4 {
-  font-size: 32px;
-}
-@media (max-width: 1280px) {
-  #faq .container section h4 {
-    font-size: 24px;
   }
 }
 #faq .container section li {
@@ -1174,4 +1171,9 @@ footer p:first-child::after {
 #support .container .support_card_container .support_card_item .support_text p:last-child {
   font-weight: 500;
   margin-top: 4px;
+}
+@media (max-width: 1280px) {
+  #support .container .support_card_container .support_card_item .support_text {
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=bootcamp_rocket.css.map */

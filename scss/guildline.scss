@@ -35,9 +35,11 @@ $neutral-gray-500: #9a9a9a;
 $neutral-gray-600: #757575;
 $neutral-gray-700: #363636;
 
-$font-size-body1-24: 24px;
-$font-size-body2-20: 20px;
-$font-size-body3-16: 16px;
+$font-size-body-24: 24px;
+$font-size-body-20: 20px;
+$font-size-body-18: 18px;
+$font-size-body-16: 16px;
+$font-size-body-14: 14px;
 
 * {
   margin: 0;
@@ -48,6 +50,7 @@ $font-size-body3-16: 16px;
   font-weight: 700;
   line-height: 1.5em;
   letter-spacing: 0.02em;
+  outline: none;
 
   &:focus {
     outline: none;
@@ -70,18 +73,34 @@ body {
 
 h1 {
   font-size: 48px;
+
+  @include mobile() {
+    font-size: 32px;
+  }
 }
 
 h2 {
   font-size: 36px;
+
+  @include mobile() {
+    font-size: 28px;
+  }
 }
 
 h3 {
   font-size: 32px;
+
+  @include mobile() {
+    font-size: 24px;
+  }
 }
 
 h4 {
   font-size: 28px;
+
+  @include mobile() {
+    font-size: 20px;
+  }
 }
 
 .bold_style {
@@ -101,6 +120,7 @@ h4 {
   left: 0;
   z-index: -1;
   width: 100%;
+  height: 50%;
 }
 
 //---
@@ -139,6 +159,7 @@ h4 {
   width: 100%;
   padding: 20px 0;
   background-color: #fff;
+  box-shadow: 0 1px 2px $neutral-gray-200;
 
   .container {
     display: flex;
@@ -177,7 +198,7 @@ h4 {
     .marquee_item {
       margin-left: 32px;
       width: fit-content;
-      font-size: 16px;
+      font-size: $font-size-body-16;
       white-space: nowrap;
     }
   }
@@ -339,12 +360,12 @@ main {
 
           .card_title_eng {
             color: $neutral-gray-500;
-            font-size: 24px;
+            font-size: $font-size-body-24;
 
             @include mobile() {
               width: 100%;
               margin-top: 8px;
-              font-size: 20px;
+              font-size: $font-size-body-20;
             }
           }
 
@@ -468,12 +489,14 @@ main {
     margin-top: -16px;
   }
 
-  span {
-    font-size: 32px;
+  h3 {
+    display: flex;
+    align-items: center;
+    line-height: normal;
   }
 
-  img {
-    width: 0; //這個要改！應該要閃現閃消失不能用 width
+  .button_img {
+    width: 0;
     opacity: 0;
     transition: 0.5s;
   }
@@ -496,7 +519,7 @@ footer {
   }
 
   p {
-    font-size: 16px;
+    font-size: $font-size-body-16;
     font-weight: 400;
   }
 
