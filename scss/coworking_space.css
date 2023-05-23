@@ -181,8 +181,7 @@ main {
 }
 #banner .container .enter_card:hover .card_container,
 #banner .container .enter_card:hover .shape,
-#banner .container .enter_card:hover .enter_btn_lg,
-#banner .container .enter_card:hover .enter_btn_sm {
+#banner .container .enter_card:hover .enter_btn {
   filter: opacity(1);
 }
 @media (max-width: 1280px) {
@@ -191,9 +190,16 @@ main {
   }
 }
 #banner .container .enter_card:active, #banner .container .enter_card.active {
+  margin-top: 0;
   box-shadow: 8px 8px 0 #bfc9f0;
   transition: 0s;
-  margin-top: 0;
+}
+#banner .container .enter_card:active .card_container,
+#banner .container .enter_card:active .shape,
+#banner .container .enter_card:active .enter_btn, #banner .container .enter_card.active .card_container,
+#banner .container .enter_card.active .shape,
+#banner .container .enter_card.active .enter_btn {
+  filter: opacity(1);
 }
 #banner .container .enter_card:active::after, #banner .container .enter_card.active::after {
   content: "";
@@ -204,8 +210,7 @@ main {
   height: 42px;
   width: 42px;
   transform: translate(100%, -100%);
-  background-image: url("../image/banner/ic-highlight-rocket-lg-.svg");
-  background-position: center center;
+  background: url("../image/banner/ic-highlight-rocket-lg-.svg") center center;
 }
 @media (max-width: 1280px) {
   #banner .container .enter_card:active::after, #banner .container .enter_card.active::after {
@@ -214,9 +219,6 @@ main {
     transform: translate(-50%, -50%);
     background-image: url("../image/banner/ic-highlight-rocket-sm-.svg");
   }
-}
-#banner .container .enter_card:target {
-  margin-top: 100px;
 }
 #banner .container .enter_card .card_container {
   display: flex;
@@ -316,23 +318,6 @@ main {
     right: 0;
     transform: translate(50%, 50%);
     background: url("../image/banner/banner-btn-rocket-sm.svg") no-repeat center center;
-  }
-}
-#banner .container .enter_card .enter_btn_lg {
-  height: 126px;
-  position: absolute;
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card .enter_btn_lg {
-    display: none;
-  }
-}
-#banner .container .enter_card .enter_btn_sm {
-  display: none;
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card .enter_btn_sm {
-    display: block;
   }
 }
 #banner .container .enter_card .shape {
@@ -446,11 +431,16 @@ footer p:first-child::after {
 
 #about_us {
   padding: 60px 0;
+  margin-top: -22px;
   background-color: #eee5ff;
   border-radius: 24px;
 }
+#about_us:target {
+  padding-top: 64px;
+}
 @media (max-width: 1280px) {
   #about_us {
+    margin-top: -28px;
     padding: 36px 0;
   }
 }

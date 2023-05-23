@@ -247,15 +247,14 @@ main {
         }
       }
 
+      //enter_card 滑鼠移過
       &:hover {
         margin-top: -16px;
 
         .card_container,
         .shape,
-        .enter_btn_lg,
-        .enter_btn_sm {
+        .enter_btn {
           filter: opacity(1);
-          // opacity: 1;
         }
 
         @include mobile() {
@@ -263,12 +262,20 @@ main {
         }
       }
 
+      //enter_card 被點擊、在該頁面
       &:active,
       &.active {
+        margin-top: 0;
         box-shadow: 8px 8px 0 $primary-blue-200;
         transition: 0s;
-        margin-top: 0;
 
+        .card_container,
+        .shape,
+        .enter_btn {
+          filter: opacity(1);
+        }
+
+        //黏在 enter_card 上的活潑小尖角
         &::after {
           content: "";
           display: inline-block;
@@ -278,8 +285,8 @@ main {
           height: 42px;
           width: 42px;
           transform: translate(100%, -100%);
-          background-image: url("../image/banner/ic-highlight-rocket-lg-.svg");
-          background-position: center center;
+          background: url("../image/banner/ic-highlight-rocket-lg-.svg") center
+            center;
 
           @include mobile() {
             right: auto;
@@ -288,10 +295,6 @@ main {
             background-image: url("../image/banner/ic-highlight-rocket-sm-.svg");
           }
         }
-      }
-
-      &:target {
-        margin-top: 100px;
       }
 
       .card_container {
@@ -397,24 +400,6 @@ main {
         }
       }
 
-      .enter_btn_lg {
-        // width: 100px;
-        height: 126px;
-        position: absolute;
-
-        @include mobile() {
-          display: none;
-        }
-      }
-
-      .enter_btn_sm {
-        display: none;
-
-        @include mobile() {
-          display: block;
-        }
-      }
-
       .shape {
         width: 120px;
         height: 120px;
@@ -437,6 +422,8 @@ main {
         }
       }
     }
+
+    //更換共同空間卡片的顏色和圖案
     .enter_card.space {
       .shape {
         background-color: $primary-violet-200;
