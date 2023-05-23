@@ -1,6 +1,20 @@
 @import "guildline";
 
+.mark_style {
+  position: relative;
+  z-index: 0;
+}
+
 .mark_style::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 50%;
+  line-height: normal;
   background-color: $accent-orange;
 }
 
@@ -43,26 +57,15 @@
         width: 100%;
       }
 
-      img {
-        width: 100%;
-        height: auto;
-      }
-
-      img.map_lg {
-        display: inline-block;
+      iframe {
+        width: 612px;
+        height: 396px;
         border-radius: 16px;
 
         @include mobile() {
-          display: none;
-        }
-      }
-
-      img.map_sm {
-        display: none;
-        border-radius: 8px;
-
-        @include mobile() {
-          display: inline-block;
+          width: 308px;
+          height: 308px;
+          border-radius: 12px;
         }
       }
     }
@@ -112,6 +115,10 @@
     h4 {
       display: inline-block;
       line-height: normal;
+    }
+
+    h4::after {
+      bottom: 0;
     }
 
     .place {
@@ -323,6 +330,10 @@
     .carousel_container {
       display: flex;
       max-width: 1440px;
+
+      @include mobile() {
+        padding-left: 48px;
+      }
 
       .carousel_img {
         width: 636px;

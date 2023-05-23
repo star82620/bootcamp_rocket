@@ -107,22 +107,6 @@ h4 {
   font-weight: 700;
 }
 
-.mark_style {
-  position: relative;
-  z-index: 0;
-}
-
-.mark_style::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 50%;
-}
-
 //---
 
 @mixin w-1076 {

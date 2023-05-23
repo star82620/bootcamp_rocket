@@ -2,8 +2,6 @@
 
 .mark_style {
   font-weight: 700;
-}
-.mark_style::after {
   background-color: $accent-yellow;
 }
 
@@ -240,13 +238,16 @@
     .case_card_container {
       width: 100%;
       overflow-x: scroll;
-
       @include scrollbar_none();
 
       div {
         width: 1296px;
         display: flex;
         justify-content: space-between;
+
+        @include mobile() {
+          padding-left: 48px;
+        }
       }
 
       img {
@@ -341,32 +342,32 @@
             //從右到左 210px 需要 2.1s
 
             &:first-child {
-              animation: marqueeb_first 10s linear infinite;
+              animation: marquee_ticker_first 20s linear infinite;
             }
 
             &:nth-child(2) {
               display: block;
-              // animation: marqueeb_second 10s linear infinite;
-              animation-delay: 5s;
+              animation: marquee_ticker_second 20s linear infinite;
+              animation-delay: 10s;
+              margin-left: 16px;
 
-              //這個還沒成功，要再試一次
-              @keyframes marqueeb_first {
+              @keyframes marquee_ticker_first {
+                0% {
+                  transform: translateX(100%);
+                }
+
+                100% {
+                  transform: translateX(-150%);
+                }
+              }
+
+              @keyframes marquee_ticker_second {
                 0% {
                   transform: translateX(0%);
                 }
 
                 100% {
-                  transform: translateX(-100%);
-                }
-              }
-
-              @keyframes marqueeb_second {
-                0% {
-                  transform: translateX(-50%);
-                }
-
-                100% {
-                  transform: translateX(-200%);
+                  transform: translateX(-250%);
                 }
               }
             }
@@ -500,14 +501,25 @@
 
     //教練團
     .coach {
-      @include w-1076();
-      flex-direction: column;
       width: 100%;
       margin-top: 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       @include mobile() {
-        max-width: 332px;
         margin-top: 40px;
+      }
+
+      h3 {
+        display: block;
+        align-self: flex-start;
+
+        @include mobile() {
+          max-width: 332px;
+          width: 100%;
+          margin: 0 auto;
+        }
       }
 
       .coach_container {
@@ -524,7 +536,7 @@
             justify-content: space-between;
 
             @include mobile() {
-              margin-top: 52px;
+              margin-top: 28px;
             }
 
             .coach_card {
@@ -584,6 +596,8 @@
         }
 
         .coach_description {
+          @include w-1076;
+          flex-direction: column;
           width: 100%;
           margin-top: 28px;
 
@@ -601,7 +615,7 @@
 
           ul {
             margin-top: 12px;
-            margin-left: 24px;
+            margin-left: 20px;
 
             li,
             a {
@@ -681,12 +695,7 @@
 
 #support {
   width: 100%;
-  padding-left: 72px;
   background-color: $neutral-gray-200;
-
-  @include mobile() {
-    padding-left: 48px;
-  }
 
   .container {
     width: 100%;
@@ -700,20 +709,29 @@
 
     h4 {
       margin-top: -16px;
+      margin-left: 72px;
+
+      @include mobile() {
+        margin-left: 48px;
+      }
+    }
+
+    .support_card_container_outside {
+      width: 100%; //因為是 100% 所以在轉版的時候會一直跟著改變大小
+      overflow-x: scroll;
+      @include scrollbar_none();
     }
 
     .support_card_container {
-      width: 100%; //因為是 100% 所以在轉版的時候會一直跟著改變大小
       margin-top: 32px;
-      overflow-x: scroll;
+      padding-left: 72px;
       display: flex;
       justify-content: flex-start; //內部 item 一直靠左
 
       @include mobile() {
+        padding-left: 48px;
         margin-top: 16px;
       }
-
-      @include scrollbar_none();
 
       .support_card_item {
         margin-left: 24px;

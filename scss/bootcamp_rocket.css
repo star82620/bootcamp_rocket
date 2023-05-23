@@ -67,22 +67,6 @@ h4 {
   font-weight: 700;
 }
 
-.mark_style {
-  position: relative;
-  z-index: 0;
-}
-
-.mark_style::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 50%;
-}
-
 #marquee {
   display: flex;
   justify-content: start;
@@ -452,9 +436,6 @@ footer p:first-child::after {
 
 .mark_style {
   font-weight: 700;
-}
-
-.mark_style::after {
   background-color: #ffeea3;
 }
 
@@ -704,6 +685,11 @@ footer p:first-child::after {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1280px) {
+  #success_case .container .case_card_container div {
+    padding-left: 48px;
+  }
+}
 #success_case .container .case_card_container img {
   height: 200px;
   border-radius: 12px;
@@ -796,26 +782,28 @@ footer p:first-child::after {
     white-space: nowrap;
   }
   #training .container .new_batch .new_batch_ticker p:first-child {
-    animation: marqueeb_first 10s linear infinite;
+    animation: marquee_ticker_first 20s linear infinite;
   }
   #training .container .new_batch .new_batch_ticker p:nth-child(2) {
     display: block;
-    animation-delay: 5s;
+    animation: marquee_ticker_second 20s linear infinite;
+    animation-delay: 10s;
+    margin-left: 16px;
   }
-  @keyframes marqueeb_first {
+  @keyframes marquee_ticker_first {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-150%);
+    }
+  }
+  @keyframes marquee_ticker_second {
     0% {
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-100%);
-    }
-  }
-  @keyframes marqueeb_second {
-    0% {
-      transform: translateX(-50%);
-    }
-    100% {
-      transform: translateX(-200%);
+      transform: translateX(-250%);
     }
   }
 }
@@ -938,19 +926,26 @@ footer p:first-child::after {
   height: 100%;
 }
 #training .container .coach {
-  max-width: 1076px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   width: 100%;
   margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 @media (max-width: 1280px) {
   #training .container .coach {
-    max-width: 332px;
     margin-top: 40px;
+  }
+}
+#training .container .coach h3 {
+  display: block;
+  align-self: flex-start;
+}
+@media (max-width: 1280px) {
+  #training .container .coach h3 {
+    max-width: 332px;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 #training .container .coach .coach_container {
@@ -971,7 +966,7 @@ footer p:first-child::after {
 }
 @media (max-width: 1280px) {
   #training .container .coach .coach_container .coach_card_container_outside .coach_card_container {
-    margin-top: 52px;
+    margin-top: 28px;
   }
 }
 #training .container .coach .coach_container .coach_card_container_outside .coach_card_container .coach_card {
@@ -1025,6 +1020,12 @@ footer p:first-child::after {
   }
 }
 #training .container .coach .coach_container .coach_description {
+  max-width: 1076px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
   margin-top: 28px;
 }
@@ -1043,7 +1044,7 @@ footer p:first-child::after {
 }
 #training .container .coach .coach_container .coach_description ul {
   margin-top: 12px;
-  margin-left: 24px;
+  margin-left: 20px;
 }
 #training .container .coach .coach_container .coach_description ul li,
 #training .container .coach .coach_container .coach_description ul a {
@@ -1111,13 +1112,7 @@ footer p:first-child::after {
 
 #support {
   width: 100%;
-  padding-left: 72px;
   background-color: #f0f0f0;
-}
-@media (max-width: 1280px) {
-  #support {
-    padding-left: 48px;
-  }
 }
 #support .container {
   width: 100%;
@@ -1132,22 +1127,32 @@ footer p:first-child::after {
 }
 #support .container h4 {
   margin-top: -16px;
+  margin-left: 72px;
+}
+@media (max-width: 1280px) {
+  #support .container h4 {
+    margin-left: 48px;
+  }
+}
+#support .container .support_card_container_outside {
+  width: 100%;
+  overflow-x: scroll;
+}
+#support .container .support_card_container_outside::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 #support .container .support_card_container {
-  width: 100%;
   margin-top: 32px;
-  overflow-x: scroll;
+  padding-left: 72px;
   display: flex;
   justify-content: flex-start;
 }
 @media (max-width: 1280px) {
   #support .container .support_card_container {
+    padding-left: 48px;
     margin-top: 16px;
   }
-}
-#support .container .support_card_container::-webkit-scrollbar {
-  width: 0;
-  height: 0;
 }
 #support .container .support_card_container .support_card_item {
   margin-left: 24px;
