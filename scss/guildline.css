@@ -20,7 +20,8 @@ img {
   vertical-align: bottom;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
 }
@@ -45,17 +46,35 @@ h4 {
   font-weight: 700;
 }
 
-#marquee {
+.mark_style {
+  position: relative;
+  z-index: 0;
+}
+
+.mark_style::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
   width: 100%;
-  padding: 20px 0;
+}
+
+#marquee {
+  display: flex;
+  justify-content: start;
+  align-items: center;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 999;
+  width: 100%;
+  padding: 20px 0;
   background-color: #fff;
+}
+#marquee .container {
   display: flex;
-  justify-content: start;
-  align-items: center;
 }
 #marquee .container:first-child {
   animation: marquee_first 28.8s linear infinite;
@@ -81,18 +100,18 @@ h4 {
   }
 }
 #marquee .container .marquee_item {
+  margin-left: 32px;
   width: -moz-fit-content;
   width: fit-content;
-  margin-left: 32px;
   font-size: 16px;
   white-space: nowrap;
 }
 
 main {
-  width: 100%;
-  margin-top: 64px;
   display: flex;
   flex-direction: column;
+  margin-top: 64px;
+  width: 100%;
   color: #363636;
 }
 
@@ -141,7 +160,7 @@ main {
   position: relative;
   width: 440px;
   height: 448px;
-  border: 2px solid #E0E0E0;
+  border: 2px solid #e0e0e0;
   border-radius: 24px;
   background-color: #fff;
   transition: 0.5s;
@@ -160,7 +179,10 @@ main {
 #banner .container .enter_card:hover {
   margin-top: -16px;
 }
-#banner .container .enter_card:hover .card_container, #banner .container .enter_card:hover .shape, #banner .container .enter_card:hover .enter_btn_lg, #banner .container .enter_card:hover .enter_btn_sm {
+#banner .container .enter_card:hover .card_container,
+#banner .container .enter_card:hover .shape,
+#banner .container .enter_card:hover .enter_btn_lg,
+#banner .container .enter_card:hover .enter_btn_sm {
   filter: opacity(1);
 }
 @media (max-width: 1280px) {
@@ -168,12 +190,12 @@ main {
     margin-top: 0;
   }
 }
-#banner .container .enter_card:active {
-  box-shadow: 8px 8px 0 #BFC9F0;
+#banner .container .enter_card:active, #banner .container .enter_card.active {
+  box-shadow: 8px 8px 0 #bfc9f0;
   transition: 0s;
   margin-top: 0;
 }
-#banner .container .enter_card:active::after {
+#banner .container .enter_card:active::after, #banner .container .enter_card.active::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -186,7 +208,7 @@ main {
   background-position: center center;
 }
 @media (max-width: 1280px) {
-  #banner .container .enter_card:active::after {
+  #banner .container .enter_card:active::after, #banner .container .enter_card.active::after {
     right: auto;
     left: 0;
     transform: translate(-50%, -50%);
@@ -211,10 +233,10 @@ main {
   }
 }
 #banner .container .enter_card .card_container .card_title {
-  margin-top: -36px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: -36px;
 }
 @media (max-width: 1280px) {
   #banner .container .enter_card .card_container .card_title {
@@ -239,7 +261,7 @@ main {
   }
 }
 #banner .container .enter_card .card_container .card_title .card_title_eng {
-  color: #9A9A9A;
+  color: #9a9a9a;
   font-size: 24px;
 }
 @media (max-width: 1280px) {
@@ -249,12 +271,12 @@ main {
     font-size: 20px;
   }
 }
-#banner .container .enter_card .card_container .card_title img {
+#banner .container .enter_card .card_container .card_title .card_img {
   width: 124px;
   margin-top: 24px;
 }
 @media (max-width: 1280px) {
-  #banner .container .enter_card .card_container .card_title img {
+  #banner .container .enter_card .card_container .card_title .card_img {
     width: 48px;
     order: -1;
     margin: 0 8px 0 0;
@@ -274,14 +296,31 @@ main {
 #banner .container .enter_card .card_container .hashtag p {
   line-height: 35px;
 }
-#banner .container .enter_card .enter_btn_lg {
-  height: 126px;
+#banner .container .enter_card .enter_btn {
   position: absolute;
   z-index: 1;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 44px);
-  filter: opacity(0.5);
+  width: 120px;
+  height: 126px;
+  background: url("../image/banner/banner-btn-rocket-lg.svg") no-repeat center center;
+  filter: opacity(0.8);
+}
+@media (max-width: 1280px) {
+  #banner .container .enter_card .enter_btn {
+    width: 60px;
+    height: 60px;
+    bottom: 50%;
+    left: auto;
+    right: 0;
+    transform: translate(50%, 50%);
+    background: url("../image/banner/banner-btn-rocket-sm.svg") no-repeat center center;
+  }
+}
+#banner .container .enter_card .enter_btn_lg {
+  height: 126px;
+  position: absolute;
 }
 @media (max-width: 1280px) {
   #banner .container .enter_card .enter_btn_lg {
@@ -290,13 +329,6 @@ main {
 }
 #banner .container .enter_card .enter_btn_sm {
   display: none;
-  width: 60px;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  transform: translate(50%, 36px);
-  filter: opacity(0.5);
 }
 @media (max-width: 1280px) {
   #banner .container .enter_card .enter_btn_sm {
@@ -307,7 +339,7 @@ main {
   width: 120px;
   height: 120px;
   border-radius: 999px;
-  background-color: #BFC9F0;
+  background-color: #bfc9f0;
   position: absolute;
   z-index: -1;
   bottom: 0;
@@ -326,16 +358,24 @@ main {
   }
 }
 #banner .container .enter_card.space .shape {
-  background-color: #EEE5FF;
+  background-color: #eee5ff;
 }
-#banner .container .enter_card.space:active {
-  box-shadow: 8px 8px 0 #EEE5FF;
+#banner .container .enter_card.space .enter_btn {
+  background-image: url("../image/banner/banner-btn-coworking-lg.svg");
 }
-#banner .container .enter_card.space:active::after {
+@media (max-width: 1280px) {
+  #banner .container .enter_card.space .enter_btn {
+    background-image: url("../image/banner/banner-btn-coworking-sm.svg");
+  }
+}
+#banner .container .enter_card.space:active, #banner .container .enter_card.space.active {
+  box-shadow: 8px 8px 0 #eee5ff;
+}
+#banner .container .enter_card.space:active::after, #banner .container .enter_card.space.active::after {
   background-image: url("../image/banner/ic-highlight-coworking-lg-.svg");
 }
 @media (max-width: 1280px) {
-  #banner .container .enter_card.space:active::after {
+  #banner .container .enter_card.space:active::after, #banner .container .enter_card.space.active::after {
     background-image: url("../image/banner/ic-highlight-coworking-sm-.svg");
   }
 }
@@ -349,7 +389,7 @@ main {
   height: 96px;
   justify-content: center;
   align-items: center;
-  background-color: #E6EBFF;
+  background-color: #e6ebff;
   border-radius: 16px;
   border: 2px solid #363636;
   margin-top: 32px;
