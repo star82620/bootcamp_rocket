@@ -561,16 +561,16 @@ footer p:first-child::after {
     height: 120px;
   }
 }
-#about_rocket .container .card_container .career_card .career_text .skill {
+#about_rocket .container .card_container .career_card .career_text .skills {
   display: flex;
   margin-top: 12px;
 }
 @media (max-width: 1023px) {
-  #about_rocket .container .card_container .career_card .career_text .skill {
+  #about_rocket .container .card_container .career_card .career_text .skills {
     margin-top: 8px;
   }
 }
-#about_rocket .container .card_container .career_card .career_text .skill li {
+#about_rocket .container .card_container .career_card .career_text .skills li {
   width: -moz-fit-content;
   width: fit-content;
   padding: 8px 12px;
@@ -582,11 +582,11 @@ footer p:first-child::after {
   line-height: normal;
   font-size: 16px;
 }
-#about_rocket .container .card_container .career_card .career_text .skill li:first-child {
+#about_rocket .container .card_container .career_card .career_text .skills li:first-child {
   margin-left: 0;
 }
 @media (max-width: 1023px) {
-  #about_rocket .container .card_container .career_card .career_text .skill li {
+  #about_rocket .container .card_container .career_card .career_text .skills li {
     font-size: 12px;
   }
 }
