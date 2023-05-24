@@ -7,6 +7,7 @@
   font-weight: 700;
   line-height: 1.5em;
   letter-spacing: 0.02em;
+  outline: none;
 }
 *:focus {
   outline: none;
@@ -20,7 +21,8 @@ img {
   vertical-align: bottom;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
 }
@@ -28,17 +30,37 @@ html, body {
 h1 {
   font-size: 48px;
 }
+@media (max-width: 1023px) {
+  h1 {
+    font-size: 32px;
+  }
+}
 
 h2 {
   font-size: 36px;
+}
+@media (max-width: 1023px) {
+  h2 {
+    font-size: 28px;
+  }
 }
 
 h3 {
   font-size: 32px;
 }
+@media (max-width: 1023px) {
+  h3 {
+    font-size: 24px;
+  }
+}
 
 h4 {
   font-size: 28px;
+}
+@media (max-width: 1023px) {
+  h4 {
+    font-size: 20px;
+  }
 }
 
 .bold_style {
@@ -46,16 +68,20 @@ h4 {
 }
 
 #marquee {
-  width: 100%;
-  padding: 20px 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 999;
+  width: 100%;
+  padding: 20px 0;
   background-color: #fff;
+  box-shadow: 0 1px 2px #f0f0f0;
+}
+#marquee .container {
   display: flex;
-  justify-content: start;
-  align-items: center;
 }
 #marquee .container:first-child {
   animation: marquee_first 28.8s linear infinite;
@@ -81,26 +107,26 @@ h4 {
   }
 }
 #marquee .container .marquee_item {
+  margin-left: 32px;
   width: -moz-fit-content;
   width: fit-content;
-  margin-left: 32px;
   font-size: 16px;
   white-space: nowrap;
 }
 
 main {
-  width: 100%;
-  margin-top: 64px;
   display: flex;
   flex-direction: column;
+  margin-top: 64px;
+  width: 100%;
   color: #363636;
 }
 
 #banner {
   background: url("../image/banner/banner-bg.png") repeat top center;
-  padding: 0 40px 0;
+  padding: 0 20px 0;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner {
     padding: 0 12px 0;
   }
@@ -118,7 +144,7 @@ main {
   padding-top: 127px;
   padding-bottom: 182px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container {
     flex-direction: column;
     justify-content: space-between;
@@ -131,7 +157,7 @@ main {
 #banner .container .deco_cross {
   font-size: 48px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .deco_cross {
     display: none;
   }
@@ -141,12 +167,12 @@ main {
   position: relative;
   width: 440px;
   height: 448px;
-  border: 2px solid #E0E0E0;
+  border: 2px solid #e0e0e0;
   border-radius: 24px;
   background-color: #fff;
   transition: 0.5s;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card {
     width: 294px;
     height: 134px;
@@ -160,20 +186,29 @@ main {
 #banner .container .enter_card:hover {
   margin-top: -16px;
 }
-#banner .container .enter_card:hover .card_container, #banner .container .enter_card:hover .shape, #banner .container .enter_card:hover .enter_btn_lg, #banner .container .enter_card:hover .enter_btn_sm {
+#banner .container .enter_card:hover .card_container,
+#banner .container .enter_card:hover .shape,
+#banner .container .enter_card:hover .enter_btn {
   filter: opacity(1);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card:hover {
     margin-top: 0;
   }
 }
-#banner .container .enter_card:active {
-  box-shadow: 8px 8px 0 #BFC9F0;
-  transition: 0s;
+#banner .container .enter_card:active, #banner .container .enter_card.active {
   margin-top: 0;
+  box-shadow: 8px 8px 0 #bfc9f0;
+  transition: 0s;
 }
-#banner .container .enter_card:active::after {
+#banner .container .enter_card:active .card_container,
+#banner .container .enter_card:active .shape,
+#banner .container .enter_card:active .enter_btn, #banner .container .enter_card.active .card_container,
+#banner .container .enter_card.active .shape,
+#banner .container .enter_card.active .enter_btn {
+  filter: opacity(1);
+}
+#banner .container .enter_card:active::after, #banner .container .enter_card.active::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -182,19 +217,15 @@ main {
   height: 42px;
   width: 42px;
   transform: translate(100%, -100%);
-  background-image: url("../image/banner/ic-highlight-rocket-lg-.svg");
-  background-position: center center;
+  background: url("../image/banner/ic-highlight-rocket-lg-.svg") center center;
 }
-@media (max-width: 1280px) {
-  #banner .container .enter_card:active::after {
+@media (max-width: 1023px) {
+  #banner .container .enter_card:active::after, #banner .container .enter_card.active::after {
     right: auto;
     left: 0;
     transform: translate(-50%, -50%);
     background-image: url("../image/banner/ic-highlight-rocket-sm-.svg");
   }
-}
-#banner .container .enter_card:target {
-  margin-top: 100px;
 }
 #banner .container .enter_card .card_container {
   display: flex;
@@ -203,7 +234,7 @@ main {
   align-items: center;
   filter: opacity(0.5);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container {
     height: 100%;
     flex-direction: row;
@@ -211,12 +242,12 @@ main {
   }
 }
 #banner .container .enter_card .card_container .card_title {
-  margin-top: -36px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: -36px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .card_title {
     display: flex;
     flex-direction: row;
@@ -232,29 +263,29 @@ main {
   line-height: normal;
   height: 72px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .card_title .card_title_chinese {
     font-size: 32px;
     height: auto;
   }
 }
 #banner .container .enter_card .card_container .card_title .card_title_eng {
-  color: #9A9A9A;
+  color: #9a9a9a;
   font-size: 24px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .card_title .card_title_eng {
     width: 100%;
     margin-top: 8px;
     font-size: 20px;
   }
 }
-#banner .container .enter_card .card_container .card_title img {
+#banner .container .enter_card .card_container .card_title .card_img {
   width: 124px;
   margin-top: 24px;
 }
-@media (max-width: 1280px) {
-  #banner .container .enter_card .card_container .card_title img {
+@media (max-width: 1023px) {
+  #banner .container .enter_card .card_container .card_title .card_img {
     width: 48px;
     order: -1;
     margin: 0 8px 0 0;
@@ -266,7 +297,7 @@ main {
   align-items: center;
   margin-top: 16px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .card_container .hashtag {
     display: none;
   }
@@ -274,40 +305,33 @@ main {
 #banner .container .enter_card .card_container .hashtag p {
   line-height: 35px;
 }
-#banner .container .enter_card .enter_btn_lg {
-  height: 126px;
+#banner .container .enter_card .enter_btn {
   position: absolute;
   z-index: 1;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 44px);
-  filter: opacity(0.5);
+  width: 120px;
+  height: 126px;
+  background: url("../image/banner/banner-btn-rocket-lg.svg") no-repeat center center;
+  filter: opacity(0.8);
 }
-@media (max-width: 1280px) {
-  #banner .container .enter_card .enter_btn_lg {
-    display: none;
-  }
-}
-#banner .container .enter_card .enter_btn_sm {
-  display: none;
-  width: 60px;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  transform: translate(50%, 36px);
-  filter: opacity(0.5);
-}
-@media (max-width: 1280px) {
-  #banner .container .enter_card .enter_btn_sm {
-    display: block;
+@media (max-width: 1023px) {
+  #banner .container .enter_card .enter_btn {
+    width: 60px;
+    height: 60px;
+    bottom: 50%;
+    left: auto;
+    right: 0;
+    transform: translate(50%, 50%);
+    background: url("../image/banner/banner-btn-rocket-sm.svg") no-repeat center center;
   }
 }
 #banner .container .enter_card .shape {
   width: 120px;
   height: 120px;
   border-radius: 999px;
-  background-color: #BFC9F0;
+  background-color: #bfc9f0;
   position: absolute;
   z-index: -1;
   bottom: 0;
@@ -315,7 +339,7 @@ main {
   transform: translate(-50%, 50%);
   filter: opacity(0.5);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   #banner .container .enter_card .shape {
     width: 80px;
     height: 80px;
@@ -326,16 +350,24 @@ main {
   }
 }
 #banner .container .enter_card.space .shape {
-  background-color: #EEE5FF;
+  background-color: #eee5ff;
 }
-#banner .container .enter_card.space:active {
-  box-shadow: 8px 8px 0 #EEE5FF;
+#banner .container .enter_card.space .enter_btn {
+  background-image: url("../image/banner/banner-btn-coworking-lg.svg");
 }
-#banner .container .enter_card.space:active::after {
+@media (max-width: 1023px) {
+  #banner .container .enter_card.space .enter_btn {
+    background-image: url("../image/banner/banner-btn-coworking-sm.svg");
+  }
+}
+#banner .container .enter_card.space:active, #banner .container .enter_card.space.active {
+  box-shadow: 8px 8px 0 #eee5ff;
+}
+#banner .container .enter_card.space:active::after, #banner .container .enter_card.space.active::after {
   background-image: url("../image/banner/ic-highlight-coworking-lg-.svg");
 }
-@media (max-width: 1280px) {
-  #banner .container .enter_card.space:active::after {
+@media (max-width: 1023px) {
+  #banner .container .enter_card.space:active::after, #banner .container .enter_card.space.active::after {
     background-image: url("../image/banner/ic-highlight-coworking-sm-.svg");
   }
 }
@@ -349,22 +381,24 @@ main {
   height: 96px;
   justify-content: center;
   align-items: center;
-  background-color: #E6EBFF;
+  background-color: #e6ebff;
   border-radius: 16px;
   border: 2px solid #363636;
   margin-top: 32px;
   transform: translate(0, 50%);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   .button_go {
     max-width: 332px;
     margin-top: -16px;
   }
 }
-.button_go span {
-  font-size: 32px;
+.button_go h3 {
+  display: flex;
+  align-items: center;
+  line-height: normal;
 }
-.button_go img {
+.button_go .button_img {
   width: 0;
   opacity: 0;
   transition: 0.5s;
@@ -381,7 +415,7 @@ footer {
   align-items: center;
   padding: 36px 0;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   footer {
     flex-direction: column;
   }
@@ -394,7 +428,7 @@ footer p:first-child::after {
   content: "-";
   margin: 0 8px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   footer p:first-child::after {
     display: none;
   }
