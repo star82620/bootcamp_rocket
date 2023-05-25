@@ -95,6 +95,7 @@
         margin-top: 32px;
         padding: 36px;
         border-radius: 24px;
+        list-style: none;
 
         @include mobile() {
           width: 332px;

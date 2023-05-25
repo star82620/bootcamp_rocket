@@ -303,8 +303,9 @@ main {
     display: none;
   }
 }
-#banner .container .enter_card .card_container .hashtag p {
+#banner .container .enter_card .card_container .hashtag li {
   line-height: 35px;
+  list-style: none;
 }
 #banner .container .enter_card .enter_btn {
   position: absolute;
@@ -539,6 +540,7 @@ footer p:first-child::after {
   margin-top: 32px;
   padding: 36px;
   border-radius: 24px;
+  list-style: none;
 }
 @media (max-width: 1023px) {
   #about_rocket .container .card_container .career_card {
