@@ -13,7 +13,7 @@
   border-radius: 40px;
 
   &:target {
-    padding-top: 64px;
+    scroll-margin-top: 64px;
   }
 
   @include large_desktop() {
@@ -30,23 +30,24 @@
     @include w-1296();
     padding-top: 60px;
     padding-bottom: 60px;
+    gap: 32px;
 
     @include mobile() {
-      max-width: 332px;
       flex-direction: column;
+      gap: 24px;
       padding-top: 36px;
       padding-bottom: 36px;
+      max-width: 332px;
     }
 
-    .what_is {
+    .summary {
       width: 526px;
 
       @include mobile() {
         width: 100%;
-        margin-bottom: 24px;
       }
 
-      .title_eng {
+      .title_en {
         font-size: $font-size-body-20;
 
         @include mobile() {
@@ -54,7 +55,7 @@
         }
       }
 
-      .title_eng ~ p {
+      .title_en ~ p {
         margin-top: 40px;
 
         @include mobile() {
@@ -146,7 +147,7 @@
           }
         }
 
-        .eng_title {
+        .title_en {
           color: $neutral-gray-500;
           font-size: $font-size-body-24;
 
@@ -214,50 +215,64 @@
 }
 
 #success_case {
+  max-width: 1440px;
   width: 100%;
-  // padding-left: 40px;
-  // padding-right: 40px; //變版時會擠壓到，再想想
-
-  @include mobile() {
-    // padding-left: 40px;
-    // padding-right: 0px;
-  }
+  margin: 0 auto;
 
   .container {
-    @include w-1296();
+    display: flex;
+    justify-content: space-between;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
+    margin: 0 auto;
     padding-top: 92px;
     padding-bottom: 120px;
+    width: 100%;
 
     @include mobile() {
       padding-top: 48px;
       padding-bottom: 92px;
     }
 
-    .case_card_container {
+    .case_card_container_outside {
       width: 100%;
       overflow-x: scroll;
       @include scrollbar_none();
+      margin: 0 auto;
+      margin-top: 28px;
 
-      div {
+      @include mobile() {
+        margin-top: 16px;
+      }
+
+      ul {
         width: 1296px;
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin: 0 72px;
 
         @include mobile() {
-          padding-left: 48px;
+          width: 1032px;
+          margin: 0 48px;
         }
       }
 
-      img {
+      li {
+        width: 306px;
         height: 200px;
         border-radius: 12px;
-        margin-top: 28px;
+        list-style: none;
 
         @include mobile() {
-          margin-top: 16px;
+          width: 240px;
+          height: 160px;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
         }
       }
     }
@@ -527,17 +542,22 @@
         width: 100%;
 
         .coach_card_container_outside {
+          width: 100%;
           overflow-x: scroll;
           overflow-y: visible;
           @include scrollbar_none();
 
-          .coach_card_container {
+          .coach_card_container_inside {
             max-width: 1412px;
             display: flex;
-            justify-content: space-between;
+            justify-content: start;
+            gap: 24px;
 
             @include mobile() {
-              margin-top: 28px;
+              width: 1507px;
+              gap: 28px;
+              margin: 0 48px;
+              margin-top: 12px;
             }
 
             .coach_card {
@@ -562,10 +582,6 @@
               @include mobile() {
                 width: 332px;
                 height: 200px;
-
-                &:first-child ~ .coach_card {
-                  margin-left: 28px;
-                }
               }
 
               img {
@@ -639,21 +655,17 @@
     flex-direction: column;
     padding-top: 128px;
     padding-bottom: 124px;
+    gap: 60px;
 
     @include mobile() {
       max-width: 332px;
       width: 100%;
       padding-top: 92px;
       padding-bottom: 76px;
+      gap: 48px;
     }
 
     section {
-      margin-bottom: 60px;
-
-      @include mobile() {
-        margin-bottom: 48px;
-      }
-
       li {
         font-size: $font-size-body-16;
         font-weight: 500;
@@ -708,38 +720,43 @@
       margin-bottom: 16px;
     }
 
-    h4 {
+    h2 {
       margin-top: -16px;
       margin-left: 72px;
+      font-size: 32px;
 
       @include mobile() {
         margin-left: 48px;
+        font-size: 24px;
       }
     }
 
     .support_card_container_outside {
+      margin-top: 32px;
       width: 100%;
       overflow-x: scroll;
       @include scrollbar_none();
+
+      @include mobile() {
+        margin-top: 16px;
+      }
     }
 
     .support_card_container {
-      margin-top: 32px;
-      padding: 0 72px;
+      width: 1516px;
+      margin: 0 72px;
       display: flex;
-      justify-content: flex-start;
+      justify-content: start;
+      gap: 24px;
 
       @include mobile() {
-        padding: 0 48px;
-        margin-top: 16px;
+        width: 1212px;
+        margin: 0 48px;
+        gap: 20px;
       }
 
       .support_card_item {
-        margin-left: 24px;
-
-        &:first-child {
-          margin-left: 0;
-        }
+        list-style: none;
 
         .support_img {
           width: 196px;
@@ -749,6 +766,11 @@
           display: flex;
           justify-content: center;
           align-items: center;
+
+          @include mobile() {
+            width: 156px;
+            height: 120px;
+          }
 
           img {
             height: auto;

@@ -11,7 +11,7 @@
       href="./image/banner/banner-logo-rocket-lg.svg"
     />
     <link rel="stylesheet" href="./scss/bootcamp_rocket.css" />
-    <script src="./javascript/bootcamp_rocket.js" defer></script>
+    <!-- <script src="./javascript/bootcamp_rocket.js" defer></script> -->
     <title>Bootcamp Rocket</title>
   </head>
   <body>
@@ -45,8 +45,8 @@
           <a class="enter_card rocket active" href="#about_rocket">
             <div class="card_container">
               <div class="card_title">
-                <h2 class="card_title_chinese">火箭隊</h2>
-                <p class="card_title_eng">Bootcamp Rocket</p>
+                <h2 class="card_title_tw">火箭隊</h2>
+                <p class="card_title_en">Bootcamp Rocket</p>
                 <img
                   class="card_img"
                   src="./image/banner/banner-logo-rocket-lg.svg"
@@ -66,8 +66,8 @@
           <a href="./coworking_space.html" class="enter_card space">
             <div class="card_container">
               <div class="card_title">
-                <h2 class="card_title_chinese">共同空間</h2>
-                <p class="card_title_eng">Co-working Space</p>
+                <h2 class="card_title_tw">共同空間</h2>
+                <p class="card_title_en">Co-working Space</p>
                 <img
                   class="card_img"
                   src="./image/banner/banner-logo-coworking-lg.svg"
@@ -87,9 +87,9 @@
       </div>
       <div id="about_rocket">
         <div class="container">
-          <div class="what_is">
-            <p class="title_eng">About Rocket</p>
-            <h1 class="title_chinese">什麼是火箭隊</h1>
+          <div class="summary">
+            <p class="title_en">About Rocket</p>
+            <h1 class="title_tw">什麼是火箭隊</h1>
             <p class="description">
               火箭隊位於高雄的工程師培訓營，針對市場急需的前端、後端工程師與 UI
               設計師職缺而設。為期<span class="bold_style"
@@ -97,7 +97,7 @@
               >
               學員全程參與，<span class="bold_style">僅需支付場地費。</span>
             </p>
-            <p class="description">
+            <p class="description" id="scrolltest">
               火箭隊培育具備問題解決能力的專業人才，滿足企業需求。透過教練的觀察與協助，學員將建立階段性目標，確保技能成長。加入火箭隊，您將獲得實戰經驗，迅速融入職場，並滿足市場對高品質工程師的渴求。
             </p>
           </div>
@@ -113,7 +113,7 @@
                       <li>JavaScript</li>
                     </ul>
                   </div>
-                  <p class="eng_title">Front-end engineer</p>
+                  <p class="title_en">Front-end engineer</p>
                 </div>
                 <div class="career_img">
                   <img
@@ -131,7 +131,7 @@
                       <li>Net</li>
                     </ul>
                   </div>
-                  <p class="eng_title">Back-end engineer</p>
+                  <p class="title_en">Back-end engineer</p>
                 </div>
                 <div class="career_img">
                   <img
@@ -150,7 +150,7 @@
                       <li>css</li>
                     </ul>
                   </div>
-                  <p class="eng_title">UI designer</p>
+                  <p class="title_en">UI designer</p>
                 </div>
                 <div class="career_img">
                   <img
@@ -166,19 +166,33 @@
       <div id="success_case">
         <div class="container">
           <h2>成功案例</h2>
-          <div class="case_card_container">
-            <div>
-              <img src="./image/success_case/case1.png" alt="case1" />
-              <img src="./image/success_case/case2.png" alt="case2" />
-              <img src="./image/success_case/case3.png" alt="case3" />
-              <img src="./image/success_case/case4.png" alt="case4" />
-            </div>
-            <div>
-              <img src="./image/success_case/case5.png" alt="case5" />
-              <img src="./image/success_case/case6.png" alt="case6" />
-              <img src="./image/success_case/case7.png" alt="case7" />
-              <img src="./image/success_case/case8.png" alt="case8" />
-            </div>
+          <div class="case_card_container_outside">
+            <ul class="case_card_container">
+              <li>
+                <img src="./image/success_case/case1.png" alt="case1" />
+              </li>
+              <li>
+                <img src="./image/success_case/case2.png" alt="case2" />
+              </li>
+              <li>
+                <img src="./image/success_case/case3.png" alt="case3" />
+              </li>
+              <li>
+                <img src="./image/success_case/case4.png" alt="case4" />
+              </li>
+              <li>
+                <img src="./image/success_case/case5.png" alt="case5" />
+              </li>
+              <li>
+                <img src="./image/success_case/case6.png" alt="case6" />
+              </li>
+              <li>
+                <img src="./image/success_case/case7.png" alt="case7" />
+              </li>
+              <li>
+                <img src="./image/success_case/case8.png" alt="case8" />
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -328,40 +342,40 @@
             <h3>教練團</h3>
             <div class="coach_container">
               <div class="coach_card_container_outside">
-                <div class="coach_card_container">
-                  <div class="coach_card active" data-coach="weijie">
+                <ul class="coach_card_container_inside">
+                  <li class="coach_card active" data-coach="weijie">
                     <img
                       class="coach_img"
                       src="./image/training/coach-weijie-2x.png"
                       alt="coach-weijie-2x"
                     />
                     <div class="coach_name">廖洧杰</div>
-                  </div>
-                  <div class="coach_card" data-coach="yinmin">
+                  </li>
+                  <li class="coach_card" data-coach="yinmin">
                     <img
                       class="coach_img"
                       src="./image/training/coach-yinmin-2x.png"
                       alt="coach-yinmin-2x"
                     />
                     <div class="coach_name">穎旻</div>
-                  </div>
-                  <div class="coach_card" data-coach="justin">
+                  </li>
+                  <li class="coach_card" data-coach="justin">
                     <img
                       class="coach_img"
                       src="./image/training/coach-justin-2x.png"
                       alt="coach-justin-2x"
                     />
                     <div class="coach_name">賈斯汀</div>
-                  </div>
-                  <div class="coach_card" data-coach="casper">
+                  </li>
+                  <li class="coach_card" data-coach="casper">
                     <img
                       class="coach_img"
                       src="./image/training/coach-casper-2x.png"
                       alt="coach-casper-2x"
                     />
                     <div class="coach_name">卡斯伯</div>
-                  </div>
-                </div>
+                  </li>
+                </ul>
               </div>
               <section class="coach_description">
                 <h5>前端教練 | 廖洧杰</h5>
@@ -527,10 +541,10 @@
       </div>
       <div id="support">
         <div class="container">
-          <h4>主辦、協辦單位</h4>
+          <h2>主辦、協辦單位</h2>
           <div class="support_card_container_outside">
-            <div class="support_card_container">
-              <div class="support_card_item">
+            <ul class="support_card_container">
+              <li class="support_card_item">
                 <div class="support_img">
                   <img
                     class="rocket"
@@ -542,8 +556,8 @@
                   <p>主辦單位</p>
                   <p>火箭隊</p>
                 </div>
-              </div>
-              <div class="support_card_item">
+              </li>
+              <li class="support_card_item">
                 <div class="support_img">
                   <img
                     class="hexschool"
@@ -555,8 +569,8 @@
                   <p>協辦單位</p>
                   <p>六角學院</p>
                 </div>
-              </div>
-              <div class="support_card_item">
+              </li>
+              <li class="support_card_item">
                 <div class="support_img">
                   <img
                     class="goodidea"
@@ -568,8 +582,8 @@
                   <p>協辦單位</p>
                   <p>好想工作室</p>
                 </div>
-              </div>
-              <div class="support_card_item">
+              </li>
+              <li class="support_card_item">
                 <div class="support_img">
                   <img
                     class="kdan"
@@ -581,8 +595,8 @@
                   <p>合作招募廠商</p>
                   <p>凱鈿科技</p>
                 </div>
-              </div>
-              <div class="support_card_item">
+              </li>
+              <li class="support_card_item">
                 <div class="support_img">
                   <img
                     class="titan"
@@ -594,8 +608,8 @@
                   <p>合作招募廠商</p>
                   <p>鈦坦科技</p>
                 </div>
-              </div>
-              <div class="support_card_item">
+              </li>
+              <li class="support_card_item">
                 <div class="support_img">
                   <img
                     class="skw"
@@ -607,8 +621,8 @@
                   <p>合作招募廠商</p>
                   <p>坂和企業</p>
                 </div>
-              </div>
-              <div class="support_card_item">
+              </li>
+              <li class="support_card_item">
                 <div class="support_img">
                   <img
                     class="wistron"
@@ -620,8 +634,8 @@
                   <p>合作招募廠商</p>
                   <p>緯創資通</p>
                 </div>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
