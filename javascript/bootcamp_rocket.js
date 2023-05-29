@@ -1,13 +1,9 @@
-// 畫面滾動
-const aboutRocket = document.querySelector();
-
 // 教練卡片
 function changeCoach() {
-  const cardContainer = document.querySelector(".coach_card_container");
+  const cardContainer = document.querySelector(".coach_card_container_inside");
   const coachCard = [...cardContainer.children];
   const coachDes = document.querySelector(".coach_description");
 
-  // h5可能要重新定義*
   const coachWeijie = `<h5>前端教練 | 廖洧杰</h5>
         <ul>
             <li>
@@ -104,11 +100,11 @@ function changeCoach() {
       item.classList.toggle("active", isActiveCoach);
     });
 
-    //如果是指定教練，給 des .active，如果不是就移除 .active
-    // desContent.forEach((item) => {
-    //     const isActiveCoach = item.dataset.coach === coachName;
-    //     item.classList.toggle("active", isActiveCoach);
-    // });
+    // 如果是指定教練，給 des .active，如果不是就移除 .active
+    desContent.forEach((item) => {
+      const isActiveCoach = item.dataset.coach === coachName;
+      item.classList.toggle("active", isActiveCoach);
+    });
   });
 }
 

@@ -251,7 +251,7 @@
         width: 1296px;
         display: flex;
         flex-wrap: wrap;
-        gap: 24px;
+        gap: 28px 24px;
         margin: 0 72px;
 
         @include mobile() {
@@ -427,6 +427,7 @@
           background-color: #fff;
           line-height: normal;
           font-size: $font-size-body-24;
+          outline: none;
 
           @include mobile() {
             margin-left: -150px;

@@ -697,7 +697,7 @@ footer p:first-child::after {
   width: 1296px;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 28px 24px;
   margin: 0 72px;
 }
 @media (max-width: 1023px) {
@@ -862,6 +862,7 @@ footer p:first-child::after {
   background-color: #fff;
   line-height: normal;
   font-size: 24px;
+  outline: none;
 }
 @media (max-width: 1023px) {
   #training .container .career_card_container .career_card h5 {
