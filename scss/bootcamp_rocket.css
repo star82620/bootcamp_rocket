@@ -293,9 +293,7 @@ main {
   }
 }
 #banner .container .enter_card .card_container .hashtag {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   margin-top: 16px;
 }
 @media (max-width: 1023px) {
@@ -532,7 +530,6 @@ footer p:first-child::after {
 }
 #about_rocket .container .card_container .career_card {
   width: 636px;
-  height: 280px;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -545,7 +542,6 @@ footer p:first-child::after {
 @media (max-width: 1023px) {
   #about_rocket .container .card_container .career_card {
     width: 332px;
-    height: 348px;
     flex-direction: column;
     align-items: center;
     height: auto;
@@ -597,10 +593,12 @@ footer p:first-child::after {
 #about_rocket .container .card_container .career_card .title_en {
   color: #9a9a9a;
   font-size: 24px;
+  margin-top: 72px;
 }
 @media (max-width: 1023px) {
   #about_rocket .container .card_container .career_card .title_en {
     font-size: 20px;
+    margin-top: 12px;
   }
 }
 #about_rocket .container .card_container .career_card .career_img {
@@ -693,34 +691,34 @@ footer p:first-child::after {
     margin-top: 16px;
   }
 }
-#success_case .container .case_card_container_outside ul {
-  width: 1296px;
+#success_case .container .case_card_container_outside .case_card_container {
+  width: 1871px;
   display: flex;
   flex-wrap: wrap;
   gap: 28px 24px;
   margin: 0 72px;
 }
 @media (max-width: 1023px) {
-  #success_case .container .case_card_container_outside ul {
-    width: 1032px;
+  #success_case .container .case_card_container_outside .case_card_container {
+    width: 1521px;
     margin: 0 48px;
   }
 }
 #success_case .container .case_card_container_outside li {
-  width: 306px;
+  width: 355px;
   height: 200px;
-  border-radius: 12px;
   list-style: none;
 }
 @media (max-width: 1023px) {
   #success_case .container .case_card_container_outside li {
-    width: 240px;
+    width: 285px;
     height: 160px;
   }
 }
 #success_case .container .case_card_container_outside li img {
   width: 100%;
   height: auto;
+  border-radius: 12px;
 }
 
 #training {
@@ -851,7 +849,7 @@ footer p:first-child::after {
     align-items: center;
   }
 }
-#training .container .career_card_container .career_card h5 {
+#training .container .career_card_container .career_card h3 {
   display: inline-block;
   margin-top: -32px;
   margin-bottom: 28px;
@@ -865,7 +863,7 @@ footer p:first-child::after {
   outline: none;
 }
 @media (max-width: 1023px) {
-  #training .container .career_card_container .career_card h5 {
+  #training .container .career_card_container .career_card h3 {
     margin-left: -150px;
     margin-bottom: 24px;
     font-size: 20px;
@@ -912,14 +910,14 @@ footer p:first-child::after {
 #training .container .career_card_container .career_card .card_content_container .card_content section p {
   font-weight: 400;
 }
-#training .container .career_card_container .career_card .card_content_container .card_content section h6 {
+#training .container .career_card_container .career_card .card_content_container .card_content section h4 {
   display: inline-block;
   margin-bottom: 16px;
   border-bottom: 3px solid #363636;
   font-size: 20px;
 }
 @media (max-width: 1023px) {
-  #training .container .career_card_container .career_card .card_content_container .card_content section h6 {
+  #training .container .career_card_container .career_card .card_content_container .card_content section h4 {
     font-size: 18px;
   }
 }
@@ -1120,13 +1118,14 @@ footer p:first-child::after {
   width: 24px;
   margin-right: 20px;
 }
-#faq .container section .question_item li {
+#faq .container section .question_item .question_item_Q,
+#faq .container section .question_item .question_item_A {
   max-width: 761px;
   width: 100%;
 }
-#faq .container section .question_item li:first-child {
-  font-weight: 700;
-  margin-bottom: 8px;
+#faq .container section .question_item .question_item_A {
+  font-weight: 400;
+  margin-top: 8px;
 }
 
 #support {

@@ -87,7 +87,7 @@
 
       .career_card {
         width: 636px;
-        height: 280px;
+        // height: 280px;
         background-color: #fff;
         display: flex;
         justify-content: space-between;
@@ -99,7 +99,7 @@
 
         @include mobile() {
           width: 332px;
-          height: 348px;
+          // height: 348px;
           flex-direction: column;
           align-items: center;
           height: auto;
@@ -151,9 +151,11 @@
         .title_en {
           color: $neutral-gray-500;
           font-size: $font-size-body-24;
+          margin-top: 72px;
 
           @include mobile() {
             font-size: $font-size-body-20;
+            margin-top: 12px;
           }
         }
 
@@ -247,33 +249,34 @@
         margin-top: 16px;
       }
 
-      ul {
-        width: 1296px;
+      .case_card_container {
+        width: 1871px;
         display: flex;
         flex-wrap: wrap;
         gap: 28px 24px;
         margin: 0 72px;
 
         @include mobile() {
-          width: 1032px;
+          width: 1521px;
           margin: 0 48px;
         }
       }
 
       li {
-        width: 306px;
+        width: 355px;
         height: 200px;
-        border-radius: 12px;
         list-style: none;
+        // background-position: ;
 
         @include mobile() {
-          width: 240px;
+          width: 285px;
           height: 160px;
         }
 
         img {
           width: 100%;
           height: auto;
+          border-radius: 12px;
         }
       }
     }
@@ -416,7 +419,7 @@
           align-items: center;
         }
 
-        h5 {
+        h3 {
           display: inline-block;
           margin-top: -32px;
           margin-bottom: 28px;
@@ -471,7 +474,7 @@
                 font-weight: 400;
               }
 
-              h6 {
+              h4 {
                 display: inline-block;
                 margin-bottom: 16px;
                 border-bottom: 3px solid $neutral-gray-700;
@@ -694,14 +697,15 @@
           margin-right: 20px;
         }
 
-        li {
+        .question_item_Q,
+        .question_item_A {
           max-width: 761px;
           width: 100%;
         }
 
-        li:first-child {
-          font-weight: 700;
-          margin-bottom: 8px;
+        .question_item_A {
+          font-weight: 400;
+          margin-top: 8px;
         }
       }
     }
