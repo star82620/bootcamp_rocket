@@ -1,8 +1,8 @@
 @import "guildline";
 
-.mark_style {
+.rocket_page .mark_style {
   font-weight: 700;
-  background-color: $accent-yellow;
+  background-image: linear-gradient(transparent 50%, $accent-yellow 50%);
 }
 
 #about_rocket {
@@ -266,7 +266,6 @@
         width: 355px;
         height: 200px;
         list-style: none;
-        // background-position: ;
 
         @include mobile() {
           width: 285px;
@@ -627,7 +626,7 @@
             max-width: 332px;
           }
 
-          h5 {
+          h4 {
             font-size: $font-size-body-24;
 
             @include mobile() {

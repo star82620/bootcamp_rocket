@@ -477,6 +477,7 @@ main {
   border: 2px solid $neutral-gray-700;
   margin-top: 32px;
   transform: translate(0, 50%);
+  text-decoration: none;
 
   @include mobile() {
     max-width: 332px;

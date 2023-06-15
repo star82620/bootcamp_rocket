@@ -434,9 +434,9 @@ footer p:first-child::after {
   }
 }
 
-.mark_style {
+.rocket_page .mark_style {
   font-weight: 700;
-  background-color: #ffeea3;
+  background-image: linear-gradient(transparent 50%, #ffeea3 50%);
 }
 
 #about_rocket {
@@ -1057,11 +1057,11 @@ footer p:first-child::after {
     max-width: 332px;
   }
 }
-#training .container .coach .coach_container .coach_description h5 {
+#training .container .coach .coach_container .coach_description h4 {
   font-size: 24px;
 }
 @media (max-width: 1023px) {
-  #training .container .coach .coach_container .coach_description h5 {
+  #training .container .coach .coach_container .coach_description h4 {
     font-size: 20px;
   }
 }
