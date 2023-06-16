@@ -1,0 +1,226 @@
+#banner {
+  background: url("../image/banner/banner-bg.png") repeat top center;
+  padding: 0 20px 0;
+}
+@media (max-width: 767px) {
+  #banner {
+    padding: 0 12px 0;
+  }
+}
+#banner a {
+  text-decoration: none;
+}
+#banner .container {
+  max-width: 1076px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 127px;
+  padding-bottom: 182px;
+}
+@media (max-width: 767px) {
+  #banner .container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 88px;
+    height: 462px;
+  }
+}
+#banner .container .deco_cross {
+  font-size: 48px;
+}
+@media (max-width: 767px) {
+  #banner .container .deco_cross {
+    display: none;
+  }
+}
+#banner .container .enter_card {
+  display: block;
+  position: relative;
+  width: 440px;
+  height: 448px;
+  border: 2px solid #e0e0e0;
+  border-radius: 24px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+@media (max-width: 767px) {
+  #banner .container .enter_card {
+    width: 294px;
+    height: 134px;
+    margin-left: -32px;
+    transition: 0s;
+  }
+  #banner .container .enter_card:first-child {
+    margin-bottom: 46px;
+  }
+}
+#banner .container .enter_card:hover {
+  margin-top: -16px;
+}
+#banner .container .enter_card:hover .card_container,
+#banner .container .enter_card:hover .shape,
+#banner .container .enter_card:hover .enter_btn {
+  filter: opacity(1);
+}
+@media (max-width: 767px) {
+  #banner .container .enter_card:hover {
+    margin-top: 0;
+  }
+}
+#banner .container .enter_card:active, #banner .container .enter_card.active {
+  margin-top: 0;
+  box-shadow: 8px 8px 0 #bfc9f0;
+  transition: 0s;
+}
+#banner .container .enter_card:active .card_container,
+#banner .container .enter_card:active .shape,
+#banner .container .enter_card:active .enter_btn, #banner .container .enter_card.active .card_container,
+#banner .container .enter_card.active .shape,
+#banner .container .enter_card.active .enter_btn {
+  filter: opacity(1);
+}
+#banner .container .enter_card:active::after, #banner .container .enter_card.active::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 42px;
+  width: 42px;
+  transform: translate(100%, -100%);
+  background: url("../image/banner/ic-highlight-rocket-lg-.png") center center;
+}
+@media (max-width: 767px) {
+  #banner .container .enter_card:active::after, #banner .container .enter_card.active::after {
+    right: auto;
+    left: 0;
+    transform: translate(-50%, -50%);
+    background-image: url("../image/banner/ic-highlight-rocket-sm-.png");
+  }
+}
+#banner .container .enter_card .card_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  filter: opacity(0.5);
+}
+@media (max-width: 767px) {
+  #banner .container .enter_card .card_container {
+    height: 100%;
+    flex-direction: row;
+    margin-right: -28px;
+  }
+}
+#banner .container .enter_card .card_container .card_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -36px;
+}
+@media (max-width: 767px) {
+  #banner .container .enter_card .card_container .card_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+    padding: 24px 0 24px 24px;
+  }
+}
+#banner .container .enter_card .card_container .card_title .card_title_tw {
+  font-size: 48px;
+  line-height: normal;
+  height: 72px;
+}
+@media (max-width: 767px) {
+  #banner .container .enter_card .card_container .card_title .card_title_tw {
+    font-size: 32px;
+    height: auto;
+  }
+}
+#banner .container .enter_card .card_container .card_title .card_title_en {
+  color: #9a9a9a;
+  font-size: 24px;
+}
+@media (max-width: 767px) {
+  #banner .container .enter_card .card_container .card_title .card_title_en {
+    width: 100%;
+    margin-top: 8px;
+    font-size: 20px;
+  }
+}
+#banner .container .enter_card .card_container .card_title .card_img {
+  width: 124px;
+  margin-top: 24px;
+}
+@media (max-width: 767px) {
+  #banner .container .enter_card .card_container .card_title .card_img {
+    width: 48px;
+    order: -1;
+    margin: 0 8px 0 0;
+  }
+}
+#banner .container .enter_card .card_container .hashtag {
+  text-align: center;
+  margin-top: 16px;
+}
+@media (max-width: 767px) {
+  #banner .container .enter_card .card_container .hashtag {
+    display: none;
+  }
+}
+#banner .container .enter_card .card_container .hashtag li {
+  line-height: 35px;
+  list-style: none;
+}
+#banner .container .enter_card .enter_btn {
+  position: absolute;
+  z-index: 1;
+  bottom: -62px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 120px;
+  height: 143px;
+  background: url("../image/banner/banner-btn-rocket-lg.png") no-repeat center center;
+  filter: opacity(0.8);
+}
+@media (max-width: 767px) {
+  #banner .container .enter_card .enter_btn {
+    width: 72px;
+    height: 80px;
+    bottom: 50%;
+    left: auto;
+    right: -4px;
+    transform: translate(50%, 50%);
+    background: url("../image/banner/banner-btn-rocket-sm.png") no-repeat center center;
+  }
+}
+#banner .container .enter_card.space .shape {
+  background-color: #eee5ff;
+}
+#banner .container .enter_card.space .enter_btn {
+  background-image: url("../image/banner/banner-btn-coworking-lg.png");
+}
+@media (max-width: 767px) {
+  #banner .container .enter_card.space .enter_btn {
+    background-image: url("../image/banner/banner-btn-coworking-sm.png");
+  }
+}
+#banner .container .enter_card.space:active, #banner .container .enter_card.space.active {
+  box-shadow: 8px 8px 0 #eee5ff;
+}
+#banner .container .enter_card.space:active::after, #banner .container .enter_card.space.active::after {
+  background-image: url("../image/banner/ic-highlight-coworking-lg-.png");
+}
+@media (max-width: 767px) {
+  #banner .container .enter_card.space:active::after, #banner .container .enter_card.space.active::after {
+    background-image: url("../image/banner/ic-highlight-coworking-sm-.png");
+  }
+}/*# sourceMappingURL=banner.css.map */

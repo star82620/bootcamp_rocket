@@ -1,26 +1,6 @@
-@import "guildline";
-
 .cowork_page .mark_style {
   background-image: linear-gradient(transparent 50%, $accent-orange 50%);
 }
-
-// .mark_style {
-//   position: relative;
-//   z-index: 0;
-// }
-
-// .mark_style::after {
-//   content: "";
-//   display: inline-block;
-//   position: absolute;
-//   bottom: 4px;
-//   left: 0;
-//   z-index: -1;
-//   width: 100%;
-//   height: 50%;
-//   line-height: normal;
-//   background-color: $accent-orange;
-// }
 
 #banner {
   .container {

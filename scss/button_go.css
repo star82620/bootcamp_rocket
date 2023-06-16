@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap");
+.button_go {
+  max-width: 1076px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  height: 96px;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6ebff;
+  border-radius: 16px;
+  border: 2px solid #363636;
+  margin-top: 32px;
+  transform: translate(0, 50%);
+  text-decoration: none;
+}
+@media (max-width: 767px) {
+  .button_go {
+    max-width: 332px;
+    margin-top: -16px;
+  }
+}
+.button_go h3 {
+  display: flex;
+  align-items: center;
+  line-height: normal;
+}
+.button_go .button_img {
+  width: 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+.button_go:hover img {
+  width: 64px;
+  opacity: 1;
+  margin-left: 20px;
+}/*# sourceMappingURL=button_go.css.map */
