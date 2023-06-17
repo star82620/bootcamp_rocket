@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
   <head>
+    <title>Bootcamp Rocket</title>
+    <link
+      rel="icon"
+      type="image/svg"
+      href="./image/banner/banner-logo-rocket-lg.png"
+    />
+
+    <!-- meta og -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,14 +24,21 @@
       property="og:description"
       content="火箭隊位於高雄的工程師培訓營，針對市場急需的前端、後端工程師與 UI 設計師職缺而設。"
     />
+
+    <!-- import -->
+    <!-- swiper -->
     <link
-      rel="icon"
-      type="image/svg"
-      href="./image/banner/banner-logo-rocket-lg.png"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+      defer
+    ></script>
+
+    <!-- project -->
     <link rel="stylesheet" href="./scss/all.css" />
     <script src="./javascript/bootcamp_rocket.js" defer></script>
-    <title>Bootcamp Rocket</title>
   </head>
   <body>
     <div id="marquee">
@@ -52,7 +67,7 @@
     </div>
     <main class="rocket_page">
       <div id="banner">
-        <div class="container">
+        <div class="container_sm banner_container">
           <a class="enter_card rocket active" href="#about_rocket">
             <div class="card_container">
               <div class="card_title">
@@ -97,18 +112,18 @@
         </div>
       </div>
       <div id="about_rocket">
-        <div class="container">
+        <div class="container_lg about_container">
           <div class="summary">
-            <p class="title_en">About Rocket</p>
-            <h1 class="title_tw">什麼是火箭隊</h1>
-            <p class="description">
+            <p class="summary_title_en">About Rocket</p>
+            <h1 class="summary_title_tw">什麼是火箭隊</h1>
+            <p class="summary_description">
               火箭隊位於高雄的工程師培訓營，針對市場急需的前端、後端工程師與 UI
               設計師職缺而設。為期<span class="bold_style"
                 >七個月的免費課程，</span
               >
               學員全程參與，<span class="bold_style">僅需支付場地費。</span>
             </p>
-            <p class="description" id="scrolltest">
+            <p class="summary_description">
               火箭隊培育具備問題解決能力的專業人才，滿足企業需求。透過教練的觀察與協助，學員將建立階段性目標，確保技能成長。加入火箭隊，您將獲得實戰經驗，迅速融入職場，並滿足市場對高品質工程師的渴求。
             </p>
           </div>
@@ -175,64 +190,68 @@
         </div>
       </div>
       <div id="success_case">
-        <div class="container">
+        <div class="case_container">
           <h2>成功案例</h2>
           <div class="case_card_container_outside">
-            <ul class="case_card_container">
-              <li>
-                <img src="./image/success_case/rocket1.jpg" alt="rocket1" />
-              </li>
-              <li>
-                <img src="./image/success_case/rocket2.png" alt="rocket2" />
-              </li>
-              <li>
-                <img src="./image/success_case/rocket3.jpg" alt="rocket3" />
-              </li>
-              <li>
-                <img src="./image/success_case/rocket4.jpg" alt="rocket4" />
-              </li>
-              <li>
-                <img src="./image/success_case/rocket5.png" alt="rocket5" />
-              </li>
-              <li>
-                <img src="./image/success_case/rocket6.jpg" alt="rocketet6" />
-              </li>
-              <li>
-                <img src="./image/success_case/rocket7.jpg" alt="rocket7" />
-              </li>
-              <li>
-                <img src="./image/success_case/rocket8.jpg" alt="rocket8" />
-              </li>
-              <li>
-                <img src="./image/success_case/rocket9.png" alt="rocket9" />
-              </li>
-              <li>
-                <img src="./image/success_case/rocket10.png" alt="rocket10" />
-              </li>
-            </ul>
+            <div class="case_card_container swiper show_case">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <img src="./image/success_case/rocket1.jpg" alt="rocket1" />
+                </li>
+                <li class="swiper-slide">
+                  <img src="./image/success_case/rocket2.png" alt="rocket2" />
+                </li>
+                <li class="swiper-slide">
+                  <img src="./image/success_case/rocket3.jpg" alt="rocket3" />
+                </li>
+                <li class="swiper-slide">
+                  <img src="./image/success_case/rocket4.jpg" alt="rocket4" />
+                </li>
+                <li class="swiper-slide">
+                  <img src="./image/success_case/rocket5.png" alt="rocket5" />
+                </li>
+                <li class="swiper-slide">
+                  <img src="./image/success_case/rocket6.jpg" alt="rocketet6" />
+                </li>
+                <li class="swiper-slide">
+                  <img src="./image/success_case/rocket7.jpg" alt="rocket7" />
+                </li>
+                <li class="swiper-slide">
+                  <img src="./image/success_case/rocket8.jpg" alt="rocket8" />
+                </li>
+                <li class="swiper-slide">
+                  <img src="./image/success_case/rocket9.png" alt="rocket9" />
+                </li>
+                <li class="swiper-slide">
+                  <img src="./image/success_case/rocket10.png" alt="rocket10" />
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div id="training">
-        <div class="container">
+        <div class="training_container">
           <h2>關於培訓</h2>
-          <section class="new_batch">
+          <div class="new_batch">
             <p class="new_batch_title">近期梯次</p>
             <div class="new_batch_ticker">
-              <p>
+              <p class="new_batch_ticker_text">
                 第十三梯 (2023/5/8~2023/11/30) 、第十四梯 (2023/7/31~2024/2/28)
               </p>
-              <p>
+              <p class="new_batch_ticker_text">
                 第十三梯 (2023/5/8~2023/11/30) 、第十四梯 (2023/7/31~2024/2/28)
               </p>
             </div>
-          </section>
+          </div>
           <ul class="career_card_container">
             <li class="career_card">
-              <h3>前端工程師</h3>
               <div class="card_content_container">
+                <div class="career_card_title">
+                  <h3>前端工程師</h3>
+                </div>
                 <div class="card_content">
-                  <section>
+                  <div class="card_content_content">
                     <h4>關於前端</h4>
                     <p>
                       主要專精 JavaScript 前端 (65%)、後端 (35%)
@@ -241,8 +260,8 @@
                         >適合有一些 HTML、CSS、JS 基礎的學員報名</span
                       >。
                     </p>
-                  </section>
-                  <section>
+                  </div>
+                  <div class="card_content_content">
                     <h4>應徵門檻</h4>
                     <ol>
                       <li>
@@ -256,8 +275,8 @@
                         等知識，尚未熟練也沒關係。
                       </li>
                     </ol>
-                  </section>
-                  <section>
+                  </div>
+                  <div class="card_content_content">
                     <h4>你會學到</h4>
                     <ol>
                       <li>
@@ -276,7 +295,7 @@
                       </li>
                       <li>程式版控：Git、GitHub、Git Flow 工作流程</li>
                     </ol>
-                  </section>
+                  </div>
                 </div>
                 <div class="card_img">
                   <img
@@ -287,7 +306,9 @@
               </div>
             </li>
             <li class="career_card">
-              <h3>後端工程師</h3>
+              <div class="career_card_title">
+                <h3>後端工程師</h3>
+              </div>
               <div class="card_content_container">
                 <div class="card_img">
                   <img
@@ -296,7 +317,7 @@
                   />
                 </div>
                 <div class="card_content">
-                  <section>
+                  <div class="card_content_content">
                     <h4>關於後端</h4>
                     <p>
                       後端工程師組主要專注為後端開發，投入後端語言為
@@ -304,8 +325,8 @@
                         >C#、.Net，適合無程式背景的學員報名</span
                       >。
                     </p>
-                  </section>
-                  <section>
+                  </div>
+                  <div class="card_content_content">
                     <h4>你會學到</h4>
                     <ol>
                       <li>後端語言：C#</li>
@@ -315,15 +336,17 @@
                       </li>
                       <li>資料庫與雲端主機：MSSQL、Microsoft Azure</li>
                     </ol>
-                  </section>
+                  </div>
                 </div>
               </div>
             </li>
             <li class="career_card">
-              <h3>UI 設計師</h3>
+              <div class="career_card_title">
+                <h3>UI 設計師</h3>
+              </div>
               <div class="card_content_container">
                 <div class="card_content">
-                  <section>
+                  <div class="card_content_content">
                     <h4>關於前端</h4>
                     <p>
                       主要以網頁 UI 設計 50%、網頁前端 50% 的雙技能樹養成，<span
@@ -331,8 +354,8 @@
                         >適合具備視覺背景，操作過繪圖軟體尤佳，歡迎無工作經驗的學員報名</span
                       >。
                     </p>
-                  </section>
-                  <section>
+                  </div>
+                  <div class="card_content_content">
                     <h4>你會學到</h4>
                     <ol>
                       <li>
@@ -344,7 +367,7 @@
                       </li>
                       <li>網頁切版技能：HTML5、CSS、Bootstrap5</li>
                     </ol>
-                  </section>
+                  </div>
                 </div>
                 <div class="card_img">
                   <img
@@ -394,7 +417,7 @@
                   </li>
                 </ul>
               </div>
-              <section class="coach_description">
+              <section class="coach_description container_sm">
                 <h4>前端教練 | 廖洧杰</h4>
                 <ul>
                   <li>
@@ -430,23 +453,25 @@
               </section>
             </div>
           </section>
-          <a
-            class="button_go"
-            href="https://rocketcamp.kktix.cc/events/db3bef4a?fbclid=IwAR0PUgEbvphT6uU72MS95bFqDAeKdWh03PlFsefOPF3Z0NhhWn1n41me3Qc"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <h3 class="button_text">馬上報名！</h3>
-            <img
-              class="button_img"
-              src="./image/training/ic-go-rocket.png"
-              alt="ic-go-rocket"
-            />
-          </a>
+          <div class="button_go_container container_sm">
+            <a
+              class="button_go"
+              href="https://rocketcamp.kktix.cc/events/db3bef4a?fbclid=IwAR0PUgEbvphT6uU72MS95bFqDAeKdWh03PlFsefOPF3Z0NhhWn1n41me3Qc"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <h3 class="button_text">馬上報名！</h3>
+              <img
+                class="button_img"
+                src="./image/training/ic-go-rocket.png"
+                alt="ic-go-rocket"
+              />
+            </a>
+          </div>
         </div>
       </div>
       <div id="faq">
-        <div class="container">
+        <div class="container_xs faq_container">
           <section>
             <h3>培訓費用</h3>
             <ul class="question_container">
@@ -568,7 +593,7 @@
         </div>
       </div>
       <div id="support">
-        <div class="container">
+        <div class="support_container">
           <h2>主辦、協辦單位</h2>
           <div class="support_card_container_outside">
             <ul class="support_card_container">
@@ -672,5 +697,10 @@
       <p>Copyright © 2023</p>
       <p>Created by 六角學院 / 火箭隊培訓營</p>
     </footer>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
   </body>
 </html>

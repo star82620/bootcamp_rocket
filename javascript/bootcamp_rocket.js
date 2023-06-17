@@ -1,3 +1,21 @@
+// --- swiper ---
+const swiper = new Swiper(".show_case", {
+  // 畫面中要顯示幾張
+  slidesPerView: 4,
+  // 格線排列
+  grid: {
+    rows: 2,
+    // 排列方向
+    fill: "row",
+  },
+  // 幻燈片間距
+  spaceBetween: 24,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
 // 教練卡片
 function changeCoach() {
   const cardContainer = document.querySelector(".coach_card_container_inside");

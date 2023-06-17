@@ -75,4 +75,43 @@ main {
   margin-top: 64px;
   width: 100%;
   color: #363636;
-}/*# sourceMappingURL=common.css.map */
+}
+
+.container_lg {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+@media (max-width: 767px) {
+  .container_lg {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+.container_sm {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 12%;
+  padding-right: 12%;
+}
+@media (max-width: 767px) {
+  .container_sm {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+.container_xs {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+@media (max-width: 767px) {
+  .container_xs {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}

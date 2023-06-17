@@ -5,8 +5,6 @@
 
 #about_rocket {
   margin-top: -22px;
-  padding-left: 40px;
-  padding-right: 40px;
   background-color: #e6ebff;
   border-radius: 40px;
 }
@@ -18,83 +16,87 @@
     border-radius: 0;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   #about_rocket {
     margin-top: -28px;
-    padding-left: 12px;
-    padding-right: 12px;
     border-radius: 24px;
   }
 }
-#about_rocket .container {
-  max-width: 1296px;
-  width: 100%;
-  margin: 0 auto;
+#about_rocket .about_container {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   padding-top: 60px;
   padding-bottom: 60px;
   gap: 32px;
 }
-@media (max-width: 1023px) {
-  #about_rocket .container {
+@media (max-width: 1279px) {
+  #about_rocket .about_container {
     flex-direction: column;
     gap: 24px;
     padding-top: 36px;
     padding-bottom: 36px;
-    max-width: 332px;
   }
 }
-#about_rocket .container .summary {
-  width: 526px;
+#about_rocket .summary {
+  width: 40%;
 }
-@media (max-width: 1023px) {
-  #about_rocket .container .summary {
+@media (max-width: 1279px) {
+  #about_rocket .summary {
     width: 100%;
   }
 }
-#about_rocket .container .summary .title_en {
+#about_rocket .summary_title_en {
   font-size: 20px;
 }
-@media (max-width: 1023px) {
-  #about_rocket .container .summary .title_en {
+@media (max-width: 1279px) {
+  #about_rocket .summary_title_en {
     font-size: 16px;
   }
 }
-#about_rocket .container .summary .title_en ~ p {
+#about_rocket .summary_title_en ~ p {
   margin-top: 40px;
 }
-@media (max-width: 1023px) {
-  #about_rocket .container .summary .title_en ~ p {
+@media (max-width: 1279px) {
+  #about_rocket .summary_title_en ~ p {
     margin-top: 16px;
   }
 }
-#about_rocket .container .summary .description {
+#about_rocket .summary_description {
   font-size: 20px;
   font-weight: 500;
 }
-@media (max-width: 1023px) {
-  #about_rocket .container .summary .description {
+@media (max-width: 1279px) {
+  #about_rocket .summary_description {
     font-size: 16px;
   }
 }
-#about_rocket .container .card_container {
+#about_rocket .card_container_outside {
+  width: 50%;
+}
+@media (max-width: 1279px) {
+  #about_rocket .card_container_outside {
+    width: 100%;
+  }
+}
+#about_rocket .card_container {
+  width: 100%;
   height: 592px;
   overflow-y: scroll;
   overflow-x: visible;
 }
-#about_rocket .container .card_container::-webkit-scrollbar {
+#about_rocket .card_container::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-@media (max-width: 1023px) {
-  #about_rocket .container .card_container {
+@media (max-width: 1279px) {
+  #about_rocket .card_container {
     height: 100%;
     overflow: visible;
   }
 }
-#about_rocket .container .card_container .career_card {
-  width: 636px;
+#about_rocket .career_card {
+  width: 100%;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -104,39 +106,67 @@
   border-radius: 24px;
   list-style: none;
 }
-@media (max-width: 1023px) {
-  #about_rocket .container .card_container .career_card {
-    width: 332px;
+@media (max-width: 1279px) {
+  #about_rocket .career_card {
     flex-direction: column;
     align-items: center;
     height: auto;
     padding: 16px 20px;
   }
 }
-#about_rocket .container .card_container .career_card .career_text {
+#about_rocket .career_card:first-child {
+  margin-top: 0;
+}
+#about_rocket .career_card:first-child img {
+  margin-left: -51px;
+}
+@media (max-width: 1279px) {
+  #about_rocket .career_card:first-child img {
+    margin-top: -116px;
+    margin-left: 0px;
+  }
+}
+#about_rocket .career_card:nth-of-type(2) img {
+  margin-left: -63px;
+}
+@media (max-width: 1279px) {
+  #about_rocket .career_card:nth-of-type(2) img {
+    margin-top: -116px;
+    margin-left: 0px;
+  }
+}
+#about_rocket .career_card:nth-of-type(3) img {
+  margin-left: -59px;
+}
+@media (max-width: 1279px) {
+  #about_rocket .career_card:nth-of-type(3) img {
+    margin-top: -116px;
+    margin-left: 0px;
+  }
+}
+#about_rocket .career_text {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   height: 100%;
 }
-@media (max-width: 1023px) {
-  #about_rocket .container .card_container .career_card .career_text {
+@media (max-width: 1279px) {
+  #about_rocket .career_text {
     width: 100%;
     height: 120px;
   }
 }
-#about_rocket .container .card_container .career_card .career_text .skills {
+#about_rocket .skills {
   display: flex;
   margin-top: 12px;
 }
-@media (max-width: 1023px) {
-  #about_rocket .container .card_container .career_card .career_text .skills {
+@media (max-width: 1279px) {
+  #about_rocket .skills {
     margin-top: 8px;
   }
 }
-#about_rocket .container .card_container .career_card .career_text .skills li {
-  width: -moz-fit-content;
+#about_rocket .skills li {
   width: fit-content;
   padding: 8px 12px;
   margin-left: 12px;
@@ -147,26 +177,26 @@
   line-height: normal;
   font-size: 16px;
 }
-#about_rocket .container .card_container .career_card .career_text .skills li:first-child {
+#about_rocket .skills li:first-child {
   margin-left: 0;
 }
-@media (max-width: 1023px) {
-  #about_rocket .container .card_container .career_card .career_text .skills li {
+@media (max-width: 1279px) {
+  #about_rocket .skills li {
     font-size: 12px;
   }
 }
-#about_rocket .container .card_container .career_card .title_en {
+#about_rocket .title_en {
   color: #9a9a9a;
   font-size: 24px;
   margin-top: 72px;
 }
-@media (max-width: 1023px) {
-  #about_rocket .container .card_container .career_card .title_en {
+@media (max-width: 1279px) {
+  #about_rocket .title_en {
     font-size: 20px;
     margin-top: 12px;
   }
 }
-#about_rocket .container .card_container .career_card .career_img {
+#about_rocket .career_img {
   display: block;
   width: 169px;
   height: 208px;
@@ -176,8 +206,8 @@
   justify-content: start;
   align-items: center;
 }
-@media (max-width: 1023px) {
-  #about_rocket .container .card_container .career_card .career_img {
+@media (max-width: 1279px) {
+  #about_rocket .career_img {
     justify-content: center;
     width: 292px;
     height: 60px;
@@ -185,38 +215,8 @@
     margin-top: 136px;
   }
 }
-#about_rocket .container .card_container .career_card .career_img img {
+#about_rocket .career_img img {
   height: 160px;
-}
-#about_rocket .container .card_container .career_card:first-child img {
-  margin-left: -51px;
-}
-@media (max-width: 1023px) {
-  #about_rocket .container .card_container .career_card:first-child img {
-    margin-top: -116px;
-    margin-left: 0px;
-  }
-}
-#about_rocket .container .card_container .career_card:nth-of-type(2) img {
-  margin-left: -63px;
-}
-@media (max-width: 1023px) {
-  #about_rocket .container .card_container .career_card:nth-of-type(2) img {
-    margin-top: -116px;
-    margin-left: 0px;
-  }
-}
-#about_rocket .container .card_container .career_card:nth-of-type(3) img {
-  margin-left: -59px;
-}
-@media (max-width: 1023px) {
-  #about_rocket .container .card_container .career_card:nth-of-type(3) img {
-    margin-top: -116px;
-    margin-left: 0px;
-  }
-}
-#about_rocket .container .card_container .career_card:first-child {
-  margin-top: 0;
 }
 
 #success_case {
@@ -224,63 +224,51 @@
   width: 100%;
   margin: 0 auto;
 }
-#success_case .container {
+#success_case .case_container {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   padding-top: 92px;
   padding-bottom: 120px;
   width: 100%;
 }
 @media (max-width: 767px) {
-  #success_case .container {
+  #success_case .case_container {
     padding-top: 48px;
     padding-bottom: 92px;
   }
 }
-#success_case .container .case_card_container_outside {
+#success_case .case_card_container_outside {
   width: 100%;
+  height: 100%;
   overflow-x: scroll;
   margin: 0 auto;
   margin-top: 28px;
 }
-#success_case .container .case_card_container_outside::-webkit-scrollbar {
+#success_case .case_card_container_outside::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 @media (max-width: 767px) {
-  #success_case .container .case_card_container_outside {
+  #success_case .case_card_container_outside {
     margin-top: 16px;
   }
 }
-#success_case .container .case_card_container_outside .case_card_container {
-  width: 1871px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px 24px;
+#success_case .case_card_container {
+  width: 2000px;
   margin: 0 72px;
 }
 @media (max-width: 767px) {
-  #success_case .container .case_card_container_outside .case_card_container {
+  #success_case .case_card_container {
     width: 1521px;
     margin: 0 48px;
   }
 }
-#success_case .container .case_card_container_outside li {
-  width: 355px;
-  height: 200px;
+#success_case li {
   list-style: none;
 }
-@media (max-width: 767px) {
-  #success_case .container .case_card_container_outside li {
-    width: 285px;
-    height: 160px;
-  }
-}
-#success_case .container .case_card_container_outside li img {
+#success_case li img {
   width: 100%;
   height: auto;
   border-radius: 12px;
@@ -290,32 +278,28 @@
   background-color: #f8f9fd;
   font-size: 16px;
 }
-#training .container {
-  max-width: 1076px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+#training .training_container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 @media (max-width: 767px) {
-  #training .container {
-    max-width: 1281px;
+  #training .training_container {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
-#training .container h2 {
+#training .training_container h2 {
   margin-top: -28px;
 }
 @media (max-width: 767px) {
-  #training .container h2 {
+  #training .training_container h2 {
     margin-top: -20px;
   }
 }
-#training .container .new_batch {
-  max-width: 636px;
-  width: 100%;
+#training .new_batch {
+  width: 60%;
+  margin: 0;
   padding: 12px 20px;
   margin-top: 12px;
   border-radius: 50px;
@@ -324,15 +308,14 @@
   display: flex;
 }
 @media (max-width: 767px) {
-  #training .container .new_batch {
+  #training .new_batch {
     max-width: 332px;
     width: 100%;
     margin-top: 8px;
     font-size: 14px;
   }
 }
-#training .container .new_batch .new_batch_title {
-  width: -moz-fit-content;
+#training .new_batch_title {
   width: fit-content;
   padding: 5px 11px 5px 0;
   margin-right: 11px;
@@ -340,12 +323,13 @@
   line-height: normal;
   white-space: nowrap;
 }
-#training .container .new_batch .new_batch_ticker {
+#training .new_batch_ticker {
   padding: 5px 0;
   font-weight: 500;
+  overflow: hidden;
 }
 @media (max-width: 767px) {
-  #training .container .new_batch .new_batch_ticker {
+  #training .new_batch_ticker {
     min-width: 210px;
     width: 100%;
     white-space: nowrap;
@@ -353,23 +337,23 @@
     display: flex;
   }
 }
-#training .container .new_batch .new_batch_ticker p {
+#training .new_batch_ticker_text {
   font-weight: 500;
   line-height: normal;
   white-space: nowrap;
 }
-#training .container .new_batch .new_batch_ticker p:nth-child(2) {
+#training .new_batch_ticker_text:nth-child(2) {
   display: none;
 }
 @media (max-width: 767px) {
-  #training .container .new_batch .new_batch_ticker p {
+  #training .new_batch_ticker_text {
     height: 24px;
     white-space: nowrap;
   }
-  #training .container .new_batch .new_batch_ticker p:first-child {
+  #training .new_batch_ticker_text:first-child {
     animation: marquee_ticker_first 20s linear infinite;
   }
-  #training .container .new_batch .new_batch_ticker p:nth-child(2) {
+  #training .new_batch_ticker_text:nth-child(2) {
     display: block;
     animation: marquee_ticker_second 20s linear infinite;
     animation-delay: 10s;
@@ -392,32 +376,61 @@
     }
   }
 }
-#training .container .career_card_container {
-  width: 100%;
-}
-#training .container .career_card_container .career_card {
-  max-width: 1076px;
-  width: 100%;
-  border-radius: 16px;
-  border: 1px solid #f0f0f0;
-  background: #fff url("../image/training/training-bg.png");
-  padding: 0 48px 42px 48px;
-  margin-top: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
+#training .career_card_container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 12%;
+  padding-right: 12%;
 }
 @media (max-width: 767px) {
-  #training .container .career_card_container .career_card {
-    max-width: 1281px;
-    border-radius: 0;
-    align-items: center;
+  #training .career_card_container {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
-#training .container .career_card_container .career_card h3 {
-  display: inline-block;
+#training .career_card {
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 42px;
+  margin-top: 80px;
+  background: #fff url("../image/training/training-bg.png");
+  border-radius: 16px;
+  border: 1px solid #f0f0f0;
+  list-style: none;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  #training .career_card {
+    border-radius: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+#training .card_content_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  #training .card_content_container {
+    flex-direction: column;
+  }
+}
+#training .career_card_title {
+  align-self: flex-start;
   margin-top: -32px;
   margin-bottom: 28px;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  #training .career_card_title {
+    order: -10;
+    margin-bottom: 24px;
+  }
+}
+#training .career_card_title h3 {
+  display: inline-block;
   padding: 12px 40px;
   border: 2px solid #363636;
   border-radius: 12px;
@@ -428,90 +441,74 @@
   outline: none;
 }
 @media (max-width: 767px) {
-  #training .container .career_card_container .career_card h3 {
-    margin-left: -150px;
-    margin-bottom: 24px;
+  #training .career_card_title h3 {
     font-size: 20px;
   }
 }
-#training .container .career_card_container .career_card .card_content_container {
-  max-width: 1076px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+#training .card_content {
+  width: 60%;
 }
 @media (max-width: 767px) {
-  #training .container .career_card_container .career_card .card_content_container {
-    flex-direction: column;
-    max-width: 332px;
-  }
-}
-#training .container .career_card_container .career_card .card_content_container .card_content {
-  width: 618px;
-}
-@media (max-width: 767px) {
-  #training .container .career_card_container .career_card .card_content_container .card_content {
+  #training .card_content {
     width: 100%;
   }
 }
-#training .container .career_card_container .career_card .card_content_container .card_content section {
+#training .card_content_content {
   margin-top: 36px;
 }
 @media (max-width: 767px) {
-  #training .container .career_card_container .career_card .card_content_container .card_content section {
+  #training .card_content_content {
     margin-top: 24px;
   }
 }
-#training .container .career_card_container .career_card .card_content_container .card_content section:first-child {
+#training .card_content_content:first-child {
   margin-top: 0;
 }
 @media (max-width: 767px) {
-  #training .container .career_card_container .career_card .card_content_container .card_content section:first-child {
+  #training .card_content_content:first-child {
     margin-top: 24px;
   }
 }
-#training .container .career_card_container .career_card .card_content_container .card_content section p {
+#training .card_content_content p {
   font-weight: 400;
 }
-#training .container .career_card_container .career_card .card_content_container .card_content section h4 {
+#training .card_content_content h4 {
   display: inline-block;
   margin-bottom: 16px;
   border-bottom: 3px solid #363636;
   font-size: 20px;
 }
 @media (max-width: 767px) {
-  #training .container .career_card_container .career_card .card_content_container .card_content section h4 {
+  #training .card_content_content h4 {
     font-size: 18px;
   }
 }
-#training .container .career_card_container .career_card .card_content_container .card_content section .underline_style {
+#training .card_content_content .underline_style {
   font-weight: 500;
   text-decoration: underline;
 }
-#training .container .career_card_container .career_card .card_content_container .card_content section ol {
+#training .card_content_content ol {
   margin-left: 20px;
 }
-#training .container .career_card_container .career_card .card_content_container .card_content section ol li {
+#training .card_content_content ol li {
   font-weight: 400;
 }
-#training .container .career_card_container .career_card .card_content_container .card_content section ol li::marker {
+#training .card_content_content ol li::marker {
   font-family: "Noto Sans TC", sans-serif;
 }
-#training .container .career_card_container .career_card .card_content_container .card_img {
-  height: 280px;
+#training .card_img {
+  width: 30%;
 }
 @media (max-width: 767px) {
-  #training .container .career_card_container .career_card .card_content_container .card_img {
+  #training .card_img {
+    width: 50%;
     order: -1;
-    height: 200px;
   }
 }
-#training .container .career_card_container .career_card .card_content_container .card_img img {
-  height: 100%;
+#training .card_img img {
+  width: 100%;
 }
-#training .container .coach {
+#training .coach {
   width: 100%;
   margin-top: 64px;
   display: flex;
@@ -519,48 +516,50 @@
   align-items: center;
 }
 @media (max-width: 767px) {
-  #training .container .coach {
+  #training .coach {
     margin-top: 40px;
   }
 }
-#training .container .coach h3 {
+#training .coach h3 {
   display: block;
   align-self: flex-start;
+  margin-left: 12%;
 }
 @media (max-width: 767px) {
-  #training .container .coach h3 {
-    max-width: 332px;
-    width: 100%;
-    margin: 0 auto;
+  #training .coach h3 {
+    margin-left: 10%;
   }
 }
-#training .container .coach .coach_container {
+#training .coach_container {
   width: 100%;
 }
-#training .container .coach .coach_container .coach_card_container_outside {
+#training .coach_card_container_outside {
   width: 100%;
   overflow-x: scroll;
   overflow-y: visible;
 }
-#training .container .coach .coach_container .coach_card_container_outside::-webkit-scrollbar {
+#training .coach_card_container_outside::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-#training .container .coach .coach_container .coach_card_container_outside .coach_card_container_inside {
+#training .coach_card_container_inside {
   max-width: 1412px;
   display: flex;
   justify-content: start;
   gap: 24px;
+  margin-left: 12%;
+  margin-right: 12%;
 }
 @media (max-width: 767px) {
-  #training .container .coach .coach_container .coach_card_container_outside .coach_card_container_inside {
+  #training .coach_card_container_inside {
     width: 1507px;
     gap: 28px;
-    margin: 0 48px;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 12px;
   }
 }
-#training .container .coach .coach_container .coach_card_container_outside .coach_card_container_inside .coach_card {
+#training .coach_card {
   width: 251px;
   height: 160px;
   border-radius: 16px;
@@ -570,27 +569,27 @@
   align-items: end;
   margin-top: 40px;
 }
-#training .container .coach .coach_container .coach_card_container_outside .coach_card_container_inside .coach_card:hover .coach_name {
+#training .coach_card:hover .coach_name {
   margin-top: -40px;
 }
-#training .container .coach .coach_container .coach_card_container_outside .coach_card_container_inside .coach_card:active, #training .container .coach .coach_container .coach_card_container_outside .coach_card_container_inside .coach_card.active {
+#training .coach_card:active, #training .coach_card.active {
   background-color: #e6ebff;
 }
 @media (max-width: 767px) {
-  #training .container .coach .coach_container .coach_card_container_outside .coach_card_container_inside .coach_card {
+  #training .coach_card {
     width: 332px;
     height: 200px;
   }
 }
-#training .container .coach .coach_container .coach_card_container_outside .coach_card_container_inside .coach_card img {
+#training .coach_card img {
   width: 180px;
 }
 @media (max-width: 767px) {
-  #training .container .coach .coach_container .coach_card_container_outside .coach_card_container_inside .coach_card img {
+  #training .coach_card img {
     width: 220px;
   }
 }
-#training .container .coach .coach_container .coach_card_container_outside .coach_card_container_inside .coach_card .coach_name {
+#training .coach_name {
   writing-mode: vertical-lr;
   padding: 16px 16px 12px 12px;
   background-color: #fff;
@@ -603,47 +602,34 @@
   margin-top: -24px;
 }
 @media (max-width: 767px) {
-  #training .container .coach .coach_container .coach_card_container_outside .coach_card_container_inside .coach_card .coach_name {
+  #training .coach_name {
     font-size: 18px;
   }
 }
-#training .container .coach .coach_container .coach_description {
-  max-width: 1076px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+#training .coach_description {
   flex-direction: column;
   width: 100%;
   margin-top: 28px;
 }
-@media (max-width: 767px) {
-  #training .container .coach .coach_container .coach_description {
-    max-width: 332px;
-  }
-}
-#training .container .coach .coach_container .coach_description h4 {
+#training .coach_description h4 {
   font-size: 24px;
 }
 @media (max-width: 767px) {
-  #training .container .coach .coach_container .coach_description h4 {
+  #training .coach_description h4 {
     font-size: 20px;
   }
 }
-#training .container .coach .coach_container .coach_description ul {
+#training .coach_description ul {
   margin-top: 12px;
   margin-left: 20px;
 }
-#training .container .coach .coach_container .coach_description ul li,
-#training .container .coach .coach_container .coach_description ul a {
+#training .coach_description ul li,
+#training .coach_description ul a {
   font-weight: 400;
   color: #363636;
 }
 
-#faq .container {
-  max-width: 856px;
-  width: 100%;
-  margin: 0 auto;
+#faq .faq_container {
   display: flex;
   flex-direction: column;
   padding-top: 128px;
@@ -651,20 +637,18 @@
   gap: 60px;
 }
 @media (max-width: 767px) {
-  #faq .container {
-    max-width: 332px;
-    width: 100%;
+  #faq .faq_container {
     padding-top: 92px;
     padding-bottom: 76px;
     gap: 48px;
   }
 }
-#faq .container section li {
+#faq section li {
   font-size: 16px;
   font-weight: 500;
   list-style: none;
 }
-#faq .container section .question_item {
+#faq .question_item {
   border-top: 2px solid #f0f0f0;
   padding: 20px;
   display: flex;
@@ -672,23 +656,23 @@
   justify-content: start;
 }
 @media (max-width: 767px) {
-  #faq .container section .question_item {
+  #faq .question_item {
     padding: 20px 0;
   }
 }
-#faq .container section .question_item:last-child {
+#faq .question_item:last-child {
   border-bottom: 2px solid #f0f0f0;
 }
-#faq .container section .question_item img {
+#faq .question_item img {
   width: 24px;
   margin-right: 20px;
 }
-#faq .container section .question_item .question_item_Q,
-#faq .container section .question_item .question_item_A {
+#faq .question_item_Q,
+#faq .question_item_A {
   max-width: 761px;
   width: 100%;
 }
-#faq .container section .question_item .question_item_A {
+#faq .question_item_A {
   font-weight: 400;
   margin-top: 8px;
 }
@@ -697,60 +681,60 @@
   width: 100%;
   background-color: #f0f0f0;
 }
-#support .container {
+#support .support_container {
   width: 100%;
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
 }
 @media (max-width: 767px) {
-  #support .container {
+  #support .support_container {
     margin-bottom: 16px;
   }
 }
-#support .container h2 {
+#support .support_container h2 {
   margin-top: -16px;
-  margin-left: 72px;
+  margin-left: 5%;
   font-size: 32px;
 }
 @media (max-width: 767px) {
-  #support .container h2 {
-    margin-left: 48px;
+  #support .support_container h2 {
+    margin-left: 10%;
     font-size: 24px;
   }
 }
-#support .container .support_card_container_outside {
+#support .support_container .support_card_container_outside {
   margin-top: 32px;
   width: 100%;
   overflow-x: scroll;
 }
-#support .container .support_card_container_outside::-webkit-scrollbar {
+#support .support_container .support_card_container_outside::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 @media (max-width: 767px) {
-  #support .container .support_card_container_outside {
+  #support .support_container .support_card_container_outside {
     margin-top: 16px;
   }
 }
-#support .container .support_card_container {
+#support .support_container .support_card_container {
   width: 1516px;
-  margin: 0 72px;
+  margin: 0 5%;
   display: flex;
   justify-content: start;
   gap: 24px;
 }
 @media (max-width: 767px) {
-  #support .container .support_card_container {
+  #support .support_container .support_card_container {
     width: 1212px;
-    margin: 0 48px;
+    margin: 0 10%;
     gap: 20px;
   }
 }
-#support .container .support_card_container .support_card_item {
+#support .support_container .support_card_container .support_card_item {
   list-style: none;
 }
-#support .container .support_card_container .support_card_item .support_img {
+#support .support_container .support_card_container .support_card_item .support_img {
   width: 196px;
   height: 148px;
   background-color: #fff;
@@ -760,62 +744,62 @@
   align-items: center;
 }
 @media (max-width: 767px) {
-  #support .container .support_card_container .support_card_item .support_img {
+  #support .support_container .support_card_container .support_card_item .support_img {
     width: 156px;
     height: 120px;
   }
 }
-#support .container .support_card_container .support_card_item .support_img img {
+#support .support_container .support_card_container .support_card_item .support_img img {
   height: auto;
 }
-#support .container .support_card_container .support_card_item .support_img img.rocket,
-#support .container .support_card_container .support_card_item .support_img img.goodidea,
-#support .container .support_card_container .support_card_item .support_img img.titan,
-#support .container .support_card_container .support_card_item .support_img img.skw {
+#support .support_container .support_card_container .support_card_item .support_img img.rocket,
+#support .support_container .support_card_container .support_card_item .support_img img.goodidea,
+#support .support_container .support_card_container .support_card_item .support_img img.titan,
+#support .support_container .support_card_container .support_card_item .support_img img.skw {
   width: 100px;
 }
 @media (max-width: 767px) {
-  #support .container .support_card_container .support_card_item .support_img img.rocket,
-  #support .container .support_card_container .support_card_item .support_img img.goodidea,
-  #support .container .support_card_container .support_card_item .support_img img.titan,
-  #support .container .support_card_container .support_card_item .support_img img.skw {
+  #support .support_container .support_card_container .support_card_item .support_img img.rocket,
+  #support .support_container .support_card_container .support_card_item .support_img img.goodidea,
+  #support .support_container .support_card_container .support_card_item .support_img img.titan,
+  #support .support_container .support_card_container .support_card_item .support_img img.skw {
     width: 80px;
   }
 }
-#support .container .support_card_container .support_card_item .support_img img.hexschool {
+#support .support_container .support_card_container .support_card_item .support_img img.hexschool {
   width: 120px;
 }
 @media (max-width: 767px) {
-  #support .container .support_card_container .support_card_item .support_img img.hexschool {
+  #support .support_container .support_card_container .support_card_item .support_img img.hexschool {
     width: 100px;
   }
 }
-#support .container .support_card_container .support_card_item .support_img img.kdan {
+#support .support_container .support_card_container .support_card_item .support_img img.kdan {
   width: 160px;
 }
 @media (max-width: 767px) {
-  #support .container .support_card_container .support_card_item .support_img img.kdan {
+  #support .support_container .support_card_container .support_card_item .support_img img.kdan {
     width: 140px;
   }
 }
-#support .container .support_card_container .support_card_item .support_img img.wistron {
+#support .support_container .support_card_container .support_card_item .support_img img.wistron {
   width: 150px;
 }
 @media (max-width: 767px) {
-  #support .container .support_card_container .support_card_item .support_img img.wistron {
+  #support .support_container .support_card_container .support_card_item .support_img img.wistron {
     width: 120px;
   }
 }
-#support .container .support_card_container .support_card_item .support_text {
+#support .support_container .support_card_container .support_card_item .support_text {
   font-size: 16px;
   margin-top: 16px;
 }
-#support .container .support_card_container .support_card_item .support_text p:last-child {
+#support .support_container .support_card_container .support_card_item .support_text p:last-child {
   font-weight: 500;
   margin-top: 4px;
 }
 @media (max-width: 767px) {
-  #support .container .support_card_container .support_card_item .support_text {
+  #support .support_container .support_card_container .support_card_item .support_text {
     font-size: 14px;
   }
-}/*# sourceMappingURL=bootcamp_rocket.css.map */
+}

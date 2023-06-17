@@ -2,16 +2,6 @@
   background-image: linear-gradient(transparent 50%, $accent-orange 50%);
 }
 
-#banner {
-  .container {
-    padding-right: 40px;
-
-    @include mobile() {
-      padding-right: 0;
-    }
-  }
-}
-
 #about_us {
   margin-top: -22px;
   background-color: $primary-violet-200;
