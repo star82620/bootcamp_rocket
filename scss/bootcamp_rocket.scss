@@ -82,6 +82,7 @@
     height: 592px;
     overflow-y: scroll;
     overflow-x: visible;
+    gap: 32px 0;
 
     @include scrollbar_none();
 
@@ -102,6 +103,10 @@
     list-style: none;
 
     @include tablet() {
+      align-items: start;
+    }
+
+    @include mobile() {
       flex-direction: column;
       align-items: center;
       height: auto;
@@ -115,7 +120,7 @@
     &:first-child img {
       margin-left: -51px;
 
-      @include tablet() {
+      @include mobile() {
         margin-top: -116px;
         margin-left: 0px;
       }
@@ -124,7 +129,7 @@
     &:nth-of-type(2) img {
       margin-left: -63px;
 
-      @include tablet() {
+      @include mobile() {
         margin-top: -116px;
         margin-left: 0px;
       }
@@ -133,7 +138,7 @@
     &:nth-of-type(3) img {
       margin-left: -59px;
 
-      @include tablet() {
+      @include mobile() {
         margin-top: -116px;
         margin-left: 0px;
       }
@@ -186,7 +191,7 @@
     font-size: $font-size-body-24;
     margin-top: 72px;
 
-    @include tablet() {
+    @include mobile() {
       font-size: $font-size-body-20;
       margin-top: 12px;
     }
@@ -203,8 +208,10 @@
     align-items: center;
 
     @include tablet() {
+    }
+    @include mobile() {
       justify-content: center;
-      width: 292px;
+      width: 100%;
       height: 60px;
       border-radius: 12px;
       margin-top: 136px;

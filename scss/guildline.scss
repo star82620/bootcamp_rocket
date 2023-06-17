@@ -1,21 +1,3 @@
-@mixin large_desktop {
-  @media (min-width: 1441px) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (max-width: 1279px) {
-    @content;
-  }
-}
-
-@mixin mobile {
-  @media (max-width: 767px) {
-    @content;
-  }
-}
-
 // Bootcamp Rocket
 $primary-blue-100: #e6ebff;
 $primary-blue-200: #bfc9f0;
@@ -47,30 +29,27 @@ $font-size-body-14: 14px;
 
 //---
 
-@mixin w-1076 {
-  max-width: 1076px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-@mixin w-1296 {
-  max-width: 1296px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-@mixin page_padding {
-  padding-left: 40px;
-  padding-right: 40px;
-
-  @include mobile() {
-    padding-left: 0px;
-    padding-right: 0px;
+@mixin large_desktop {
+  @media (min-width: 1441px) {
+    @content;
   }
+}
+
+@mixin tablet {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin padding-y-48 {
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 @mixin scrollbar_none {

@@ -16,7 +16,7 @@
     border-radius: 0;
   }
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   #about_rocket {
     margin-top: -28px;
     border-radius: 24px;
@@ -30,7 +30,7 @@
   padding-bottom: 60px;
   gap: 32px;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   #about_rocket .about_container {
     flex-direction: column;
     gap: 24px;
@@ -41,7 +41,7 @@
 #about_rocket .summary {
   width: 40%;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   #about_rocket .summary {
     width: 100%;
   }
@@ -49,7 +49,7 @@
 #about_rocket .summary_title_en {
   font-size: 20px;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   #about_rocket .summary_title_en {
     font-size: 16px;
   }
@@ -57,7 +57,7 @@
 #about_rocket .summary_title_en ~ p {
   margin-top: 40px;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   #about_rocket .summary_title_en ~ p {
     margin-top: 16px;
   }
@@ -66,7 +66,7 @@
   font-size: 20px;
   font-weight: 500;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   #about_rocket .summary_description {
     font-size: 16px;
   }
@@ -74,7 +74,7 @@
 #about_rocket .card_container_outside {
   width: 50%;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   #about_rocket .card_container_outside {
     width: 100%;
   }
@@ -84,12 +84,13 @@
   height: 592px;
   overflow-y: scroll;
   overflow-x: visible;
+  gap: 32px 0;
 }
 #about_rocket .card_container::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   #about_rocket .card_container {
     height: 100%;
     overflow: visible;
@@ -106,7 +107,12 @@
   border-radius: 24px;
   list-style: none;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
+  #about_rocket .career_card {
+    align-items: start;
+  }
+}
+@media (max-width: 767px) {
   #about_rocket .career_card {
     flex-direction: column;
     align-items: center;
@@ -120,7 +126,7 @@
 #about_rocket .career_card:first-child img {
   margin-left: -51px;
 }
-@media (max-width: 1279px) {
+@media (max-width: 767px) {
   #about_rocket .career_card:first-child img {
     margin-top: -116px;
     margin-left: 0px;
@@ -129,7 +135,7 @@
 #about_rocket .career_card:nth-of-type(2) img {
   margin-left: -63px;
 }
-@media (max-width: 1279px) {
+@media (max-width: 767px) {
   #about_rocket .career_card:nth-of-type(2) img {
     margin-top: -116px;
     margin-left: 0px;
@@ -138,7 +144,7 @@
 #about_rocket .career_card:nth-of-type(3) img {
   margin-left: -59px;
 }
-@media (max-width: 1279px) {
+@media (max-width: 767px) {
   #about_rocket .career_card:nth-of-type(3) img {
     margin-top: -116px;
     margin-left: 0px;
@@ -151,7 +157,7 @@
   align-items: flex-start;
   height: 100%;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   #about_rocket .career_text {
     width: 100%;
     height: 120px;
@@ -161,7 +167,7 @@
   display: flex;
   margin-top: 12px;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   #about_rocket .skills {
     margin-top: 8px;
   }
@@ -180,7 +186,7 @@
 #about_rocket .skills li:first-child {
   margin-left: 0;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   #about_rocket .skills li {
     font-size: 12px;
   }
@@ -190,7 +196,7 @@
   font-size: 24px;
   margin-top: 72px;
 }
-@media (max-width: 1279px) {
+@media (max-width: 767px) {
   #about_rocket .title_en {
     font-size: 20px;
     margin-top: 12px;
@@ -206,10 +212,10 @@
   justify-content: start;
   align-items: center;
 }
-@media (max-width: 1279px) {
+@media (max-width: 767px) {
   #about_rocket .career_img {
     justify-content: center;
-    width: 292px;
+    width: 100%;
     height: 60px;
     border-radius: 12px;
     margin-top: 136px;
