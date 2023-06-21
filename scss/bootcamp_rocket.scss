@@ -242,25 +242,16 @@
       padding-bottom: 92px;
     }
   }
-  .case_card_container_outside {
+
+  .case_card_container {
     width: 100%;
-    height: 100%;
-    overflow-x: scroll;
-    @include scrollbar_none();
-    margin: 0 auto;
+    // margin: 0 72px;
     margin-top: 28px;
 
     @include mobile() {
+      width: 100%;
+      // margin: 0 48px;
       margin-top: 16px;
-    }
-  }
-  .case_card_container {
-    width: 2000px;
-    margin: 0 72px;
-
-    @include mobile() {
-      width: 1521px;
-      margin: 0 48px;
     }
   }
 

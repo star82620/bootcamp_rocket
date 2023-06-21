@@ -245,30 +245,14 @@
     padding-bottom: 92px;
   }
 }
-#success_case .case_card_container_outside {
-  width: 100%;
-  height: 100%;
-  overflow-x: scroll;
-  margin: 0 auto;
-  margin-top: 28px;
-}
-#success_case .case_card_container_outside::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-@media (max-width: 767px) {
-  #success_case .case_card_container_outside {
-    margin-top: 16px;
-  }
-}
 #success_case .case_card_container {
-  width: 2000px;
-  margin: 0 72px;
+  width: 100%;
+  margin-top: 28px;
 }
 @media (max-width: 767px) {
   #success_case .case_card_container {
-    width: 1521px;
-    margin: 0 48px;
+    width: 100%;
+    margin-top: 16px;
   }
 }
 #success_case li {
