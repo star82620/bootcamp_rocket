@@ -1,15 +1,24 @@
 // --- swiper ---
 const swiper = new Swiper(".show_case", {
-  // 畫面中要顯示幾張
-  slidesPerView: 4,
   // 格線排列
   grid: {
     rows: 2,
     // 排列方向
     fill: "row",
   },
-  // 幻燈片間距
   spaceBetween: 24,
+  breakpoints: {
+    // 幻燈片間距
+
+    320: {
+      // 畫面中要顯示幾張
+      slidesPerView: 1.5,
+    },
+
+    768: {
+      slidesPerView: 5,
+    },
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
