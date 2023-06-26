@@ -189,6 +189,13 @@
           },
         },
       });
+
+      swiper_coach.on("slideChange", function () {
+        if (this.activeIndex === 1) {
+          console.log("IM ON SECOND SLIDE!");
+          alert("IM ON SECOND SLIDE!");
+        }
+      });
     </script>
   </body>
 </html>

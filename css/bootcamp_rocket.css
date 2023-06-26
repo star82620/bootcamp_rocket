@@ -575,6 +575,7 @@
 @media (max-width: 767px) {
   #training .coach_name {
     font-size: 18px;
+    margin-left: 26px;
   }
 }
 #training .coach_description {
