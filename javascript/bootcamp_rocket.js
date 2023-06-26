@@ -1,5 +1,5 @@
 // --- swiper ---
-const swiper = new Swiper(".show_case", {
+const swiper_case = new Swiper(".success_case_swiper", {
   // 格線排列
   grid: {
     rows: 2,
@@ -22,6 +22,33 @@ const swiper = new Swiper(".show_case", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
+  },
+});
+const swiper_coach = new Swiper(".coach_swiper", {
+  // 格線排列
+  grid: {
+    rows: 1,
+    // 排列方向
+    fill: "row",
+  },
+  breakpoints: {
+    320: {
+      spaceBetween: 28,
+      width: 332,
+      centeredSlides: true,
+    },
+
+    768: {
+      spaceBetween: 24,
+      width: 251,
+      centeredSlides: true,
+    },
+
+    1229: {
+      spaceBetween: 24,
+      width: 1076,
+      slidesPerView: 4,
+    },
   },
 });
 

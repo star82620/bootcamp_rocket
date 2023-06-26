@@ -99,7 +99,6 @@ main {
 }
 @media (max-width: 767px) {
   .container_sm {
-    max-width: 428px;
     padding-left: 48px;
     padding-right: 48px;
   }
@@ -113,7 +112,6 @@ main {
 }
 @media (max-width: 767px) {
   .container_xs {
-    max-width: 428px;
     padding-left: 48px;
     padding-right: 48px;
   }
@@ -734,7 +732,6 @@ footer p:first-child::after {
   }
 }
 #training .new_batch {
-  width: 60%;
   margin: 0;
   padding: 12px 20px;
   margin-top: 12px;
@@ -963,36 +960,18 @@ footer p:first-child::after {
 }
 @media (max-width: 767px) {
   #training .coach h3 {
-    margin-left: 10%;
+    margin-left: 48px;
   }
 }
 #training .coach_container {
   width: 100%;
 }
-#training .coach_card_container_outside {
-  width: 100%;
-  overflow-x: scroll;
-  overflow-y: visible;
-}
-#training .coach_card_container_outside::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
 #training .coach_card_container_inside {
-  max-width: 1412px;
-  display: flex;
-  justify-content: start;
-  gap: 24px;
-  margin-left: 12%;
-  margin-right: 12%;
+  padding-left: 12%;
 }
 @media (max-width: 767px) {
   #training .coach_card_container_inside {
-    width: 1507px;
-    gap: 28px;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 12px;
+    padding-left: 48px;
   }
 }
 #training .coach_card {

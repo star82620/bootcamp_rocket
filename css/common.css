@@ -99,7 +99,6 @@ main {
 }
 @media (max-width: 767px) {
   .container_sm {
-    max-width: 428px;
     padding-left: 48px;
     padding-right: 48px;
   }
@@ -113,7 +112,6 @@ main {
 }
 @media (max-width: 767px) {
   .container_xs {
-    max-width: 428px;
     padding-left: 48px;
     padding-right: 48px;
   }

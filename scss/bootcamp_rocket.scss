@@ -291,8 +291,6 @@
   }
   //近期梯次
   .new_batch {
-    // max-width: 636px;
-    width: 60%;
     margin: 0;
     padding: 12px 20px;
     margin-top: 12px;
@@ -536,7 +534,7 @@
       margin-left: 12%;
 
       @include mobile() {
-        margin-left: 10%;
+        margin-left: 48px;
       }
     }
   }
@@ -544,25 +542,16 @@
     width: 100%;
   }
   .coach_card_container_outside {
-    width: 100%;
-    overflow-x: scroll;
-    overflow-y: visible;
-    @include scrollbar_none();
+    // width: 100%;
+    // overflow-x: scroll;
+    // overflow-y: visible;
+    // @include scrollbar_none();
   }
   .coach_card_container_inside {
-    max-width: 1412px;
-    display: flex;
-    justify-content: start;
-    gap: 24px;
-    margin-left: 12%;
-    margin-right: 12%;
+    padding-left: 12%;
 
     @include mobile() {
-      width: 1507px;
-      gap: 28px;
-      margin-left: 10%;
-      margin-right: 10%;
-      margin-top: 12px;
+      padding-left: 48px;
     }
   }
   .coach_card {
