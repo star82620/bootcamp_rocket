@@ -1,38 +1,13 @@
 @import "guildline";
 
-.mark_style {
-  position: relative;
-  z-index: 0;
-}
-
-.mark_style::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 50%;
-  line-height: normal;
-  background-color: $accent-orange;
-}
-
-#banner {
-  .container {
-    padding-right: 40px;
-
-    @include mobile() {
-      padding-right: 0;
-    }
-  }
+.cowork_page .mark_style {
+  background-image: linear-gradient(transparent 50%, $accent-orange 50%);
 }
 
 #about_us {
   margin-top: -22px;
   background-color: $primary-violet-200;
   border-radius: 24px;
-  @include page_padding();
 
   &:target {
     padding-top: 64px;
@@ -42,419 +17,376 @@
     margin-top: -28px;
   }
 
-  .container {
-    @include w-1296();
-    padding: 60px 0;
+  .about_us_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     @include mobile() {
       flex-direction: column;
-      max-width: 332px;
-      padding: 36px 0;
+      padding-top: 36px;
+      padding-bottom: 36px;
     }
+  }
+  .map {
+    height: 420px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 16px;
 
-    .map {
-      max-width: 636px;
-      height: 420px;
-      width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 12px;
-      background-color: #fff;
-      border-radius: 16px;
+    @include mobile() {
+      order: 1;
+      margin-top: 20px;
 
-      @include mobile() {
-        order: 1;
-        margin-top: 20px;
-        max-width: 332px;
-        width: 100%;
-        height: 332px;
-      }
-
-      iframe {
-        width: 100%;
-        height: 100%;
-        border-radius: 16px;
-
-        @include mobile() {
-          width: 308px;
-          height: 308px;
-          border-radius: 12px;
-        }
-      }
-    }
-
-    .summary {
-      max-width: 40%;
       width: 100%;
-      // width: 500px;
+      height: 332px;
+    }
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
 
-      @include mobile() {
-        max-width: 332px;
-        width: 100%;
+    @include mobile() {
+      border-radius: 12px;
+    }
+  }
 
-        p {
-          font-size: $font-size-body-16;
-        }
+  .summary {
+    width: 45%;
+
+    @include mobile() {
+      width: 100%;
+
+      p {
+        font-size: $font-size-body-16;
       }
+    }
+  }
+  .summary_content {
+    margin-top: 40px;
+    font-weight: 400;
 
-      .summary_content {
-        margin-top: 40px;
-        font-weight: 400;
-
-        @include mobile() {
-          margin-top: 16px;
-        }
-      }
+    @include mobile() {
+      margin-top: 16px;
     }
   }
 }
 
 #space {
-  padding: 80px 0;
-  @include page_padding();
-
-  @include mobile() {
-    padding: 48px 0;
-  }
-
-  .container {
-    @include w-1076();
+  .space_container {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
 
     @include mobile() {
-      max-width: 332px;
       width: 100%;
+      padding-top: 48px;
+      padding-bottom: 48px;
     }
 
     h4 {
       display: inline-block;
       line-height: normal;
     }
+  }
+  .place {
+    width: 100%;
+    margin-top: 60px;
 
-    h4::after {
-      bottom: 0;
+    @include mobile() {
+      margin-top: 16px;
+    }
+  }
+  .place_card_container {
+    width: 100%;
+    margin-top: 32px;
+
+    @include mobile() {
+      margin-top: 24px;
     }
 
-    .place {
-      width: 100%;
-      margin-top: 60px;
+    .place_card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      @include mobile() {
-        margin-top: 16px;
+      &:first-child ~ .place_card {
+        margin-top: 52px;
       }
 
-      .place_card_container {
-        width: 100%;
-        margin-top: 32px;
+      @include mobile() {
+        flex-direction: column;
+
+        &:first-child ~ .place_card {
+          margin-top: 48px;
+        }
+      }
+
+      .place_card_img {
+        // max-width: 510px;
+        // width: 100%;
+        width: 50%;
+        @include mobile() {
+          width: 100%;
+        }
+
+        img {
+          width: 100%;
+        }
+
+        .img_lg {
+          display: block;
+
+          @include mobile() {
+            display: none;
+          }
+        }
+
+        .img_sm {
+          display: none;
+
+          @include mobile() {
+            display: block;
+          }
+        }
+      }
+
+      .place_card_text {
+        // width: 494px;
+        width: 45%;
 
         @include mobile() {
+          order: 1;
+          width: 100%;
           margin-top: 24px;
         }
 
-        .place_card {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-
-          &:first-child ~ .place_card {
-            margin-top: 52px;
-          }
+        h5 {
+          font-size: $font-size-body-24;
 
           @include mobile() {
-            flex-direction: column;
-
-            &:first-child ~ .place_card {
-              margin-top: 48px;
-            }
+            font-size: $font-size-body-20;
           }
+        }
 
-          .place_card_img {
-            max-width: 510px;
-            width: 100%;
+        p {
+          color: $neutral-gray-600;
+          font-size: $font-size-body-16;
+          font-weight: 400;
+          margin-top: 20px;
 
-            @include mobile() {
-              width: 100%;
-            }
-
-            img {
-              width: 100%;
-            }
-
-            .img_lg {
-              display: block;
-
-              @include mobile() {
-                display: none;
-              }
-            }
-
-            .img_sm {
-              display: none;
-
-              @include mobile() {
-                display: block;
-              }
-            }
+          @include mobile() {
+            font-size: $font-size-body-14;
+            margin-top: 8px;
           }
+        }
+      }
 
-          .place_card_text {
-            width: 494px;
+      div:nth-of-type(2) {
+        margin-left: 48px;
 
-            @include mobile() {
-              order: 1;
-              width: 100%;
-              margin-top: 24px;
-            }
-
-            h5 {
-              font-size: $font-size-body-24;
-
-              @include mobile() {
-                font-size: $font-size-body-20;
-              }
-            }
-
-            p {
-              color: $neutral-gray-600;
-              font-size: $font-size-body-16;
-              font-weight: 400;
-              margin-top: 20px;
-
-              @include mobile() {
-                font-size: $font-size-body-14;
-                margin-top: 8px;
-              }
-            }
-          }
-
-          div:nth-of-type(2) {
-            margin-left: 48px;
-
-            @include mobile() {
-              margin-left: 0;
-            }
-          }
+        @include mobile() {
+          margin-left: 0;
         }
       }
     }
+  }
 
-    //icon 有點調皮，還要找一下問題
-    .service {
-      margin-top: 84px;
+  .service {
+    margin-top: 84px;
+    width: 100%;
+
+    @include mobile() {
+      margin-top: 48px;
+    }
+  }
+  .service_card_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 28px;
+    gap: 48px 0;
+
+    @include mobile() {
+      flex-direction: column;
+      gap: 28px 0;
+    }
+  }
+  .service_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 30%;
+
+    @include mobile() {
       width: 100%;
+      flex-direction: row;
+      justify-content: start;
+      align-items: start;
+    }
+  }
+  .service_card_img {
+    @include mobile() {
+      max-width: 48px;
+    }
+
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .service_card_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0 0 0;
+
+    @include mobile() {
+      align-items: start;
+      margin: 0 0 0 16px;
+    }
+
+    p {
+      margin-top: 8px;
+      text-align: center;
+      font-size: $font-size-body-14;
+      font-weight: 400;
+      color: $neutral-gray-600;
 
       @include mobile() {
-        margin-top: 48px;
+        margin-top: 4px;
+        text-align: left;
       }
+    }
 
-      .service_card_container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-        margin-top: 28px;
+    h5 {
+      font-size: 18px;
 
-        @include mobile() {
-          flex-direction: column;
-        }
-
-        .service_card {
-          display: flex;
-          flex-direction: column;
-          justify-content: start;
-          align-items: center;
-          max-width: 300px;
-          width: 100%;
-
-          &:nth-child(3) ~ .service_card {
-            margin-top: 48px;
-          }
-
-          @include mobile() {
-            max-width: 332px;
-            flex-direction: row;
-            justify-content: start;
-            align-items: start;
-
-            &:first-child ~ .service_card {
-              margin-top: 28px;
-            }
-          }
-
-          .service_card_img {
-            width: 120px;
-
-            @include mobile() {
-              width: 48px;
-              height: 48px;
-            }
-
-            & img {
-              width: 100%;
-              height: auto;
-            }
-          }
-
-          .service_card_text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 24px 0 0 0;
-
-            @include mobile() {
-              align-items: start;
-              margin: 0 0 0 16px;
-            }
-
-            p {
-              max-width: 240px;
-              margin-top: 8px;
-              text-align: center;
-              font-size: $font-size-body-14;
-              font-weight: 400;
-              color: $neutral-gray-600;
-
-              @include mobile() {
-                margin-top: 4px;
-                text-align: left;
-              }
-            }
-
-            h5 {
-              font-size: 18px;
-
-              @include mobile() {
-                font-size: 16px;
-              }
-            }
-          }
-        }
+      @include mobile() {
+        font-size: 16px;
       }
     }
   }
 
   .carousel {
-    margin-top: 80px;
+    margin-bottom: 80px;
     width: 100%;
     overflow-x: scroll;
     @include scrollbar_none();
 
     @include mobile() {
-      margin-top: 40px;
+      margin-bottom: 40px;
     }
+  }
+  .carousel_container {
+    display: flex;
+    max-width: 1440px;
+    gap: 0 24px;
 
-    .carousel_container {
-      display: flex;
-      max-width: 1440px;
+    @include mobile() {
+      padding-left: 48px;
+    }
+  }
+  .carousel_img {
+    width: 636px;
+    height: 424px;
+    border-radius: 12px;
 
-      @include mobile() {
-        padding-left: 48px;
-      }
-
-      .carousel_img {
-        width: 636px;
-        height: 424px;
-        border-radius: 12px;
-
-        @include mobile() {
-          width: 332px;
-          height: 240px;
-        }
-
-        &:first-child ~ .carousel_img {
-          margin-left: 24px;
-        }
-      }
+    @include mobile() {
+      width: 332px;
+      height: 240px;
     }
   }
 }
 
 #menu {
-  width: 100%;
   background-color: $primary-violet-200;
-  padding: 60px 0 80px;
+  padding-bottom: 80px;
 
   @include mobile() {
-    padding: 36px 0 48px;
+    padding-bottom: 48px;
   }
 
-  .container {
-    @include w-1076();
+  .menu_header_container {
     flex-direction: column;
-    @include page_padding();
+    padding-top: 60px;
 
     @include mobile() {
-      max-width: 332px;
-    }
-
-    .notice {
-      width: fit-content;
-      margin-bottom: 25px; //還要加上下面角角，感覺尺寸要調？
-      margin-left: 80px;
-
-      @include mobile() {
-        width: 100%;
-        height: auto;
-        margin-left: 0;
-      }
-
-      .notice_block {
-        padding: 16px;
-        font-size: $font-size-body-16;
-        font-weight: 500;
-        background-color: #fff;
-        border: 2px solid $neutral-gray-700;
-        border-radius: 12px;
-        white-space: nowrap;
-        line-height: normal;
-
-        @include mobile() {
-          padding: 12px;
-          font-size: $font-size-body-14;
-        }
-      }
-
-      .notice_sharp_outside {
-        width: 0;
-        height: 0;
-        border-top: 20px solid $neutral-gray-700;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        margin: 0px 0 0 18px;
-
-        .notice_sharp_inside {
-          width: 0;
-          height: 0;
-          border-top: 20px solid #fff;
-          border-left: 10px solid transparent;
-          border-right: 10px solid transparent;
-          transform: translate(-50%, -120%);
-        }
-      }
-    }
-
-    p {
-      font-size: $font-size-body-20;
-      font-weight: 400;
-      margin-top: 8px;
-
-      @include mobile() {
-        font-size: $font-size-body-16;
-      }
+      padding-top: 36px;
     }
   }
+  .menu_header_description {
+    font-size: $font-size-body-20;
+    font-weight: 400;
+    margin-top: 8px;
+
+    @include mobile() {
+      font-size: $font-size-body-16;
+    }
+  }
+
+  .notice {
+    width: fit-content;
+    margin-bottom: 25px; //還要加上下面角角，感覺尺寸要調？
+    margin-left: 80px;
+
+    @include mobile() {
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+    }
+  }
+  .notice_block {
+    padding: 16px;
+    font-size: $font-size-body-16;
+    font-weight: 500;
+    background-color: #fff;
+    border: 2px solid $neutral-gray-700;
+    border-radius: 12px;
+    white-space: nowrap;
+    line-height: normal;
+
+    @include mobile() {
+      padding: 12px;
+      font-size: $font-size-body-14;
+    }
+  }
+  .notice_sharp_outside {
+    width: 0;
+    height: 0;
+    border-top: 20px solid $neutral-gray-700;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    margin: 0px 0 0 18px;
+  }
+  .notice_sharp_inside {
+    width: 0;
+    height: 0;
+    border-top: 20px solid #fff;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    transform: translate(-50%, -120%);
+  }
+
   .menu_card_container_outside {
-    @include w-1076();
     margin-top: 36px;
     overflow-x: scroll;
     @include scrollbar_none();
 
     @include mobile() {
       margin-top: 20px;
+      max-width: 100%;
     }
 
     .menu_card_container_inside {
@@ -463,7 +395,8 @@
 
       @include mobile() {
         width: 686px;
-        padding-left: 48px;
+        padding-left: 0;
+        padding-right: 0;
       }
 
       .menu_card {
@@ -471,7 +404,7 @@
         max-width: 526px;
         width: 100%;
         border-radius: 24px;
-        border: 2px solid $neutral-gray-700;
+        border: 2px solid #fff;
         padding: 36px 80px 48px;
         display: flex;
         flex-direction: column;
@@ -479,7 +412,13 @@
 
         &:last-child {
           margin-left: 24px;
-          border: none;
+          // border: none;
+        }
+
+        &:hover,
+        &:active {
+          border-color: $neutral-gray-700;
+          transition: 0.5s;
         }
 
         @include mobile() {
@@ -491,7 +430,7 @@
           }
         }
 
-        h5 {
+        h3 {
           font-size: $font-size-body-24;
         }
 
